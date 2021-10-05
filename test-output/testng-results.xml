@@ -1,11 +1,201 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="0" passed="0">
+<testng-results skipped="0" failed="0" ignored="0" total="7" passed="7">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="18" started-at="2021-10-03T18:05:55 IST" finished-at="2021-10-03T18:05:55 IST">
+  <suite name="Suite" duration-ms="100843" started-at="2021-10-06T00:19:13 IST" finished-at="2021-10-06T00:20:53 IST">
     <groups>
     </groups>
-    <test name="Test" duration-ms="18" started-at="2021-10-03T18:05:55 IST" finished-at="2021-10-03T18:05:55 IST">
+    <test name="Test" duration-ms="100843" started-at="2021-10-06T00:19:13 IST" finished-at="2021-10-06T00:20:53 IST">
+      <class name="com.buffalocart.Test.SignoutTest">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.buffalocart.Test.SignoutTest@5ed828d]" name="setUp" is-config="true" duration-ms="8610" started-at="2021-10-06T00:19:42 IST" finished-at="2021-10-06T00:19:51 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyUserNavigatingToLoginPageByClickingOnSignout()[pri:7, instance:com.buffalocart.Test.SignoutTest@5ed828d]" name="verifyUserNavigatingToLoginPageByClickingOnSignout" duration-ms="6079" started-at="2021-10-06T00:19:51 IST" description="TC_007_Verify whether user is navigating to login page by clicking on Sign out button" finished-at="2021-10-06T00:19:57 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyUserNavigatingToLoginPageByClickingOnSignout -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.buffalocart.Test.SignoutTest@5ed828d]" name="tearDown" is-config="true" duration-ms="226" started-at="2021-10-06T00:19:57 IST" finished-at="2021-10-06T00:19:57 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyUserNavigatingToLoginPageByClickingOnSignout status=SUCCESS method=SignoutTest.verifyUserNavigatingToLoginPageByClickingOnSignout()[pri:7, instance:com.buffalocart.Test.SignoutTest@5ed828d] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.buffalocart.Test.SignoutTest -->
+      <class name="com.buffalocart.Test.HomeTest">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.buffalocart.Test.HomeTest@2173f6d9]" name="setUp" is-config="true" duration-ms="23298" started-at="2021-10-06T00:19:13 IST" finished-at="2021-10-06T00:19:36 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyHomepageTitle()[pri:6, instance:com.buffalocart.Test.HomeTest@2173f6d9]" name="verifyHomepageTitle" duration-ms="6151" started-at="2021-10-06T00:19:36 IST" description="TC_006_Verify home page title" finished-at="2021-10-06T00:19:42 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyHomepageTitle -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.buffalocart.Test.HomeTest@2173f6d9]" name="tearDown" is-config="true" duration-ms="439" started-at="2021-10-06T00:19:42 IST" finished-at="2021-10-06T00:19:42 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyHomepageTitle status=SUCCESS method=HomeTest.verifyHomepageTitle()[pri:6, instance:com.buffalocart.Test.HomeTest@2173f6d9] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.buffalocart.Test.HomeTest -->
+      <class name="com.buffalocart.Test.ResetTest">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.buffalocart.Test.ResetTest@1e7c7811]" name="setUp" is-config="true" duration-ms="7941" started-at="2021-10-06T00:20:42 IST" finished-at="2021-10-06T00:20:50 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="VerifyErrorMessageDisplyedOnResetpasswordWithInvalidEmailId()[pri:5, instance:com.buffalocart.Test.ResetTest@1e7c7811]" name="VerifyErrorMessageDisplyedOnResetpasswordWithInvalidEmailId" duration-ms="3245" started-at="2021-10-06T00:20:50 IST" description="TC_005_Verify error meesage displyed on  Reset Password page with invalid email id" finished-at="2021-10-06T00:20:53 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyErrorMessageDisplyedOnResetpasswordWithInvalidEmailId -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.buffalocart.Test.ResetTest@1e7c7811]" name="tearDown" is-config="true" duration-ms="192" started-at="2021-10-06T00:20:53 IST" finished-at="2021-10-06T00:20:53 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=VerifyErrorMessageDisplyedOnResetpasswordWithInvalidEmailId status=SUCCESS method=ResetTest.VerifyErrorMessageDisplyedOnResetpasswordWithInvalidEmailId()[pri:5, instance:com.buffalocart.Test.ResetTest@1e7c7811] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.buffalocart.Test.ResetTest -->
+      <class name="com.buffalocart.Test.LoginTest">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.buffalocart.Test.LoginTest@7a3d45bd]" name="setUp" is-config="true" duration-ms="8844" started-at="2021-10-06T00:19:57 IST" finished-at="2021-10-06T00:20:06 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyLoginpageTitle()[pri:1, instance:com.buffalocart.Test.LoginTest@7a3d45bd]" name="verifyLoginpageTitle" duration-ms="12" started-at="2021-10-06T00:20:06 IST" description="TC_001_Verify login page title" finished-at="2021-10-06T00:20:06 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLoginpageTitle -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.buffalocart.Test.LoginTest@7a3d45bd]" name="tearDown" is-config="true" duration-ms="179" started-at="2021-10-06T00:20:06 IST" finished-at="2021-10-06T00:20:06 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyLoginpageTitle status=SUCCESS method=LoginTest.verifyLoginpageTitle()[pri:1, instance:com.buffalocart.Test.LoginTest@7a3d45bd] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.buffalocart.Test.LoginTest@7a3d45bd]" name="setUp" is-config="true" duration-ms="9252" started-at="2021-10-06T00:20:06 IST" finished-at="2021-10-06T00:20:16 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyUserLoginWithValidUserCredentials()[pri:2, instance:com.buffalocart.Test.LoginTest@7a3d45bd]" name="verifyUserLoginWithValidUserCredentials" duration-ms="5754" started-at="2021-10-06T00:20:16 IST" description="TC_002_Verify user login with valid user credentials" finished-at="2021-10-06T00:20:21 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyUserLoginWithValidUserCredentials -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.buffalocart.Test.LoginTest@7a3d45bd]" name="tearDown" is-config="true" duration-ms="242" started-at="2021-10-06T00:20:21 IST" finished-at="2021-10-06T00:20:22 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyUserLoginWithValidUserCredentials status=SUCCESS method=LoginTest.verifyUserLoginWithValidUserCredentials()[pri:2, instance:com.buffalocart.Test.LoginTest@7a3d45bd] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.buffalocart.Test.LoginTest@7a3d45bd]" name="setUp" is-config="true" duration-ms="8291" started-at="2021-10-06T00:20:22 IST" finished-at="2021-10-06T00:20:30 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyUserLoginWithInvalidUserCredentials()[pri:3, instance:com.buffalocart.Test.LoginTest@7a3d45bd]" name="verifyUserLoginWithInvalidUserCredentials" duration-ms="1779" started-at="2021-10-06T00:20:30 IST" description="TC_003_Verify the error message displayed for user login with invalid credentials" finished-at="2021-10-06T00:20:32 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyUserLoginWithInvalidUserCredentials -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.buffalocart.Test.LoginTest@7a3d45bd]" name="tearDown" is-config="true" duration-ms="253" started-at="2021-10-06T00:20:32 IST" finished-at="2021-10-06T00:20:32 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyUserLoginWithInvalidUserCredentials status=SUCCESS method=LoginTest.verifyUserLoginWithInvalidUserCredentials()[pri:3, instance:com.buffalocart.Test.LoginTest@7a3d45bd] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.buffalocart.Test.LoginTest@7a3d45bd]" name="setUp" is-config="true" duration-ms="9627" started-at="2021-10-06T00:20:32 IST" finished-at="2021-10-06T00:20:42 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyUserAbleToClickOnRememeberMeCheckbox()[pri:4, instance:com.buffalocart.Test.LoginTest@7a3d45bd]" name="verifyUserAbleToClickOnRememeberMeCheckbox" duration-ms="174" started-at="2021-10-06T00:20:42 IST" description="TC_004_Verify User is able to clickon rememeberme Checkbox" finished-at="2021-10-06T00:20:42 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyUserAbleToClickOnRememeberMeCheckbox -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.buffalocart.Test.LoginTest@7a3d45bd]" name="tearDown" is-config="true" duration-ms="177" started-at="2021-10-06T00:20:42 IST" finished-at="2021-10-06T00:20:42 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyUserAbleToClickOnRememeberMeCheckbox status=SUCCESS method=LoginTest.verifyUserAbleToClickOnRememeberMeCheckbox()[pri:4, instance:com.buffalocart.Test.LoginTest@7a3d45bd] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.buffalocart.Test.LoginTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

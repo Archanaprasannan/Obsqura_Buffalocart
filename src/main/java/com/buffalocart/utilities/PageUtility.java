@@ -71,11 +71,11 @@ public class PageUtility {
 		element.click();
 	}
 
-	public boolean isElementDisplayed(WebElement element) {
+	public static boolean isElementDisplayed(WebElement element) {
 		return element.isDisplayed();
 	}
 
-	public boolean isElementSelected(WebElement element) {
+	public static boolean isElementSelected(WebElement element) {
 		return element.isSelected();
 	}
 
