@@ -32,20 +32,19 @@ public class LoginPage {
 	private final String _invalidloginmessage = "//span[@class='help-block']//strong";
 	@FindBy(xpath = _invalidloginmessage)
 	private WebElement invalidloginmessage;
-	
+
 	private final String _remembermecheckbox = "//input[@name='remember']";
 	@FindBy(xpath = _remembermecheckbox)
 	private WebElement remembermecheckbox;
-	
+
 	private final String _loginlogo = "//div[@class='panel-heading']";
 	@FindBy(xpath = _loginlogo)
 	private WebElement panelheadinglogin;
-	
+
 	private final String _forgotpassword = "//a[@class='btn btn-link']";
 	@FindBy(xpath = _forgotpassword)
 	private WebElement forgotpassword;
-	
-	
+
 	/*** UserActionMethods ***/
 	public String getLoginpageTitle() {
 		return PageUtility.getPageTitle(driver);
@@ -63,25 +62,24 @@ public class LoginPage {
 		PageUtility.clickOnElement(loginbutton);
 		return new HomePage(driver);
 	}
-	public String getInvalidLoginMessage()
-	{
+
+	public String getInvalidLoginMessage() {
 		return PageUtility.getElementText(invalidloginmessage);
 	}
-	
-	public void clickOnRememebermeCheckbox()
-	{
+
+	public void clickOnRememebermeCheckbox() {
 		PageUtility.clickOnElement(remembermecheckbox);
 	}
-	public boolean getRemembermeStatus()
-	{
+
+	public boolean getRemembermeStatus() {
 		return PageUtility.isElementSelected(remembermecheckbox);
 	}
-	public boolean getLoginlogoStatus()
-	{
+
+	public boolean getLoginlogoStatus() {
 		return PageUtility.isElementDisplayed(panelheadinglogin);
 	}
-	public ResetPage clickOnForgotPasswordButton()
-	{
+
+	public ResetPage clickOnForgotPasswordButton() {
 		PageUtility.clickOnElement(forgotpassword);
 		return new ResetPage(driver);
 	}

@@ -20,11 +20,12 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 
 import com.buffalocart.constants.Constants;
+import com.buffalocart.extentreport.ExtentReport;
 import com.buffalocart.utilities.WaitUtility;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class Base {
+public class Base extends ExtentReport{
 	public WebDriver driver;
 	public static Properties properties;
 	FileReader f;

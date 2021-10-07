@@ -12,20 +12,20 @@ import com.buffalocart.pages.LoginPage;
 import com.buffalocart.pages.SignoutPage;
 import com.buffalocart.utilities.ExcelUtility;
 
-public class SignoutTest extends Base{
+public class SignoutTest extends Base {
 	HomePage home;
 	ExcelUtility excel;
 	LoginPage login;
 	SignoutPage signout;
 	String path = System.getProperty("user.dir") + Constants.EXCEL_FILE;
 
-	@Test(priority = 7, description = "TC_007_Verify whether user is navigating to login page by clicking on Sign out button", enabled = true)
+	@Test(priority = 8, description = "TC_008_Verify whether user is navigating to login page by clicking on Sign out button", enabled = true)
 	public void verifyUserNavigatingToLoginPageByClickingOnSignout() throws IOException {
 		excel = new ExcelUtility(path, "Login");
 		login = new LoginPage(driver);
 		login.enterUsername(excel.getStringCellData(1, 0));
 		login.enterPassword(excel.getStringCellData(1, 1));
-		home=login.clickOnLoginButton();
+		home = login.clickOnLoginButton();
 		home.clickOnEndTour();
 		signout = home.clickOnUserMenu();
 		login = signout.clickOnSignoutButton();
@@ -33,5 +33,4 @@ public class SignoutTest extends Base{
 		SoftAssert softassert = new SoftAssert();
 		softassert.assertTrue(actualLoginlogoStatus, "unable to navigate to loginpage");
 	}
-	
 }

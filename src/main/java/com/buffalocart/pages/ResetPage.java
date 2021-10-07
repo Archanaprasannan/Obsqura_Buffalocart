@@ -24,12 +24,10 @@ public class ResetPage {
 	private final String _resetLinkButton = "//button[@class='btn btn-primary']";
 	@FindBy(xpath = _resetLinkButton)
 	private WebElement resetLinkButton;
-	
+
 	private final String _errormessage = "//span[@class='help-block']//strong";
 	@FindBy(xpath = _errormessage)
 	private WebElement errormessage;
-	
-	
 
 	/*** UserActionMethods ***/
 
@@ -40,8 +38,8 @@ public class ResetPage {
 	public void clickOnResetLinkButton() {
 		PageUtility.clickOnElement(resetLinkButton);
 	}
-	public String getErrorMessage()
-	{
+
+	public String getErrorMessage() {
 		return PageUtility.getElementText(errormessage);
 	}
 }

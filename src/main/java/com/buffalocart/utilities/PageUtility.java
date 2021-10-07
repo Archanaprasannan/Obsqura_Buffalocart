@@ -1,5 +1,7 @@
 package com.buffalocart.utilities;
 
+import java.util.Date;
+
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,6 +20,10 @@ public class PageUtility {
 	public static String getElementText(WebElement element) {
 		return element.getText();
 	}
+	
+	/*public static String getDateElementText(Date date) {
+		return ((Alert) date).getText();
+	}*/
 
 	public String getAttributeValue(WebElement element, String attribute) {
 		return element.getAttribute(attribute);

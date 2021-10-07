@@ -1,5 +1,9 @@
 package com.buffalocart.pages;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -29,6 +33,14 @@ public class HomePage {
 	@FindBy(xpath = _usermenu)
 	WebElement usermenu;
 
+	private final String _date = "//div[@class='m-8 pull-left mt-15 hidden-xs']//strong";
+	@FindBy(xpath = _date)
+	WebElement date;
+
+	private final String _sidebar = "//ul[@class='sidebar-menu']";
+	@FindBy(xpath = _sidebar)
+	WebElement sidebar;
+
 	/*** UserActionMethods ***/
 	public HomePage clickOnEndTour() {
 		PageUtility.clickOnElement(endtour);
@@ -46,6 +58,25 @@ public class HomePage {
 
 	public String getHomepageTitle() {
 		return PageUtility.getPageTitle(driver);
+	}
+
+	public String getHomepageDate() {
+		//DateFormat dateFormat = new SimpleDateFormat("dd/mm/yyyy");
+		 
+		 //get current date time with Date()
+		 //Date date = new Date();
+		 
+		 // Now format the date
+		 //String date1= dateFormat.format(date);
+		 
+		 //System.out.println(date1);
+
+		return PageUtility.getElementText(date);
+	}
+
+	public SidebarPage clickOnSidebar() {
+		PageUtility.clickOnElement(sidebar);
+		return new SidebarPage(driver);
 	}
 
 }

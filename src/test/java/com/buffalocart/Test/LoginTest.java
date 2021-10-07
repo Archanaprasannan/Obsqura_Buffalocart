@@ -41,9 +41,10 @@ public class LoginTest extends Base {
 		softassert.assertTrue(actualHomeLogostatus, "Login failed");
 		softassert.assertAll();
 		signout = home.clickOnUserMenu();
-		login=signout.clickOnSignoutButton();
+		login = signout.clickOnSignoutButton();
 
 	}
+
 	@Test(priority = 3, description = "TC_003_Verify the error message displayed for user login with invalid credentials", enabled = true)
 	public void verifyUserLoginWithInvalidUserCredentials() throws IOException {
 		excel = new ExcelUtility(path, "Login");
@@ -51,18 +52,17 @@ public class LoginTest extends Base {
 		login.enterUsername(excel.getStringCellData(2, 0));
 		login.enterPassword(excel.getStringCellData(2, 1));
 		login.clickOnLoginButton();
-		String actualTextStatus=login.getInvalidLoginMessage();
-		String expectedTextStatus="These credentials do not match our records.";
+		String actualTextStatus = login.getInvalidLoginMessage();
+		String expectedTextStatus = "These credentials do not match our records.";
 		Assert.assertEquals(actualTextStatus, expectedTextStatus, "Successful Login");
-		}
+	}
+
 	@Test(priority = 4, description = "TC_004_Verify User is able to clickon rememeberme Checkbox", enabled = true)
-	public void verifyUserAbleToClickOnRememeberMeCheckbox() throws IOException
-	{
+	public void verifyUserAbleToClickOnRememeberMeCheckbox() throws IOException {
 		login = new LoginPage(driver);
 		login.clickOnRememebermeCheckbox();
-		boolean checkboxStatus=login.getRemembermeStatus();
+		boolean checkboxStatus = login.getRemembermeStatus();
 		Assert.assertTrue(checkboxStatus, "Unable to check the Rememeberme checkbox");
 	}
-	
-	
+
 }
