@@ -61,16 +61,6 @@ public class HomePage {
 	}
 
 	public String getHomepageDate() {
-		//DateFormat dateFormat = new SimpleDateFormat("dd/mm/yyyy");
-		 
-		 //get current date time with Date()
-		 //Date date = new Date();
-		 
-		 // Now format the date
-		 //String date1= dateFormat.format(date);
-		 
-		 //System.out.println(date1);
-
 		return PageUtility.getElementText(date);
 	}
 

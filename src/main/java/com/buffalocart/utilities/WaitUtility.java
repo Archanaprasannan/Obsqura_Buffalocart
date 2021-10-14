@@ -8,15 +8,15 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WaitUtility {
-	public static final long PAGE_LOAD_WAIT = 20;
-	public static final long EXPLICIT_WAIT = 20;
+	public static final long PAGE_LOAD_WAIT = 100;
+	public static final long EXPLICIT_WAIT = 70;
 	public static final long IMPLICIT_WAIT = 20;
 
 	public enum LocatorType {
 		Id, Xpath, Cssselector, Name, Classname, Tagname, Linktext, Partiallinktext
 	}
 
-	public void waitForElement(WebDriver driver, String target, Enum locatortype) {
+	public static void waitForElement(WebDriver driver, String target, Enum locatortype) {
 		WebDriverWait wait = new WebDriverWait(driver, TimeUnit.SECONDS.toSeconds(EXPLICIT_WAIT));
 		if (locatortype.equals(LocatorType.Id)) {
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(target)));

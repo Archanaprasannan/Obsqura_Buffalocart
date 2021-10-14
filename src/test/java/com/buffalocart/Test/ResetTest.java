@@ -17,7 +17,7 @@ public class ResetTest extends Base {
 	ExcelUtility excel;
 	String path = System.getProperty("user.dir") + Constants.EXCEL_FILE;
 
-	@Test(priority = 5, description = "TC_005_Verify error meesage displyed on  Reset Password page with invalid email id", enabled = true)
+	@Test(priority = 5, description = "TC_005_Verify error message displyed on  Reset Password page with invalid email id", enabled = true)
 	public void VerifyErrorMessageDisplyedOnResetpasswordWithInvalidEmailId() throws IOException {
 		excel = new ExcelUtility(path, "Login");
 		login = new LoginPage(driver);

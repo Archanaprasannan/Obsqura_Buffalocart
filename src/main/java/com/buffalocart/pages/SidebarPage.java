@@ -20,21 +20,28 @@ public class SidebarPage {
 
 	/*** WebElements ***/
 
-	private final String _usermanagementsub = "//ul[@class='sidebar-menu']//li//span";
-	@FindBy(xpath = _usermanagementsub)
-	private List<WebElement> usermanagementsub;// 4
+	private final String _usermanagement = "//ul[@class='sidebar-menu']//li//span";
+	@FindBy(xpath = _usermanagement)
+	private List<WebElement> usermanagement;// 38
+
+	/*
+	 * private final String _usermanagement =
+	 * "//li[@class='treeview']//a/span[@class='title']";
+	 * 
+	 * @FindBy(xpath = _usermanagement) private List<WebElement> usermanagement;// 4
+	 */
 
 	/*** UserActionMethods ***/
 	public UserManagementPage clickOnUserManagementModule() {
-		for (int i = 0; i < usermanagementsub.size(); i++) {
-			String value = usermanagementsub.get(i).getText();
+		for (int i = 0; i < usermanagement.size(); i++) {
+			String value = usermanagement.get(i).getText();
 			if (value.equals("User Management")) {
-				PageUtility.clickOnElement(usermanagementsub.get(i));
-
+				PageUtility.clickOnElement(usermanagement.get(i));
 			}
-
 		}
+
 		return new UserManagementPage(driver);
+
 	}
 
 }

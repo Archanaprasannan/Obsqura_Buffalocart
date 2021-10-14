@@ -11,6 +11,7 @@ import com.buffalocart.constants.Constants;
 import com.buffalocart.pages.HomePage;
 import com.buffalocart.pages.LoginPage;
 import com.buffalocart.pages.SignoutPage;
+import com.buffalocart.utilities.CalendarUtility;
 import com.buffalocart.utilities.ExcelUtility;
 
 public class HomeTest extends Base {
@@ -28,9 +29,13 @@ public class HomeTest extends Base {
 		login.enterPassword(excel.getStringCellData(1, 1));
 		home = login.clickOnLoginButton();
 		home.clickOnEndTour();
+		SoftAssert softassert = new SoftAssert();
 		String actualTitle = home.getHomepageTitle();
 		String expectedTitle = "Home - Reobeen HHC";
-		Assert.assertEquals(actualTitle, expectedTitle, "Invalid home page title");
+		softassert.assertEquals(actualTitle, expectedTitle, "Invalid home page title");
+		softassert.assertAll();
+		signout = home.clickOnUserMenu();
+		login = signout.clickOnSignoutButton();
 	}
 
 	@Test(priority = 7, description = "TC_007_Verify date displayed in home page ", enabled = true)
@@ -43,7 +48,7 @@ public class HomeTest extends Base {
 		home = login.clickOnLoginButton();
 		home.clickOnEndTour();
 		String actualDate = home.getHomepageDate();
-		String expectedDate = "10/07/2021";
+		String expectedDate = CalendarUtility.getCurrentDate();
 		SoftAssert softassert = new SoftAssert();
 		softassert.assertEquals(actualDate, expectedDate, "invalid date");
 		softassert.assertAll();

@@ -21,22 +21,19 @@ public class UserManagementPage {
 
 	/*** WebElements ***/
 
-	private final String _usermanagementsub = "//ul[@class='sidebar-menu']//li//span";
+	private final String _usermanagementsub = "//li[@class='treeview  active']//i[contains(@class,'fa fa')]//following-sibling::span[@class='title']";
 	@FindBy(xpath = _usermanagementsub)
-	private List<WebElement> usermanagementsubmodules;// 38
+	private List<WebElement> usermanagementsubmodules;// 4
 
 	/*** UserActionMethods ***/
 	public List<String> getUserManagementSubModules() {
 
 		List<String> submodules = new ArrayList<String>();
-		for (int i = 0; i < usermanagementsubmodules.size(); i++) {
-			String webelementValue = PageUtility.getElementText(usermanagementsubmodules.get(i));
-			if ((webelementValue.equals("Users")) || (webelementValue.equals("Roles"))
-					|| (webelementValue.equals("Sales Commission Agents"))) {
-				submodules.add(webelementValue);
-			}
-
+		for (int i = 1; i < usermanagementsubmodules.size(); i++) {
+			String submodulevalue = usermanagementsubmodules.get(i).getText();
+			submodules.add(submodulevalue);
 		}
+
 		return submodules;
 	}
 
@@ -50,5 +47,29 @@ public class UserManagementPage {
 
 		}
 		return new UsersPage(driver);
+	}
+
+	public RolesPage clickOnRolesSubmodule() {
+		for (int i = 0; i < usermanagementsubmodules.size(); i++) {
+			String value = usermanagementsubmodules.get(i).getText();
+			if (value.equals("Roles")) {
+				PageUtility.clickOnElement(usermanagementsubmodules.get(i));
+
+			}
+
+		}
+		return new RolesPage(driver);
+	}
+
+	public SalesCommisionAgentPage clickOnSalesCommsionAgentSubmodule() {
+		for (int i = 0; i < usermanagementsubmodules.size(); i++) {
+			String value = usermanagementsubmodules.get(i).getText();
+			if (value.equals("Sales Commission Agents")) {
+				PageUtility.clickOnElement(usermanagementsubmodules.get(i));
+
+			}
+
+		}
+		return new SalesCommisionAgentPage(driver);
 	}
 }

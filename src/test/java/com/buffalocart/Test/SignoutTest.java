@@ -2,6 +2,7 @@ package com.buffalocart.Test;
 
 import java.io.IOException;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -30,7 +31,7 @@ public class SignoutTest extends Base {
 		signout = home.clickOnUserMenu();
 		login = signout.clickOnSignoutButton();
 		boolean actualLoginlogoStatus = login.getLoginlogoStatus();
-		SoftAssert softassert = new SoftAssert();
-		softassert.assertTrue(actualLoginlogoStatus, "unable to navigate to loginpage");
+		Assert.assertTrue(actualLoginlogoStatus, "unable to navigate to loginpage");
+		
 	}
 }

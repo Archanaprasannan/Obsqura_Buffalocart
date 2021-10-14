@@ -22,6 +22,7 @@ public class LoginTest extends Base {
 
 	@Test(priority = 1, description = "TC_001_Verify login page title", enabled = true)
 	public void verifyLoginpageTitle() {
+		extentTest = extent.startTest("verifyLoginPageTitleTitle","verify title of login page under test");
 		login = new LoginPage(driver);
 		String actualTitle = login.getLoginpageTitle();
 		String expectedTitle = "Login - Demo POS";
@@ -30,6 +31,7 @@ public class LoginTest extends Base {
 
 	@Test(priority = 2, description = "TC_002_Verify user login with valid user credentials", enabled = true)
 	public void verifyUserLoginWithValidUserCredentials() throws IOException {
+		extentTest = extent.startTest("verifyUserLoginWithValidUserCredentials","verify user login with valid credentials");
 		excel = new ExcelUtility(path, "Login");
 		login = new LoginPage(driver);
 		login.enterUsername(excel.getStringCellData(1, 0));
@@ -47,6 +49,7 @@ public class LoginTest extends Base {
 
 	@Test(priority = 3, description = "TC_003_Verify the error message displayed for user login with invalid credentials", enabled = true)
 	public void verifyUserLoginWithInvalidUserCredentials() throws IOException {
+		extentTest = extent.startTest("verifyUserLoginWithinvalidValidUserCredentials","verify user login with invalid credentials");
 		excel = new ExcelUtility(path, "Login");
 		login = new LoginPage(driver);
 		login.enterUsername(excel.getStringCellData(2, 0));
@@ -57,8 +60,9 @@ public class LoginTest extends Base {
 		Assert.assertEquals(actualTextStatus, expectedTextStatus, "Successful Login");
 	}
 
-	@Test(priority = 4, description = "TC_004_Verify User is able to clickon rememeberme Checkbox", enabled = true)
+	@Test(priority = 4, description = "TC_004_Verify User is able to click on rememeberme Checkbox", enabled = true)
 	public void verifyUserAbleToClickOnRememeberMeCheckbox() throws IOException {
+		extentTest = extent.startTest("verifyUserAbleToClickOnRememeberMeCheckbox","verify user is able to click on the rememberme checkbox");
 		login = new LoginPage(driver);
 		login.clickOnRememebermeCheckbox();
 		boolean checkboxStatus = login.getRemembermeStatus();

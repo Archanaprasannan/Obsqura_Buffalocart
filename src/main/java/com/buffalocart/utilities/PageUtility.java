@@ -1,6 +1,7 @@
 package com.buffalocart.utilities;
 
 import java.util.Date;
+import java.util.List;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
@@ -12,9 +13,26 @@ public class PageUtility {
 	public static void clickOnElement(WebElement element) {
 		element.click();
 	}
+	
+	public static int getSizeOfElement(List<WebElement>element) {
+		return element.size();
+	}
 
 	public static void enterText(WebElement element, String value) {
 		element.sendKeys(value);
+	}
+	
+	public static void clickOnsaveButton(WebElement element, String value) {
+		element.sendKeys(value);
+	}
+	
+	
+	public static List<WebElement> getDropdownOptions(Select select) {
+		return select.getOptions();
+	}
+	public static void hardWait() throws InterruptedException
+	{
+		Thread.sleep(10000);
 	}
 
 	public static String getElementText(WebElement element) {
@@ -53,7 +71,7 @@ public class PageUtility {
 		action.clickAndHold(element);
 	}
 
-	public void acceptAlert(WebElement element, Alert alert) {
+	public static void acceptAlert(Alert alert) {
 		alert.accept();
 	}
 
