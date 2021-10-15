@@ -18,6 +18,11 @@ public class AddSalesCommisionAgentPage {
 	}
 
 	/*** WebElements ***/
+	
+	private final String _sales = "//form[@id='sale_commission_agent_form']";
+	@FindBy(xpath = _sales)
+	private WebElement sales;
+	
 	private final String _prefix = "surname";
 	@FindBy(id = _prefix)
 	private WebElement prefix;
@@ -48,12 +53,16 @@ public class AddSalesCommisionAgentPage {
 	
 	
 	private final String _save = "//button[@class='btn btn-primary']";
-	@FindBy(id = _save)
+	@FindBy(xpath = _save)
 	private WebElement save;
 	
 	
 	/*** UserActionMethods ***/
 	
+	public void clickOnWindow()
+	{
+		PageUtility.clickOnElement(sales);
+	}
 	public void enterPrefix(String prefixvalue)
 	{
 		PageUtility.enterText(prefix, prefixvalue);
@@ -70,9 +79,10 @@ public class AddSalesCommisionAgentPage {
 	{
 		PageUtility.enterText(email, eMail);
 	}
-	public void enterContact(String contact)
+	public void enterContact(double contact)
 	{
-		PageUtility.enterText(contactno, contact);
+		long l = (new Double(contact)).longValue();
+		PageUtility.enterNumericText(contactno, l);
 	}
 	
 	public void enterAddress(String addres)
@@ -80,18 +90,21 @@ public class AddSalesCommisionAgentPage {
 		PageUtility.enterText(address, addres);
 	}
 	
-	public void enterSalesPercentage(String percentage)
+	public void enterSalesPercentage(double percentage)
+	
 	{
-		PageUtility.enterText(salespercentage, percentage);
+		String s=String.valueOf(percentage);
+		PageUtility.enterText(salespercentage, s);
 	}
 	
 	public SalesCommisionAgentPage clickOnSaveButton()
 	{
-		//JavascriptExecutor js = (JavascriptExecutor) driver;
 		PageUtility.clickOnElement(save);
 		return new SalesCommisionAgentPage(driver);
 	}
-	
+	public void getHardWait() throws InterruptedException {
+		PageUtility.hardWait();
+	}
 	
 	
 	

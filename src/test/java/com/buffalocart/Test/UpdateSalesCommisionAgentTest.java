@@ -16,11 +16,13 @@ import com.buffalocart.pages.LoginPage;
 import com.buffalocart.pages.SalesCommisionAgentPage;
 import com.buffalocart.pages.SidebarPage;
 import com.buffalocart.pages.SignoutPage;
+import com.buffalocart.pages.UpdateSalesCommisionAgentPage;
 import com.buffalocart.pages.UserManagementPage;
 import com.buffalocart.pages.UsersPage;
 import com.buffalocart.utilities.ExcelUtility;
 
-public class AddSalesCommisionAgentTest extends Base{
+public class UpdateSalesCommisionAgentTest extends Base{
+
 	LoginPage login;
 	HomePage home;
 	ExcelUtility excel;
@@ -31,11 +33,13 @@ public class AddSalesCommisionAgentTest extends Base{
 	SignoutPage signout;
 	AddSalesCommisionAgentPage addsalescommisionagent;
 	SalesCommisionAgentPage salescommisionagent;
+	UpdateSalesCommisionAgentPage updatesales;
 	String path = System.getProperty("user.dir") + Constants.EXCEL_FILE;
 	
-	 @Test(priority = 28, description = "TC_028_Verify user can sales agent ", enabled = true)
+	
+	 @Test(priority = 29, description = "TC_029_Verify Edit sales agent details ", enabled = true)
 
-		public void verifyUserCanAddSalesagent() throws IOException, InterruptedException {
+		public void verifyEditSalesagentDetails() throws IOException, InterruptedException {
 			excel = new ExcelUtility(path, "Login");
 			login = new LoginPage(driver);
 			login.enterUsername(excel.getStringCellData(1, 0));
@@ -45,32 +49,26 @@ public class AddSalesCommisionAgentTest extends Base{
 			sidebar = home.clickOnSidebar();
 			usermanagement = sidebar.clickOnUserManagementModule();
 			salescommisionagent=usermanagement.clickOnSalesCommsionAgentSubmodule();
-			addsalescommisionagent=salescommisionagent.clickOnAddButton();
-			//addsalescommisionagent.clickOnWindow();
-			addsalescommisionagent.getHardWait();
+			updatesales=salescommisionagent.ClickonEditButton("Mr Vinod Micheal");
+			updatesales.getHardWait();
 			excel = new ExcelUtility(path, "SalesCommsionAgent");
-			addsalescommisionagent.enterPrefix(excel.getStringCellData(1, 0));
-			addsalescommisionagent.enterFirstname(excel.getStringCellData(1, 1));
-			addsalescommisionagent.enterLastname(excel.getStringCellData(1, 2));
-			addsalescommisionagent.enterEmail(excel.getStringCellData(1, 3));
-			addsalescommisionagent.enterContact(excel.getNumericCellData(1, 4));
-			addsalescommisionagent.enterAddress(excel.getStringCellData(1, 5));
-			addsalescommisionagent.enterSalesPercentage(excel.getNumericCellData(1, 6));
-			salescommisionagent=addsalescommisionagent.clickOnSaveButton();
-			List<ArrayList<String>> data = salescommisionagent.getTableData();
-			System.out.println(data);
+			updatesales.enterLastname(" R");
+			salescommisionagent=updatesales.clickOnUpdateButton();
+			List<ArrayList<String>> updateTableData = salescommisionagent.getTableData();
+			System.out.println(updateTableData);
 			boolean status = false;
-			for (int i = 0; i < data.size(); i++) {
-				if (data.get(i).equals(excel.getStringCellData(1, 3)));
+			for (int i = 0; i < updateTableData.size(); i++) {
+				if (updateTableData.get(i).equals("Mr Eric Mathew D"));
 				status = true;
 				break;
 			}
 			SoftAssert softassert = new SoftAssert();
-			softassert.assertTrue(status, "Add user Failed");
+			softassert.assertTrue(status, "Edit Sales agent Failed");
 			softassert.assertAll();
-			salescommisionagent.getHardWait();
+			users.getHardWait();
 			signout = home.clickOnUserMenu();
 			login = signout.clickOnSignoutButton();
 			
-	 }
+}
+
 }

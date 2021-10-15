@@ -63,7 +63,8 @@ public class UsersPage {
 		return new AddUsersPage(driver);
 	}
 
-	public List<ArrayList<String>> getTableData() {
+	public List<ArrayList<String>> getTableData() throws InterruptedException {
+		PageUtility.hardWait();
 		return TableUtility.gridData(rElement, cElement);
 
 	}
@@ -109,4 +110,22 @@ public class UsersPage {
 		}
 		return new ViewUserPage(driver);
 	}
+	public DeleteUserPage ClickonDeleteButton(String user) {
+		List<ArrayList<WebElement>> grid=TableUtility.actionData(rElement, cElement);
+		System.out.println(grid);
+		OUTER: for(int i=0;i<grid.size();i++)
+		{
+			for(int j=0;j<grid.get(0).size();j++)
+			{
+				String data=grid.get(i).get(j).getText();
+				if(data.equals(user))
+				{
+					WebElement viewbutton=driver.findElement(By.xpath("//table[@id='users_table']//tbody//tr["+(i+1)+"]//td[5]//button"));
+					PageUtility.clickOnElement(viewbutton);
+					break OUTER;
+				}
+			}
+		}
+		return new DeleteUserPage(driver);
+}
 }

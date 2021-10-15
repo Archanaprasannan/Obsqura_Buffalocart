@@ -45,7 +45,7 @@ public class AddUsersTest extends Base {
 		users = usermanagement.clickOnUsersSubmodule();
 		adduser = users.clickOnAddUsers();
 		excel = new ExcelUtility(path, "AddUser");
-		adduser.enterPrefix(excel.getStringCellData(1, 0));
+		adduser.enterPrefix();
 		adduser.enterLastname(excel.getStringCellData(1, 2));
 		adduser.enteruserName(excel.getStringCellData(1, 5));
 		adduser.enterSalesPercentage(excel.getNumericCellData(1, 8));
@@ -93,15 +93,17 @@ public class AddUsersTest extends Base {
 		users = usermanagement.clickOnUsersSubmodule();
 		adduser = users.clickOnAddUsers();
 		excel = new ExcelUtility(path, "AddUser");
-		adduser.enterPrefix(excel.getStringCellData(1, 0));
+		adduser.enterPrefix();
 		adduser.enterfirstname(excel.getStringCellData(1, 1));
 		adduser.enterLastname(excel.getStringCellData(1, 2));
 		adduser.enterEmail(excel.getStringCellData(1, 3));
+		adduser.enteruserName(excel.getStringCellData(1, 5));
 		adduser.enterPassword(excel.getStringCellData(1, 6));
 		adduser.enterConfirmPassword(excel.getStringCellData(1, 7));
 		adduser.enterSalesPercentage(excel.getNumericCellData(1, 8));
 		users = adduser.clickOnSaveButton();
 		List<ArrayList<String>> data = users.getTableData();
+		users.getHardWait();
 		System.out.println(data);
 		boolean status = false;
 		for (int i = 0; i < data.size(); i++) {

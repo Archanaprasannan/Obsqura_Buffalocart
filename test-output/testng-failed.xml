@@ -1,77 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
-  <test thread-count="5" name="Test(failed)">
+  <listeners>
+    <listener class-name="com.buffalocart.extentreport.ExtentReportListener"/>
+  </listeners>
+  <test thread-count="5" name="Test(failed)" parallel="methods">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="com.buffalocart.Test.UsersTest">
-        <methods>
-          <include name="endReport"/>
-          <include name="verifyUserSearch"/>
-          <include name="setUp"/>
-          <include name="setExtentReport"/>
-          <include name="verifyUserLoginWithNewlyAddedUser"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- com.buffalocart.Test.UsersTest -->
       <class name="com.buffalocart.Test.LoginTest">
         <methods>
-          <include name="endReport"/>
           <include name="setUp"/>
-          <include name="setExtentReport"/>
-          <include name="verifyLoginpageTitle"/>
           <include name="verifyUserAbleToClickOnRememeberMeCheckbox"/>
           <include name="verifyUserLoginWithInvalidUserCredentials"/>
           <include name="verifyUserLoginWithValidUserCredentials"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- com.buffalocart.Test.LoginTest -->
-      <class name="com.buffalocart.Test.AddSalesCommisionAgentTest">
-        <methods>
-          <include name="endReport"/>
-          <include name="verifyErrorMessageDisplayedWithoutFillingMandatoryFields"/>
-          <include name="setUp"/>
-          <include name="setExtentReport"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- com.buffalocart.Test.AddSalesCommisionAgentTest -->
-      <class name="com.buffalocart.Test.UpdateUsersTest">
-        <methods>
-          <include name="endReport"/>
-          <include name="verifyEditUserpageTitle"/>
-          <include name="verifyUserCanEditUserDetails"/>
-          <include name="setUp"/>
-          <include name="setExtentReport"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- com.buffalocart.Test.UpdateUsersTest -->
-      <class name="com.buffalocart.Test.DeleteRolesTest">
-        <methods>
-          <include name="endReport"/>
-          <include name="setUp"/>
-          <include name="setExtentReport"/>
-          <include name="verifyUserCanDeleteRole"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- com.buffalocart.Test.DeleteRolesTest -->
-      <class name="com.buffalocart.Test.DeleteUserTest">
-        <methods>
-          <include name="endReport"/>
-          <include name="verifyEditUserpageTitle"/>
-          <include name="setUp"/>
-          <include name="setExtentReport"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- com.buffalocart.Test.DeleteUserTest -->
-      <class name="com.buffalocart.Test.RolesTest">
-        <methods>
-          <include name="endReport"/>
-          <include name="verifyAddedRoleInUserAddpage"/>
-          <include name="setUp"/>
-          <include name="setExtentReport"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- com.buffalocart.Test.RolesTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

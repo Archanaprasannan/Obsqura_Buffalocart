@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -14,12 +15,23 @@ public class PageUtility {
 		element.click();
 	}
 	
+	public static void clickElement(JavascriptExecutor js,String script) {
+		js.executeScript(script);
+	}
 	public static int getSizeOfElement(List<WebElement>element) {
 		return element.size();
 	}
 
 	public static void enterText(WebElement element, String value) {
 		element.sendKeys(value);
+	}
+	public static void enterNumericText(WebElement element, long value) {
+		String s=String.valueOf(value);
+		element.sendKeys(s);
+	}
+	
+	public static void enterTextToElement(JavascriptExecutor js,String value) {
+		js.executeScript(value);
 	}
 	
 	public static void clickOnsaveButton(WebElement element, String value) {

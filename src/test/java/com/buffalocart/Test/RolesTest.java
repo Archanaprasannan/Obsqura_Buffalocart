@@ -9,6 +9,7 @@ import org.testng.asserts.SoftAssert;
 
 import com.buffalocart.automationcore.Base;
 import com.buffalocart.constants.Constants;
+import com.buffalocart.pages.AddRolesPage;
 import com.buffalocart.pages.AddUsersPage;
 import com.buffalocart.pages.HomePage;
 import com.buffalocart.pages.LoginPage;
@@ -29,9 +30,10 @@ public class RolesTest extends Base {
 	SignoutPage signout;
 	UsersPage users;
 	AddUsersPage adduser;
+	AddRolesPage addroles;
 	String path = System.getProperty("user.dir") + Constants.EXCEL_FILE;
 
-	 @Test(priority = 20, description = "TC_020_Verify Roles page title", enabled = true)
+	@Test(priority = 20, description = "TC_020_Verify Roles page title", enabled = true)
 	public void verifyRolespageTitle() throws IOException {
 		excel = new ExcelUtility(path, "Login");
 		login = new LoginPage(driver);
@@ -51,8 +53,8 @@ public class RolesTest extends Base {
 		login = signout.clickOnSignoutButton();
 	}
 
-	 @Test(priority = 26, description = "TC_026_Verify whether the added role in Role page is listed in roles field in user add page", enabled = true)
-	public void verifyAddedRoleInUserAddpage() throws IOException {
+	@Test(priority = 26, description = "TC_026_Verify whether the added role in Role page is listed in roles field in user add page", enabled = true)
+	public void verifyAddedRoleInUserAddpage() throws IOException, InterruptedException {
 		excel = new ExcelUtility(path, "Login");
 		login = new LoginPage(driver);
 		login.enterUsername(excel.getStringCellData(1, 0));
@@ -61,15 +63,20 @@ public class RolesTest extends Base {
 		home.clickOnEndTour();
 		sidebar = home.clickOnSidebar();
 		usermanagement = sidebar.clickOnUserManagementModule();
+		roles = usermanagement.clickOnRolesSubmodule();
+		addroles = roles.clickOnAddRoles();
+		addroles.clickOnRoleName();
+		excel = new ExcelUtility(path, "Roles");
+		addroles.enterRoleName(excel.getStringCellData(1, 0));
+		roles = addroles.clickOnSaveButton();
+		roles.getHardWait();
 		users = usermanagement.clickOnUsersSubmodule();
 		adduser = users.clickOnAddUsers();
-		List<String> actualRoleNames=adduser.getOptionsFromRoleDropdown();
-		boolean actualRoleName=false;
-		for(int i=0;i<actualRoleNames.size();i++)
-		{
-			if(actualRoleNames.get(i).equals("Chief Accountant"))
-			{
-				actualRoleName=true;
+		List<String> actualRoleNames = adduser.getOptionsFromRoleDropdown();
+		boolean actualRoleName = false;
+		for (int i = 0; i < actualRoleNames.size(); i++) {
+			if (actualRoleNames.get(i).equals(excel.getStringCellData(1, 0))) {
+				actualRoleName = true;
 				break;
 			}
 		}
@@ -78,6 +85,6 @@ public class RolesTest extends Base {
 		softassert.assertAll();
 		signout = home.clickOnUserMenu();
 		login = signout.clickOnSignoutButton();
-		
+
 	}
 }

@@ -45,7 +45,7 @@ public class UpdateUsersTest extends Base {
 		sidebar = home.clickOnSidebar();
 		usermanagement = sidebar.clickOnUserManagementModule();
 		users = usermanagement.clickOnUsersSubmodule();
-		updateusers=users.ClickonEditButton("felixmathew@gmail.com");
+		updateusers=users.ClickonEditButton("eric@gmail.com");
 		//updateusers.getHardWait();
 		String actualTitle=updateusers.getEditUserspageTitle();
 		System.out.println(actualTitle);
@@ -70,7 +70,7 @@ public class UpdateUsersTest extends Base {
 		sidebar = home.clickOnSidebar();
 		usermanagement = sidebar.clickOnUserManagementModule();
 		users = usermanagement.clickOnUsersSubmodule();
-		updateusers=users.ClickonEditButton("felixmathew@gmail.com");
+		updateusers=users.ClickonEditButton("eric@gmail.com");
 		updateusers.enterEditUsersLastname(" D");
 		users=updateusers.clickOnUpdateButton();
 		users.getHardWait();
@@ -78,7 +78,7 @@ public class UpdateUsersTest extends Base {
 		//System.out.println(updateTableData);
 		boolean status = false;
 		for (int i = 0; i < updateTableData.size(); i++) {
-			if (updateTableData.get(i).equals("Mr Felix Mathew D"));
+			if (updateTableData.get(i).equals("Mr Eric Mathew D"));
 			status = true;
 			break;
 		}

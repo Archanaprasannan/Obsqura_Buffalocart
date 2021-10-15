@@ -28,7 +28,7 @@ public class UsersTest extends Base {
 	SignoutPage signout;
 	String path = System.getProperty("user.dir") + Constants.EXCEL_FILE;
 
-	 @Test(priority = 10, description = "TC_010_Verify Users page title", enabled= true)
+	@Test(priority = 10, description = "TC_010_Verify Users page title", enabled= true)
 	public void verifyUserspageTitle() throws IOException {
 		excel = new ExcelUtility(path, "Login");
 		login = new LoginPage(driver);
@@ -47,9 +47,8 @@ public class UsersTest extends Base {
 		signout = home.clickOnUserMenu();
 		login = signout.clickOnSignoutButton();
 	}
-
 	@Test(priority = 11, description = "TC_011_Verify user search", enabled = true)
-	public void verifyUserSearch() throws IOException {
+	public void verifyUserSearch() throws IOException, InterruptedException {
 		excel = new ExcelUtility(path, "Login");
 		login = new LoginPage(driver);
 		login.enterUsername(excel.getStringCellData(1, 0));
@@ -60,8 +59,10 @@ public class UsersTest extends Base {
 		usermanagement = sidebar.clickOnUserManagementModule();
 		users = usermanagement.clickOnUsersSubmodule();
 		users.clickOnSearchBar();
-		users.enterDataToSearchBar("felixmathew22@gmail.com");
+		users.enterDataToSearchBar("felix mathew");
 		List<ArrayList<String>> data = users.getTableData();
+		users.getHardWait();
+		System.out.println(data);
 		System.out.println("datas are :" + data);
 		excel = new ExcelUtility(path, "AddUser");
 		boolean searchStatus = false;

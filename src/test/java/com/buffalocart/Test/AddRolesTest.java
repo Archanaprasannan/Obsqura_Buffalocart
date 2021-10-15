@@ -64,7 +64,7 @@ public class AddRolesTest extends Base{
 		roles=usermanagement.clickOnRolesSubmodule();
 		addroles=roles.clickOnAddRoles();
 		addroles.clickOnRoleName();
-		addroles.enterRoleName("Accountant");
+		addroles.enterRoleName("SalesMan");
 		//addroles.clickOnUserCheckBox();
 		roles=addroles.clickOnSaveButton();
 		roles.getHardWait();
@@ -72,7 +72,7 @@ public class AddRolesTest extends Base{
 		System.out.println(data);
 		boolean status = false;
 		for (int i = 0; i < data.size(); i++) {
-			if (data.get(i).equals("Accountant"));
+			if (data.get(i).equals("SalesMan"));
 			status = true;
 			break;
 		}

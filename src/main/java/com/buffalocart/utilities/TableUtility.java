@@ -13,51 +13,51 @@ import org.openqa.selenium.WebElement;
 
 public class TableUtility {
 	public static List<ArrayList<String>> gridData(List<WebElement> rowItems, List<WebElement> columnItems) {
-		 int rSize = rowItems.size();
-		    int cSize = columnItems.size();
-		    int clistSize = (columnItems.size() / rowItems.size() - 1)  ;
+		int rSize = rowItems.size();
+	    int cSize = columnItems.size();
+	    int clistSize = (columnItems.size() / rowItems.size() - 1)  ;
 
-		    String[] columnList = new String[clistSize]; // 20/5 --->4
-		    List<ArrayList<String>> gridData = new ArrayList<ArrayList<String>>();
-		    int x = 0;
-		    int s = columnList.length;
-		    for (int i = 0; i < rowItems.size(); i++) {
+	    String[] columnList = new String[clistSize]; // 20/5 --->4
+	    List<ArrayList<String>> gridData = new ArrayList<ArrayList<String>>();
+	    int x = 0;
+	    int s = columnList.length;
+	    for (int i = 0; i < rowItems.size(); i++) {
 
-		        for (int j = 0; j < columnList.length; j++) {
+	        for (int j = 0; j < columnList.length; j++) {
 
-		            columnList[j] = columnItems.get(x).getText();
+	            columnList[j] = columnItems.get(x).getText();
 
-		             x++;
-		        }
-		        x++;
-		        gridData.add(new ArrayList<String>(Arrays.asList(columnList)));
+	             x++;
+	        }
+	        x++;
+	        gridData.add(new ArrayList<String>(Arrays.asList(columnList)));
 
-		    }
-		    return gridData;
+	    }
+	    return gridData;
 	}
 	
 
 
 
 public static List<ArrayList<WebElement>> actionData(List<WebElement> rowItems, List<WebElement> columnItems) {
-    int rSize= rowItems.size();
-    int cSize = columnItems.size();
-    int clistSize = (cSize / rSize);
-    WebElement[] columnList = new WebElement[clistSize]; // 20/5 --->4
-    List<ArrayList<WebElement>> gridData = new ArrayList<ArrayList<WebElement>>();
-    int x = 0;
-    int s = columnList.length;
-    for (int i = 0; i < rSize; i++) {
+	 int rSize= rowItems.size();
+	    int cSize = columnItems.size();
+	    int clistSize = (columnItems.size() / rowItems.size())  ;
+	    WebElement[] columnList = new WebElement[clistSize]; 
+	    List<ArrayList<WebElement>> gridData = new ArrayList<ArrayList<WebElement>>();
+	    int x = 0;
+	    int s = columnList.length;
+	    for (int i = 0; i < rowItems.size(); i++) {
 
-        for (int j = 0; j < s; j++) {
+	        for (int j = 0; j < columnList.length; j++) {
 
-            columnList[j] = columnItems.get(x);
+	            columnList[j] = columnItems.get(x);
 
-            x++;
-        }
-        gridData.add(new ArrayList<WebElement>(Arrays.asList(columnList)));
-    }
-    return gridData;
+	            x++;
+	        }
+	        gridData.add(new ArrayList<WebElement>(Arrays.asList(columnList)));
+	    }
+	    return gridData;
 }
 
 	}

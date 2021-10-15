@@ -22,8 +22,8 @@ public class UpdateUsersPage {
 
 	/*** WebElements ***/
 	
-	private final String _editlastname = "last_name";
-	@FindBy(id = _editlastname)
+	private final String _editlastname = "//input[@id='last_name']";
+	@FindBy(xpath = _editlastname)
 	private WebElement editlastname;
 	
 	private final String _updateButton = "submit_user_button";

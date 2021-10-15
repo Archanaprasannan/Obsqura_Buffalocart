@@ -3,6 +3,7 @@ package com.buffalocart.pages;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -84,8 +85,11 @@ public class AddUsersPage {
 
 	/*** UserActionMethods ***/
 
-	public void enterPrefix(String value) {
-		PageUtility.enterText(prefix, value);
+	public void enterPrefix() {
+		//PageUtility.enterText(prefix, value);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		String data="document.getElementById('surname').value='Mr';";
+		PageUtility.enterTextToElement(js, data);
 	}
 	
 	public void enterfirstname(String firstName) {
@@ -119,7 +123,13 @@ public class AddUsersPage {
 	}
 
 	public UsersPage clickOnSaveButton() {
-		PageUtility.clickOnElement(save);
+		
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		String script="document.getElementById('submit_user_button').click();";
+		PageUtility.clickElement(js, script);
+		//js.executeScript("document.getElementById('newsletter-email').value='test@gmail.com'");
+		//js.executeScript("document.getElementById('newsletter-subscribe-button').click()");
+	//PageUtility.clickOnElement(save);
 		return new UsersPage(driver);
 	}
 	public String getErrorMessage()
