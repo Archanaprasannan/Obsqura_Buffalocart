@@ -43,5 +43,9 @@ public class SidebarPage {
 		return new UserManagementPage(driver);
 
 	}
+	
+	public void getHardWait() throws InterruptedException {
+		PageUtility.hardWait();
+	}
 
 }

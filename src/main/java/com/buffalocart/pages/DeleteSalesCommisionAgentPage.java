@@ -22,15 +22,17 @@ public class DeleteSalesCommisionAgentPage {
 	
 	private final String _deleteButton = "//button[@class='swal-button swal-button--confirm swal-button--danger']";
 	@FindBy(xpath = _deleteButton)
-	private WebElement deleteButton;
+	private WebElement okButton;
 
 	
 	/*** UserActionMethods ***/
 	public void getHardWait() throws InterruptedException {
 		PageUtility.hardWait();
 	}
-	public void clickOnDeleteButton()
+	public SalesCommisionAgentPage clickOnOkButton()
 	{
-		PageUtility.clickOnElement(deleteButton);
+		PageUtility.clickOnElement(okButton);
+		return new SalesCommisionAgentPage(driver);
 	}
+	
 }

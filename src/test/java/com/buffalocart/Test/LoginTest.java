@@ -6,26 +6,32 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.TestListener;
 import com.buffalocart.automationcore.Base;
 import com.buffalocart.constants.Constants;
 import com.buffalocart.pages.HomePage;
 import com.buffalocart.pages.LoginPage;
 import com.buffalocart.pages.SignoutPage;
 import com.buffalocart.utilities.ExcelUtility;
+import com.relevantcodes.extentreports.ExtentTest;
 
 public class LoginTest extends Base {
 	ExcelUtility excel;
 	LoginPage login;
 	HomePage home;
 	SignoutPage signout;
+	//ThreadLocal<ExtentTest> extentTest = TestListener.getTestInstance();
 	String path = System.getProperty("user.dir") + Constants.EXCEL_FILE;
 
 	@Test(priority = 1, description = "TC_001_Verify login page title", enabled = true)
 	public void verifyLoginpageTitle() {
+		//extentTest.get().assignCategory("Sanity");
 		login = new LoginPage(driver);
 		String actualTitle = login.getLoginpageTitle();
 		String expectedTitle = "Login - Demo POS";
 		Assert.assertEquals(actualTitle, expectedTitle, "Invalid login page title");
+		//extentTest.get().log(Status.PASS, "Add user Test passed");
 	}
 
 	@Test(priority = 2, description = "TC_002_Verify user login with valid user credentials", enabled = true)

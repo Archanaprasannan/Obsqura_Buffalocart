@@ -17,7 +17,7 @@ public class SignoutPage {
 	}
 
 	/*** WebElements ***/
-	private final String _signout = "//div[@class='pull-right']//a";
+	private final String _signout = "//div[@class='pull-right']/a";
 	@FindBy(xpath = _signout)
 	WebElement signout;
 

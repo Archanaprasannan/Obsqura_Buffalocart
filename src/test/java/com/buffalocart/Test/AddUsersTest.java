@@ -80,7 +80,7 @@ public class AddUsersTest extends Base {
 		login = signout.clickOnSignoutButton();
 	}
 
-	 @Test(priority = 15, description = "TC_014_Verify User can AddUser Details",enabled = true)
+	@Test(priority = 15, description = "TC_014_Verify User can AddUser Details",enabled = true)
 	public void verifyUserCanAddUserDetails() throws IOException, InterruptedException {
 		excel = new ExcelUtility(path, "Login");
 		login = new LoginPage(driver);
@@ -94,14 +94,15 @@ public class AddUsersTest extends Base {
 		adduser = users.clickOnAddUsers();
 		excel = new ExcelUtility(path, "AddUser");
 		adduser.enterPrefix();
-		adduser.enterfirstname(excel.getStringCellData(1, 1));
-		adduser.enterLastname(excel.getStringCellData(1, 2));
-		adduser.enterEmail(excel.getStringCellData(1, 3));
-		adduser.enteruserName(excel.getStringCellData(1, 5));
-		adduser.enterPassword(excel.getStringCellData(1, 6));
-		adduser.enterConfirmPassword(excel.getStringCellData(1, 7));
-		adduser.enterSalesPercentage(excel.getNumericCellData(1, 8));
+		adduser.enterfirstname(excel.getStringCellData(2, 1));
+		adduser.enterLastname(excel.getStringCellData(2,2));
+		adduser.enterEmail(excel.getStringCellData(2,3));
+		adduser.enteruserName(excel.getStringCellData(2,5));
+		adduser.enterPassword(excel.getStringCellData(2,6));
+		adduser.enterConfirmPassword(excel.getStringCellData(2,7));
+		adduser.enterSalesPercentage(excel.getNumericCellData(2,8));
 		users = adduser.clickOnSaveButton();
+		users.getHardWait();
 		List<ArrayList<String>> data = users.getTableData();
 		users.getHardWait();
 		System.out.println(data);

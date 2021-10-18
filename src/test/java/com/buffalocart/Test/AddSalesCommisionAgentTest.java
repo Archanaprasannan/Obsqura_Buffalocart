@@ -2,8 +2,10 @@ package com.buffalocart.Test;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -19,6 +21,7 @@ import com.buffalocart.pages.SignoutPage;
 import com.buffalocart.pages.UserManagementPage;
 import com.buffalocart.pages.UsersPage;
 import com.buffalocart.utilities.ExcelUtility;
+import com.buffalocart.utilities.PageUtility;
 
 public class AddSalesCommisionAgentTest extends Base{
 	LoginPage login;
@@ -46,7 +49,7 @@ public class AddSalesCommisionAgentTest extends Base{
 			usermanagement = sidebar.clickOnUserManagementModule();
 			salescommisionagent=usermanagement.clickOnSalesCommsionAgentSubmodule();
 			addsalescommisionagent=salescommisionagent.clickOnAddButton();
-			//addsalescommisionagent.clickOnWindow();
+			//addsalescommisionagent.getSoftWait();
 			addsalescommisionagent.getHardWait();
 			excel = new ExcelUtility(path, "SalesCommsionAgent");
 			addsalescommisionagent.enterPrefix(excel.getStringCellData(1, 0));
@@ -57,8 +60,11 @@ public class AddSalesCommisionAgentTest extends Base{
 			addsalescommisionagent.enterAddress(excel.getStringCellData(1, 5));
 			addsalescommisionagent.enterSalesPercentage(excel.getNumericCellData(1, 6));
 			salescommisionagent=addsalescommisionagent.clickOnSaveButton();
-			List<ArrayList<String>> data = salescommisionagent.getTableData();
+			salescommisionagent.getHardWait();
+			List<ArrayList<String>> data = salescommisionagent.getTableData();	
+			salescommisionagent.getHardWait();
 			System.out.println(data);
+			
 			boolean status = false;
 			for (int i = 0; i < data.size(); i++) {
 				if (data.get(i).equals(excel.getStringCellData(1, 3)));

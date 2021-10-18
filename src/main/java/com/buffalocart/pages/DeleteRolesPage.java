@@ -32,4 +32,8 @@ public class DeleteRolesPage {
 		return new RolesPage(driver);
 	}
 	
+	public void getHardWait() throws InterruptedException {
+		PageUtility.hardWait();
+	}
+	
 }

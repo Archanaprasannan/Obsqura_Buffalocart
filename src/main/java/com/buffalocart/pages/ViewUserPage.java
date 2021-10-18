@@ -3,6 +3,8 @@ package com.buffalocart.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
+import com.buffalocart.utilities.PageUtility;
+
 public class ViewUserPage {
 	WebDriver driver;
 
@@ -14,4 +16,7 @@ public class ViewUserPage {
 
 	/*** WebElements ***/
 	/*** UserActionMethods ***/
+	public void getHardWait() throws InterruptedException {
+		PageUtility.hardWait();
+	}
 }

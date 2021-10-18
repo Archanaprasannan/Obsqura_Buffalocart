@@ -30,7 +30,7 @@ public class DeleteUserTest extends Base{
 	DeleteUserPage deleteuser;
 	String path = System.getProperty("user.dir") + Constants.EXCEL_FILE;
 	@Test(priority = 18, description = "TC_018_Verify user can delete a user", enabled = true)
-	public void verifyDeleteUserpageTitle() throws IOException {
+	public void verifyDeleteUserpageTitle() throws IOException, InterruptedException {
 		excel = new ExcelUtility(path, "Login");
 		login = new LoginPage(driver);
 		login.enterUsername(excel.getStringCellData(1, 0));
@@ -40,7 +40,10 @@ public class DeleteUserTest extends Base{
 		sidebar = home.clickOnSidebar();
 		usermanagement = sidebar.clickOnUserManagementModule();
 		users = usermanagement.clickOnUsersSubmodule();
-		deleteuser=users.ClickonDeleteButton("eric@gmail.com");
+		excel = new ExcelUtility(path, "AddUser");
+		users.getHardwait();
+		deleteuser=users.ClickonDeleteButton(excel.getStringCellData(2, 3));
+		//deleteuser.getHardWait();
 		users=deleteuser.clickOnAlertwindow();
 		signout = home.clickOnUserMenu();
 		login = signout.clickOnSignoutButton();

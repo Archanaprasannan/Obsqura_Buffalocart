@@ -26,12 +26,21 @@ public class UpdateRolesPage {
 	@FindBy(xpath = _updateButton)
 	private WebElement updateButton;
 	
+	private final String _UserselectAll ="//*[@id='role_add_form']/div[3]/div[2]/div/label";
+	@FindBy(xpath = _UserselectAll)
+	private WebElement UserSelectAll;
+	
+	private final String _customerSelectAll ="//*[@id='role_add_form']/div[6]/div[2]/div/label";
+	@FindBy(xpath = _customerSelectAll)
+	private WebElement customerSelectAll;
+	
 	
 	/*** UserActionMethods ***/
 	public String getEditRolesPageTitle()
 	{
 		return PageUtility.getPageTitle(driver);
 	}
+	
 	
 	
 	public void clickOnRoleName()
@@ -47,5 +56,14 @@ public class UpdateRolesPage {
 	{
 		 PageUtility.clickOnElement(updateButton);
 		 return new RolesPage(driver);
+	}
+	public void getHardWait() throws InterruptedException {
+		PageUtility.hardWait();
+	}
+	public void editCustomerPermissionSelectAllCheckbox() {
+		PageUtility.clickOnElement(customerSelectAll);
+	}
+	public void editUserPermissionSelectAllCheckbox() {
+		PageUtility.clickOnElement(UserSelectAll);
 	}
 }

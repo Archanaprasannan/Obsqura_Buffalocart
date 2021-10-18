@@ -29,4 +29,7 @@ public class DeleteUserPage {
 		PageUtility.clickOnElement(acceptalert);
 		return new UsersPage(driver);
 	}
+	public void getHardWait() throws InterruptedException {
+		PageUtility.hardWait();
+	}
 }

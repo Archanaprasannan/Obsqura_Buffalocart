@@ -10,6 +10,7 @@ import org.testng.asserts.SoftAssert;
 
 import com.buffalocart.automationcore.Base;
 import com.buffalocart.constants.Constants;
+import com.buffalocart.pages.AddUsersPage;
 import com.buffalocart.pages.HomePage;
 import com.buffalocart.pages.LoginPage;
 import com.buffalocart.pages.SidebarPage;
@@ -26,6 +27,7 @@ public class UsersTest extends Base {
 	UserManagementPage usermanagement;
 	UsersPage users;
 	SignoutPage signout;
+	AddUsersPage adduser;
 	String path = System.getProperty("user.dir") + Constants.EXCEL_FILE;
 
 	@Test(priority = 10, description = "TC_010_Verify Users page title", enabled= true)
@@ -79,15 +81,41 @@ public class UsersTest extends Base {
 	}
 
 	 @Test(priority = 13, description = "TC_013_Verify user login with newly added user", enabled = true)
-	public void verifyUserLoginWithNewlyAddedUser() throws IOException {
+	public void verifyUserLoginWithNewlyAddedUser() throws IOException, InterruptedException {
 		excel = new ExcelUtility(path, "Login");
 		login = new LoginPage(driver);
-		login.enterUsername(excel.getStringCellData(3, 0));
-		login.enterPassword(excel.getStringCellData(3, 1));
+		login.enterUsername(excel.getStringCellData(1, 0));
+		login.enterPassword(excel.getStringCellData(1, 1));
 		home = login.clickOnLoginButton();
 		home.clickOnEndTour();
+		sidebar = home.clickOnSidebar();
+		usermanagement = sidebar.clickOnUserManagementModule();
+		users = usermanagement.clickOnUsersSubmodule();
+		adduser = users.clickOnAddUsers();
+		excel = new ExcelUtility(path, "AddUser");
+		adduser.enterPrefix();
+		adduser.enterfirstname(excel.getStringCellData(1, 1));
+		adduser.enterLastname(excel.getStringCellData(1, 2));
+		adduser.enterEmail(excel.getStringCellData(1, 3));
+		adduser.enteruserName(excel.getStringCellData(1, 5));
+		adduser.enterPassword(excel.getStringCellData(1, 6));
+		adduser.enterConfirmPassword(excel.getStringCellData(1, 7));
+		adduser.enterSalesPercentage(excel.getNumericCellData(1, 8));
+		users = adduser.clickOnSaveButton();
+		users.getHardwait();
 		signout = home.clickOnUserMenu();
 		login = signout.clickOnSignoutButton();
+		login.enterUsername(excel.getStringCellData(1, 5));
+		login.enterPassword(excel.getStringCellData(1, 6));
+		home = login.clickOnLoginButton();
+		//home.clickOnEndTour();
+		Boolean logoDisplayStatus = home.getHomePageLogoStatus();
+		SoftAssert softassert=new SoftAssert();
+		softassert.assertTrue(logoDisplayStatus, "Login failed");
+		softassert.assertAll();
+		signout = home.clickOnUserMenu();
+		login = signout.clickOnSignoutButton();
+		
 	}
 
 }

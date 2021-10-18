@@ -19,7 +19,7 @@ import com.buffalocart.pages.SignoutPage;
 import com.buffalocart.pages.UserManagementPage;
 import com.buffalocart.utilities.ExcelUtility;
 
-public class AddRolesTest extends Base{
+public class AddRolesTest extends Base {
 	LoginPage login;
 	HomePage home;
 	ExcelUtility excel;
@@ -30,7 +30,7 @@ public class AddRolesTest extends Base{
 	SignoutPage signout;
 	String path = System.getProperty("user.dir") + Constants.EXCEL_FILE;
 
-	@Test(priority = 21, description = "TC_021_Verify Add Roles page title", enabled = true)
+	 @Test(priority = 21, description = "TC_021_Verify Add Roles page title", enabled = true)
 	public void verifyRolespageTitle() throws IOException {
 		excel = new ExcelUtility(path, "Login");
 		login = new LoginPage(driver);
@@ -40,19 +40,19 @@ public class AddRolesTest extends Base{
 		home.clickOnEndTour();
 		sidebar = home.clickOnSidebar();
 		usermanagement = sidebar.clickOnUserManagementModule();
-		roles=usermanagement.clickOnRolesSubmodule();
-		addroles=roles.clickOnAddRoles();
-		String actualTitle=addroles.getAddRolesPageTitle();
-		String expectedTitle="Add Role - Reobeen HHC";
-		SoftAssert softassert=new SoftAssert();
-		softassert.assertEquals(actualTitle,expectedTitle,"Invalid addroles Page title");
+		roles = usermanagement.clickOnRolesSubmodule();
+		addroles = roles.clickOnAddRoles();
+		String actualTitle = addroles.getAddRolesPageTitle();
+		String expectedTitle = "Add Role - Reobeen HHC";
+		SoftAssert softassert = new SoftAssert();
+		softassert.assertEquals(actualTitle, expectedTitle, "Invalid addroles Page title");
 		softassert.assertAll();
 		signout = home.clickOnUserMenu();
 		login = signout.clickOnSignoutButton();
-}
-	
+	}
+
 	@Test(priority = 22, description = "TC_022_Verify  user can add roles ", enabled = true)
-	public void VerifyUserCanAddRoles () throws IOException, InterruptedException {
+	public void VerifyUserCanAddRoles() throws IOException, InterruptedException {
 		excel = new ExcelUtility(path, "Login");
 		login = new LoginPage(driver);
 		login.enterUsername(excel.getStringCellData(1, 0));
@@ -61,18 +61,21 @@ public class AddRolesTest extends Base{
 		home.clickOnEndTour();
 		sidebar = home.clickOnSidebar();
 		usermanagement = sidebar.clickOnUserManagementModule();
-		roles=usermanagement.clickOnRolesSubmodule();
-		addroles=roles.clickOnAddRoles();
+		roles = usermanagement.clickOnRolesSubmodule();
+		addroles = roles.clickOnAddRoles();
 		addroles.clickOnRoleName();
-		addroles.enterRoleName("SalesMan");
-		//addroles.clickOnUserCheckBox();
-		roles=addroles.clickOnSaveButton();
+		excel = new ExcelUtility(path, "Roles");
+		addroles.enterRoleName(excel.getStringCellData(1, 0));
+		addroles.clickOnUserPermissionSelectAllCheckbox();
+		addroles.clickOnRolesPermissionSelectAllCheckbox();
+		roles = addroles.clickOnSaveButton();
 		roles.getHardWait();
 		List<ArrayList<String>> data = roles.getTableData();
 		System.out.println(data);
 		boolean status = false;
 		for (int i = 0; i < data.size(); i++) {
-			if (data.get(i).equals("SalesMan"));
+			if (data.get(i).equals(excel.getStringCellData(1, 0)))
+				;
 			status = true;
 			break;
 		}
@@ -81,6 +84,5 @@ public class AddRolesTest extends Base{
 		softassert.assertAll();
 		signout = home.clickOnUserMenu();
 		login = signout.clickOnSignoutButton();
-		}
 	}
-
+}

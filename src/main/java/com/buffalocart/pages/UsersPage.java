@@ -120,12 +120,19 @@ public class UsersPage {
 				String data=grid.get(i).get(j).getText();
 				if(data.equals(user))
 				{
-					WebElement viewbutton=driver.findElement(By.xpath("//table[@id='users_table']//tbody//tr["+(i+1)+"]//td[5]//button"));
-					PageUtility.clickOnElement(viewbutton);
+					WebElement deletebutton=driver.findElement(By.xpath("//table[@id='users_table']//tbody//tr["+(i+1)+"]//td[5]//button"));
+					PageUtility.clickOnElement(deletebutton);
 					break OUTER;
 				}
 			}
 		}
 		return new DeleteUserPage(driver);
 }
+	
+	public void getHardwait() throws InterruptedException
+	{
+		PageUtility.hardWait();
+	}
+	
+	
 }

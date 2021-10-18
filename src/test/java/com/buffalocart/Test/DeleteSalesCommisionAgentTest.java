@@ -48,21 +48,47 @@ public class DeleteSalesCommisionAgentTest extends Base{
 		sidebar = home.clickOnSidebar();
 		usermanagement = sidebar.clickOnUserManagementModule();
 		salescommisionagent=usermanagement.clickOnSalesCommsionAgentSubmodule();
-		deletesales=salescommisionagent.ClickonDeleteButton("Mr Vinod Micheal");
-		deletesales.clickOnDeleteButton();
+		addsalescommisionagent=salescommisionagent.clickOnAddButton();
+		//addsalescommisionagent.getSoftWait();
+		addsalescommisionagent.getHardWait();
+		excel = new ExcelUtility(path, "SalesCommsionAgent");
+		addsalescommisionagent.enterPrefix(excel.getStringCellData(3, 0));
+		addsalescommisionagent.enterFirstname(excel.getStringCellData(3, 1));
+		addsalescommisionagent.enterLastname(excel.getStringCellData(3, 2));
+		addsalescommisionagent.enterEmail(excel.getStringCellData(3, 3));
+		addsalescommisionagent.enterContact(excel.getNumericCellData(3, 4));
+		addsalescommisionagent.enterAddress(excel.getStringCellData(3, 5));
+		addsalescommisionagent.enterSalesPercentage(excel.getNumericCellData(3, 6));
+		salescommisionagent=addsalescommisionagent.clickOnSaveButton();
+		salescommisionagent.getHardWait();
+		signout = home.clickOnUserMenu();
+		login = signout.clickOnSignoutButton();
+		
+		excel = new ExcelUtility(path, "Login");
+		login.enterUsername(excel.getStringCellData(1, 0));
+		login.enterPassword(excel.getStringCellData(1, 1));
+		home = login.clickOnLoginButton();
+		//home.clickOnEndTour();
+		sidebar = home.clickOnSidebar();
+		usermanagement = sidebar.clickOnUserManagementModule();
+		salescommisionagent=usermanagement.clickOnSalesCommsionAgentSubmodule();
+		salescommisionagent.getHardWait();
+		excel = new ExcelUtility(path, "SalesCommsionAgent");
+		deletesales=salescommisionagent.ClickonDeleteButton(excel.getStringCellData(3, 7));
 		deletesales.getHardWait();
+		salescommisionagent=deletesales.clickOnOkButton();
+		salescommisionagent.getHardWait();
 		List<ArrayList<String>> updateTableData = salescommisionagent.getTableData();
 		System.out.println(updateTableData);
 		boolean status = false;
 		for (int i = 0; i < updateTableData.size(); i++) {
-			if (!updateTableData.get(i).equals("Mr Eric Micheal D"));
+			if (!updateTableData.get(i).equals(excel.getStringCellData(3, 7)));
 			status = true;
 			break;
 		}
 		SoftAssert softassert = new SoftAssert();
 		softassert.assertTrue(status, "Delete Sales agent Failed");
 		softassert.assertAll();
-		users.getHardWait();
 		signout = home.clickOnUserMenu();
 		login = signout.clickOnSignoutButton();
 		

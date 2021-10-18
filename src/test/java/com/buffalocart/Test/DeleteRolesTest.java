@@ -43,14 +43,15 @@ public class DeleteRolesTest extends Base{
 		sidebar = home.clickOnSidebar();
 		usermanagement = sidebar.clickOnUserManagementModule();
 		roles=usermanagement.clickOnRolesSubmodule();
-		deleterole=roles.ClickonDeleteButton("Chief Accountant");
+		excel = new ExcelUtility(path, "Roles");
+		deleterole=roles.ClickonDeleteButton(excel.getStringCellData(1, 0));
 		roles=deleterole.clickOnDeleteButton();
 		roles.getHardWait();
 		List<ArrayList<String>> updateTableData = roles.getTableData();
 		//System.out.println(updateTableData);
 		boolean status = false;
 		for (int i = 0; i < updateTableData.size(); i++) {
-			if (!updateTableData.get(i).equals("Chief Accountant"));
+			if (!updateTableData.get(i).equals(excel.getStringCellData(1, 0)));
 			status = true;
 			break;
 		}

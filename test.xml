@@ -3,29 +3,12 @@
 <suite name="Suite">
 <listeners>
 		<listener
-			class-name="com.buffalocart.extentreport.ExtentReportListener" />
+			class-name="com.buffalocart.extentreport.ExtentReportManager" />
 	</listeners>
   <test name="Test">
   <parameter name="browser" value="chrome" />
     <classes>
-      <class name="com.buffalocart.Test.AddUsersTest"/>
-      <class name="com.buffalocart.Test.HomeTest"/>
-      <class name="com.buffalocart.Test.SignoutTest"/>
-      <class name="com.buffalocart.Test.SalesCommisionAgentTest"/>
-      <class name="com.buffalocart.Test.UpdateRolesTest"/>
-      <class name="com.buffalocart.Test.UserManagementTest"/>
-      <class name="com.buffalocart.Test.DeleteUserTest"/>
-      <class name="com.buffalocart.Test.DeleteRolesTest"/>
-      <class name="com.buffalocart.Test.UpdateSalesCommisionAgentTest"/>
-      <class name="com.buffalocart.Test.AddRolesTest"/>
-      <class name="com.buffalocart.Test.UpdateUsersTest"/>
-      <class name="com.buffalocart.Test.AddSalesCommisionAgentTest"/>
-      <class name="com.buffalocart.Test.DeleteSalesCommisionAgentTest"/>
-      <class name="com.buffalocart.Test.ViewUserTest"/>
       <class name="com.buffalocart.automationcore.Base"/>
-      <class name="com.buffalocart.Test.UsersTest"/>
-      <class name="com.buffalocart.Test.RolesTest"/>
-      <class name="com.buffalocart.Test.ResetTest"/>
       <class name="com.buffalocart.Test.LoginTest"/>
     </classes>
   </test> <!-- Test -->

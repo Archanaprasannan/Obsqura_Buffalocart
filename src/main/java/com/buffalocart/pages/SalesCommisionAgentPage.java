@@ -66,7 +66,7 @@ public class SalesCommisionAgentPage {
 	}
 	
 	public DeleteSalesCommisionAgentPage ClickonDeleteButton(String user) {
-		List<ArrayList<WebElement>> grid=TableUtility.actionData(rElement, cElement);
+		List<ArrayList<WebElement>> grid=TableUtility.actionData(salesrElement, salescElement);
 		System.out.println(grid);
 		OUTER: for(int i=0;i<grid.size();i++)
 		{
@@ -75,7 +75,7 @@ public class SalesCommisionAgentPage {
 				String data=grid.get(i).get(j).getText();
 				if(data.equals(user))
 				{
-					WebElement deletebutton=driver.findElement(By.xpath("//table[@id='sales_commission_agent_table']//tbody//tr["+(i+1)+"]//td[6]//button[2]"));
+					WebElement deletebutton=driver.findElement(By.xpath("//table[@id='sales_commission_agent_table']//tbody//tr[\"+(i+1)+\"]//td[6]//button[2]"));
 					PageUtility.clickOnElement(deletebutton);
 					break OUTER;
 				}
@@ -94,13 +94,15 @@ public class SalesCommisionAgentPage {
 		PageUtility.clickOnElement(addbutton);
 		return new AddSalesCommisionAgentPage(driver);
 	}
-	public List<ArrayList<String>> getTableData()
+	public List<ArrayList<String>> getTableData() throws InterruptedException
+	
 	{
-		return TableUtility.gridData(rElement, cElement);
+		PageUtility.hardWait();
+		return TableUtility.gridData(salesrElement,  salescElement);
 		
 	}
 	public void getHardWait() throws InterruptedException {
 		PageUtility.hardWait();
 	}
-
+	
 }

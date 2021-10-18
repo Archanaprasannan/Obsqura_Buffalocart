@@ -11,6 +11,8 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.buffalocart.utilities.PageUtility;
 import com.buffalocart.utilities.TableUtility;
+import com.buffalocart.utilities.WaitUtility;
+import com.buffalocart.utilities.WaitUtility.LocatorType;
 
 public class UpdateSalesCommisionAgentPage {
 	WebDriver driver;
@@ -23,8 +25,8 @@ public class UpdateSalesCommisionAgentPage {
 
 	/*** WebElements ***/
 	
-	private final String _lastname = "last_name";
-	@FindBy(id = _lastname)
+	private final String _lastname = "input#last_name";
+	@FindBy(css = _lastname)
 	private WebElement lastName;
 	
 	private final String _updatebutton = "//button[@class='btn btn-primary']";
@@ -43,7 +45,11 @@ public class UpdateSalesCommisionAgentPage {
 		return new SalesCommisionAgentPage(driver);
 	}
 	public void enterLastname(String stringCellData) {
-		PageUtility.enterText(updatebutton, stringCellData);
+		PageUtility.enterText(lastName, stringCellData);
 		
 	}
+	/*public void getWait() throws InterruptedException {
+		WaitUtility.waitForElement(driver, updatebutton.getText(), null);
+
+	}*/
 }

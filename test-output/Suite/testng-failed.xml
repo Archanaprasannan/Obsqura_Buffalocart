@@ -2,20 +2,25 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
   <listeners>
-    <listener class-name="com.buffalocart.extentreport.ExtentReportListener"/>
+    <listener class-name="com.buffalocart.listener.TestListener"/>
   </listeners>
-  <test thread-count="5" name="Test(failed)" parallel="methods">
+  <test thread-count="5" name="Test(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="com.buffalocart.Test.LoginTest">
+      <class name="com.buffalocart.Test.UpdateUsersTest">
         <methods>
+          <include name="verifyEditUserpageTitle"/>
           <include name="setUp"/>
-          <include name="verifyUserAbleToClickOnRememeberMeCheckbox"/>
-          <include name="verifyUserLoginWithInvalidUserCredentials"/>
-          <include name="verifyUserLoginWithValidUserCredentials"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- com.buffalocart.Test.LoginTest -->
+      </class> <!-- com.buffalocart.Test.UpdateUsersTest -->
+      <class name="com.buffalocart.Test.DeleteRolesTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="verifyUserCanDeleteRole"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.buffalocart.Test.DeleteRolesTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

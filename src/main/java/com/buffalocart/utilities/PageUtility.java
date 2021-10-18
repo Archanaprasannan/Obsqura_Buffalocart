@@ -1,5 +1,6 @@
 package com.buffalocart.utilities;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -44,7 +45,7 @@ public class PageUtility {
 	}
 	public static void hardWait() throws InterruptedException
 	{
-		Thread.sleep(10000);
+		Thread.sleep(20000);
 	}
 
 	public static String getElementText(WebElement element) {
@@ -122,4 +123,12 @@ public class PageUtility {
 	public static String getPageTitle(WebDriver driver) {
 		return driver.getTitle();
 	}
+	
+	public static void selectDropdownbyText(WebElement element, String text) {
+		Select select = new Select(element);
+		select.selectByVisibleText(text);
+	}
+	
+	
+
 }

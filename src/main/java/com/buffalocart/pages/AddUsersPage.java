@@ -40,6 +40,10 @@ public class AddUsersPage {
 	@FindBy(css = _email)
 	private WebElement email;
 	
+	private final String _roleDropdown = "role";
+	@FindBy(id = _roleDropdown)
+	private WebElement roleDropdown;
+	
 	private final String _role = "input#email";
 	@FindBy(css = _role)
 	private WebElement role;
@@ -63,6 +67,10 @@ public class AddUsersPage {
 	private final String _save = "submit_user_button";
 	@FindBy(id = _save)
 	private WebElement save;
+	
+	public void selectRole(String role) {
+		PageUtility.selectDropdownbyText(roleDropdown,role );
+	}
 	
 	private final String _errormessage = "first_name-error";
 	@FindBy(id = _errormessage)
@@ -135,6 +143,9 @@ public class AddUsersPage {
 	public String getErrorMessage()
 	{
 		return PageUtility.getElementText(errormessage);
+	}
+	public void getHardWait() throws InterruptedException {
+		PageUtility.hardWait();
 	}
 	public String getAddUserspageTitle()
 	{

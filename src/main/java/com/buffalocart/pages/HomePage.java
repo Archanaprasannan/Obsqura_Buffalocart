@@ -10,6 +10,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.buffalocart.utilities.PageUtility;
+import com.buffalocart.utilities.WaitUtility;
+import com.buffalocart.utilities.WaitUtility.LocatorType;
 
 public class HomePage {
 	WebDriver driver;
@@ -21,15 +23,15 @@ public class HomePage {
 	}
 
 	/*** WebElements ***/
-	private final String _endtour = "//button[@class='btn btn-default btn-sm']";
-	@FindBy(xpath = _endtour)
-	WebElement endtour;
+	private final String _endTourButton = "button[class='btn btn-default btn-sm']";
+	@FindBy(css = _endTourButton)
+	private WebElement endTourButton;
 
 	private final String _homelogotitle = "//span[@class='logo-lg']";
 	@FindBy(xpath = _homelogotitle)
 	WebElement homelogotitle;
 
-	private final String _usermenu = "//a[@class='dropdown-toggle']//span";
+	private final String _usermenu = "//li[@class='dropdown user user-menu']";
 	@FindBy(xpath = _usermenu)
 	WebElement usermenu;
 
@@ -43,7 +45,7 @@ public class HomePage {
 
 	/*** UserActionMethods ***/
 	public HomePage clickOnEndTour() {
-		PageUtility.clickOnElement(endtour);
+		PageUtility.clickOnElement(endTourButton);
 		return new HomePage(driver);
 	}
 
@@ -55,6 +57,7 @@ public class HomePage {
 		PageUtility.clickOnElement(usermenu);
 		return new SignoutPage(driver);
 	}
+
 
 	public String getHomepageTitle() {
 		return PageUtility.getPageTitle(driver);
@@ -68,5 +71,9 @@ public class HomePage {
 		PageUtility.clickOnElement(sidebar);
 		return new SidebarPage(driver);
 	}
+	public void getHardWait() throws InterruptedException {
+		PageUtility.hardWait();
+	}
+	
 
 }

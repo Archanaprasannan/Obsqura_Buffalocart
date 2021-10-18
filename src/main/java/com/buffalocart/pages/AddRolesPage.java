@@ -23,16 +23,18 @@ public class AddRolesPage {
 	@FindBy(id = _rolename)
 	private WebElement roleName;
 	
-	private final String _userchechbox = "//div[@class='icheckbox_square-blue hover']";
-	@FindBy(xpath = _userchechbox)
-	private WebElement userchechbox;
-	
 	private final String _savebutton = "//button[@class='btn btn-primary pull-right']";
 	@FindBy(xpath = _savebutton)
 	private WebElement savebutton;
 	
+	private final String _UserselectAll ="//*[@id='role_add_form']/div[3]/div[2]/div/label";
+	@FindBy(xpath = _UserselectAll)
+	private WebElement UserSelectAll;
 	
-	
+
+	private final String _RolesSelectAll ="//*[@id='role_add_form']/div[4]/div[2]/div/label";
+	@FindBy(xpath = _RolesSelectAll)
+	private WebElement RolesSelectAll;
 	
 	
 	/*** UserActionMethods ***/
@@ -49,15 +51,21 @@ public class AddRolesPage {
 	{
 		PageUtility.enterText(roleName, name);
 	}
-	public void clickOnUserCheckBox()
-	{
-		PageUtility.clickOnElement(userchechbox);
-	}
+
 	public RolesPage clickOnSaveButton()
 	{
 		PageUtility.clickOnElement(savebutton);
 		return new RolesPage(driver);
 	}
+	public void getHardWait() throws InterruptedException {
+		PageUtility.hardWait();
+	}
 	
+	public void clickOnUserPermissionSelectAllCheckbox() {
+		PageUtility.clickOnElement(UserSelectAll);
+	}
+	public void clickOnRolesPermissionSelectAllCheckbox() {
+		PageUtility.clickOnElement(RolesSelectAll);
+	}
 	
 }

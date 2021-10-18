@@ -40,7 +40,8 @@ public class UpdateSalesCommisionAgentTest extends Base{
 	 @Test(priority = 29, description = "TC_029_Verify Edit sales agent details ", enabled = true)
 
 		public void verifyEditSalesagentDetails() throws IOException, InterruptedException {
-			excel = new ExcelUtility(path, "Login");
+		 
+		 excel = new ExcelUtility(path, "Login");
 			login = new LoginPage(driver);
 			login.enterUsername(excel.getStringCellData(1, 0));
 			login.enterPassword(excel.getStringCellData(1, 1));
@@ -49,23 +50,49 @@ public class UpdateSalesCommisionAgentTest extends Base{
 			sidebar = home.clickOnSidebar();
 			usermanagement = sidebar.clickOnUserManagementModule();
 			salescommisionagent=usermanagement.clickOnSalesCommsionAgentSubmodule();
-			updatesales=salescommisionagent.ClickonEditButton("Mr Vinod Micheal");
-			updatesales.getHardWait();
+			addsalescommisionagent=salescommisionagent.clickOnAddButton();
+			//addsalescommisionagent.getSoftWait();
+			addsalescommisionagent.getHardWait();
 			excel = new ExcelUtility(path, "SalesCommsionAgent");
-			updatesales.enterLastname(" R");
+			addsalescommisionagent.enterPrefix(excel.getStringCellData(2, 0));
+			addsalescommisionagent.enterFirstname(excel.getStringCellData(2, 1));
+			addsalescommisionagent.enterLastname(excel.getStringCellData(2, 2));
+			addsalescommisionagent.enterEmail(excel.getStringCellData(2, 3));
+			addsalescommisionagent.enterContact(excel.getNumericCellData(2, 4));
+			addsalescommisionagent.enterAddress(excel.getStringCellData(2, 5));
+			addsalescommisionagent.enterSalesPercentage(excel.getNumericCellData(2, 6));
+			salescommisionagent=addsalescommisionagent.clickOnSaveButton();
+			salescommisionagent.getHardWait();
+			signout = home.clickOnUserMenu();
+			login = signout.clickOnSignoutButton();
+			
+			excel = new ExcelUtility(path, "Login");
+			login = new LoginPage(driver);
+			login.enterUsername(excel.getStringCellData(1, 0));
+			login.enterPassword(excel.getStringCellData(1, 1));
+			home = login.clickOnLoginButton();
+			//home.clickOnEndTour();
+			sidebar = home.clickOnSidebar();
+			usermanagement = sidebar.clickOnUserManagementModule();
+			salescommisionagent=usermanagement.clickOnSalesCommsionAgentSubmodule();
+			salescommisionagent.getHardWait();
+			excel = new ExcelUtility(path, "SalesCommsionAgent");
+			updatesales=salescommisionagent.ClickonEditButton(excel.getStringCellData(2, 3));
+			updatesales.getHardWait();
+			//excel = new ExcelUtility(path, "SalesCommsionAgent");
+			updatesales.enterLastname(excel.getStringCellData(2, 7));
 			salescommisionagent=updatesales.clickOnUpdateButton();
 			List<ArrayList<String>> updateTableData = salescommisionagent.getTableData();
 			System.out.println(updateTableData);
 			boolean status = false;
 			for (int i = 0; i < updateTableData.size(); i++) {
-				if (updateTableData.get(i).equals("Mr Eric Mathew D"));
+				if (updateTableData.get(i).equals("Mr Rahul Babu R"));
 				status = true;
 				break;
 			}
 			SoftAssert softassert = new SoftAssert();
 			softassert.assertTrue(status, "Edit Sales agent Failed");
 			softassert.assertAll();
-			users.getHardWait();
 			signout = home.clickOnUserMenu();
 			login = signout.clickOnSignoutButton();
 			

@@ -7,6 +7,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.buffalocart.utilities.PageUtility;
+import com.buffalocart.utilities.WaitUtility;
+import com.buffalocart.utilities.WaitUtility.LocatorType;
 
 public class AddSalesCommisionAgentPage {
 	WebDriver driver;
@@ -104,6 +106,10 @@ public class AddSalesCommisionAgentPage {
 	}
 	public void getHardWait() throws InterruptedException {
 		PageUtility.hardWait();
+	}
+	
+	public void getSoftWait() throws InterruptedException {
+	WaitUtility.waitForElement(driver, sales.getText(), LocatorType.Xpath);
 	}
 	
 	

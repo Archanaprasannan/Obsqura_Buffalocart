@@ -41,7 +41,7 @@ public class ViewUserTest extends Base{
 			sidebar = home.clickOnSidebar();
 			usermanagement = sidebar.clickOnUserManagementModule();
 			users = usermanagement.clickOnUsersSubmodule();
-			viewuser=users.ClickonViewButton("felixmathew@gmail.com");
+			viewuser=users.ClickonViewButton("alenmathew@gmail.com");
 			
 		}
 }

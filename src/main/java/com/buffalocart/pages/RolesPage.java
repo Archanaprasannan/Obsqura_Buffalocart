@@ -11,6 +11,8 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.buffalocart.utilities.PageUtility;
 import com.buffalocart.utilities.TableUtility;
+import com.buffalocart.utilities.WaitUtility;
+import com.buffalocart.utilities.WaitUtility.LocatorType;
 
 public class RolesPage {
 	WebDriver driver;
@@ -53,7 +55,8 @@ public class RolesPage {
 		return new UpdateRolesPage(driver);
 	}
 
-	public List<ArrayList<String>> getTableData() {
+	public List<ArrayList<String>> getTableData() throws InterruptedException {
+		PageUtility.hardWait();
 		return TableUtility.gridData(rElement, cElement);
 
 	}
@@ -62,7 +65,12 @@ public class RolesPage {
 		PageUtility.hardWait();
 
 	}
-	public UpdateRolesPage ClickonEditButton(String user) {
+	public void getWait() throws InterruptedException {
+		WaitUtility.waitForElement(driver, _addbutton, LocatorType.Xpath);
+
+	}
+	public UpdateRolesPage ClickonEditButton(String user) throws InterruptedException {
+		PageUtility.hardWait();
 		List<ArrayList<WebElement>> grid=TableUtility.actionData(rElement, cElement);
 		System.out.println(grid);
 		OUTER: for(int i=0;i<grid.size();i++)
