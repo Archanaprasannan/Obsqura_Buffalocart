@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<listeners>
+		<listener class-name="com.buffalocart.listener.TestListener" />
+	</listeners>
+	<test name="Chrome Test">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="com.buffalocart.Test.LoginTest" />
+			<class name="com.buffalocart.Test.ResetTest" />
+			<class name="com.buffalocart.automationcore.Base" />
+		</classes>
+	</test> <!-- Test -->
+	<test name="Edge Test">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="com.buffalocart.Test.LoginTest" />
+			<class name="com.buffalocart.Test.ResetTest" />
+			<class name="com.buffalocart.automationcore.Base" />
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

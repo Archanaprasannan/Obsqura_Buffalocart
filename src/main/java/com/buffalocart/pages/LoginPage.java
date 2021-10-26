@@ -58,6 +58,11 @@ public class LoginPage {
 	public void enterPassword(String pName) {
 		PageUtility.enterText(password, pName);
 	}
+	
+	public void enternumericPassword(int pName) {
+		String s=String.valueOf(pName);  
+		PageUtility.enterText(password, s);
+	}
 
 	public HomePage clickOnLoginButton() {
 		PageUtility.clickOnElement(loginbutton);

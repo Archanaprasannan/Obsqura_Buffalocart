@@ -42,7 +42,7 @@ public class DeleteSalesCommisionAgentTest extends Base{
 		excel = new ExcelUtility(path, "Login");
 		login = new LoginPage(driver);
 		login.enterUsername(excel.getStringCellData(1, 0));
-		login.enterPassword(excel.getStringCellData(1, 1));
+		login.enternumericPassword((int)excel.getNumericCellData(1, 1));
 		home = login.clickOnLoginButton();
 		home.clickOnEndTour();
 		sidebar = home.clickOnSidebar();
@@ -61,20 +61,8 @@ public class DeleteSalesCommisionAgentTest extends Base{
 		addsalescommisionagent.enterSalesPercentage(excel.getNumericCellData(3, 6));
 		salescommisionagent=addsalescommisionagent.clickOnSaveButton();
 		salescommisionagent.getHardWait();
-		signout = home.clickOnUserMenu();
-		login = signout.clickOnSignoutButton();
 		
-		excel = new ExcelUtility(path, "Login");
-		login.enterUsername(excel.getStringCellData(1, 0));
-		login.enterPassword(excel.getStringCellData(1, 1));
-		home = login.clickOnLoginButton();
-		//home.clickOnEndTour();
-		sidebar = home.clickOnSidebar();
-		usermanagement = sidebar.clickOnUserManagementModule();
-		salescommisionagent=usermanagement.clickOnSalesCommsionAgentSubmodule();
-		salescommisionagent.getHardWait();
-		excel = new ExcelUtility(path, "SalesCommsionAgent");
-		deletesales=salescommisionagent.ClickonDeleteButton(excel.getStringCellData(3, 7));
+		deletesales=salescommisionagent.ClickonDeleteButton(excel.getStringCellData(3, 3));
 		deletesales.getHardWait();
 		salescommisionagent=deletesales.clickOnOkButton();
 		salescommisionagent.getHardWait();

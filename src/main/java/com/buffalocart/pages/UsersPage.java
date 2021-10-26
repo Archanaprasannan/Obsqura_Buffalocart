@@ -44,7 +44,21 @@ public class UsersPage {
 	private final String _celement = "//table[@id='users_table']//tbody//tr//td";
 	@FindBy(xpath = _celement)
 	private List<WebElement> cElement;
-
+	
+	private final String _userstable = "//table[@id='users_table']";
+	@FindBy(xpath = _userstable)
+	private WebElement userstable;
+	
+	private final String _userslogo = "//section[@class='content-header']";
+	@FindBy(xpath = _userslogo)
+	private WebElement userslogo;
+	
+	private final String _edittable = "//table[@id='users_table']//tbody//tr//td[5]//a[1]";
+	@FindBy(xpath = _edittable)
+	private WebElement edittable;
+	
+	
+	
 	/*** UserActionMethods ***/
 	public String getUsersPageTitle() {
 		return PageUtility.getPageTitle(driver);
@@ -65,6 +79,7 @@ public class UsersPage {
 
 	public List<ArrayList<String>> getTableData() throws InterruptedException {
 		PageUtility.hardWait();
+		//WaitUtility.waitForelement(driver,userstable,LocatorType.Xpath);
 		return TableUtility.gridData(rElement, cElement);
 
 	}
@@ -73,8 +88,10 @@ public class UsersPage {
 		PageUtility.hardWait();
 	}
 
-	public UpdateUsersPage ClickonEditButton(String user) {
+	public UpdateUsersPage ClickonEditButton(String user) throws InterruptedException {
 		List<ArrayList<WebElement>> grid=TableUtility.actionData(rElement, cElement);
+		PageUtility.hardWait();
+		//WaitUtility.waitForelement(driver, userstable, LocatorType.Xpath);
 		System.out.println(grid);
 		OUTER: for(int i=0;i<grid.size();i++)
 		{
@@ -92,8 +109,9 @@ public class UsersPage {
 		return new UpdateUsersPage(driver);
 	}
 	
-	public ViewUserPage ClickonViewButton(String user) {
+	public ViewUserPage ClickonViewButton(String user) throws InterruptedException {
 		List<ArrayList<WebElement>> grid=TableUtility.actionData(rElement, cElement);
+		PageUtility.hardWait();
 		System.out.println(grid);
 		OUTER: for(int i=0;i<grid.size();i++)
 		{
@@ -134,5 +152,16 @@ public class UsersPage {
 		PageUtility.hardWait();
 	}
 	
-	
+	public void getSoftWaitusertable()
+	{
+		WaitUtility.waitForelement(driver,userstable,LocatorType.Xpath);
+	}
+	public void getSoftWaitEditusertable()
+	{
+		WaitUtility.waitForelement(driver,edittable,LocatorType.Xpath);
+	}
+	public void getSoftWaitUsersLogo()
+	{
+		WaitUtility.waitForelement(driver,userslogo , LocatorType.Xpath);
+	}
 }

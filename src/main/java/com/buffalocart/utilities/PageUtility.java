@@ -45,7 +45,7 @@ public class PageUtility {
 	}
 	public static void hardWait() throws InterruptedException
 	{
-		Thread.sleep(20000);
+		Thread.sleep(30000);
 	}
 
 	public static String getElementText(WebElement element) {

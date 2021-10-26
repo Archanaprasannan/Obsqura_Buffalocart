@@ -9,18 +9,11 @@
     <classes>
       <class name="com.buffalocart.Test.UpdateUsersTest">
         <methods>
-          <include name="verifyEditUserpageTitle"/>
+          <include name="verifyUserCanEditUserDetails"/>
           <include name="setUp"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- com.buffalocart.Test.UpdateUsersTest -->
-      <class name="com.buffalocart.Test.DeleteRolesTest">
-        <methods>
-          <include name="setUp"/>
-          <include name="verifyUserCanDeleteRole"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- com.buffalocart.Test.DeleteRolesTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

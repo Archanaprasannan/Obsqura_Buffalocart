@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="2" ignored="0" total="30" passed="28">
+<testng-results skipped="1" failed="0" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="1702080" started-at="2021-10-18T20:42:52 IST" finished-at="2021-10-18T21:11:14 IST">
+  <suite name="Suite" duration-ms="105874" started-at="2021-10-26T22:09:47 IST" finished-at="2021-10-26T22:11:33 IST">
     <groups>
     </groups>
-    <test name="Test" duration-ms="1702080" started-at="2021-10-18T20:42:52 IST" finished-at="2021-10-18T21:11:14 IST">
-      <class name="com.buffalocart.Test.UsersTest">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.buffalocart.Test.UsersTest@770c2e6b]" name="setUp" is-config="true" duration-ms="25844" started-at="2021-10-18T20:46:58 IST" finished-at="2021-10-18T20:47:23 IST">
+    <test name="Test" duration-ms="105874" started-at="2021-10-26T22:09:47 IST" finished-at="2021-10-26T22:11:33 IST">
+      <class name="com.buffalocart.Test.UpdateUsersTest">
+        <test-method status="FAIL" signature="setUp(java.lang.String)[pri:0, instance:com.buffalocart.Test.UpdateUsersTest@27c6e487]" name="setUp" is-config="true" duration-ms="105751" started-at="2021-10-26T22:09:47 IST" finished-at="2021-10-26T22:11:33 IST">
           <params>
             <param index="0">
               <value>
@@ -15,112 +15,24 @@
               </value>
             </param>
           </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="verifyUserspageTitle()[pri:10, instance:com.buffalocart.Test.UsersTest@770c2e6b]" name="verifyUserspageTitle" duration-ms="13724" started-at="2021-10-18T20:47:23 IST" description="TC_010_Verify Users page title" finished-at="2021-10-18T20:47:37 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyUserspageTitle -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.buffalocart.Test.UsersTest@770c2e6b]" name="tearDown" is-config="true" duration-ms="204" started-at="2021-10-18T20:47:37 IST" finished-at="2021-10-18T20:47:37 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyUserspageTitle status=SUCCESS method=UsersTest.verifyUserspageTitle()[pri:10, instance:com.buffalocart.Test.UsersTest@770c2e6b] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.buffalocart.Test.UsersTest@770c2e6b]" name="setUp" is-config="true" duration-ms="20218" started-at="2021-10-18T20:47:37 IST" finished-at="2021-10-18T20:47:58 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="verifyUserSearch()[pri:11, instance:com.buffalocart.Test.UsersTest@770c2e6b]" name="verifyUserSearch" duration-ms="54164" started-at="2021-10-18T20:47:58 IST" description="TC_011_Verify user search" finished-at="2021-10-18T20:48:52 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyUserSearch -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.buffalocart.Test.UsersTest@770c2e6b]" name="tearDown" is-config="true" duration-ms="194" started-at="2021-10-18T20:48:52 IST" finished-at="2021-10-18T20:48:52 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyUserSearch status=SUCCESS method=UsersTest.verifyUserSearch()[pri:11, instance:com.buffalocart.Test.UsersTest@770c2e6b] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.buffalocart.Test.UsersTest@770c2e6b]" name="setUp" is-config="true" duration-ms="21452" started-at="2021-10-18T20:48:52 IST" finished-at="2021-10-18T20:49:13 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="verifyUserLoginWithNewlyAddedUser()[pri:13, instance:com.buffalocart.Test.UsersTest@770c2e6b]" name="verifyUserLoginWithNewlyAddedUser" duration-ms="40722" started-at="2021-10-18T20:49:13 IST" description="TC_013_Verify user login with newly added user" finished-at="2021-10-18T20:49:54 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyUserLoginWithNewlyAddedUser -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.buffalocart.Test.UsersTest@770c2e6b]" name="tearDown" is-config="true" duration-ms="203" started-at="2021-10-18T20:49:54 IST" finished-at="2021-10-18T20:49:54 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyUserLoginWithNewlyAddedUser status=SUCCESS method=UsersTest.verifyUserLoginWithNewlyAddedUser()[pri:13, instance:com.buffalocart.Test.UsersTest@770c2e6b] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.buffalocart.Test.UsersTest -->
-      <class name="com.buffalocart.Test.DeleteRolesTest">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.buffalocart.Test.DeleteRolesTest@7f77e91b]" name="setUp" is-config="true" duration-ms="15896" started-at="2021-10-18T21:02:28 IST" finished-at="2021-10-18T21:02:44 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="FAIL" signature="verifyUserCanDeleteRole()[pri:25, instance:com.buffalocart.Test.DeleteRolesTest@7f77e91b]" name="verifyUserCanDeleteRole" duration-ms="10111" started-at="2021-10-18T21:02:44 IST" description="TC_025_Verify user can delete a role" finished-at="2021-10-18T21:02:54 IST">
-          <exception class="org.openqa.selenium.NoSuchElementException">
+          <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//button[@class='swal-button swal-button--confirm swal-button--danger']"}
-  (Session info: chrome=94.0.4606.81)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+              <![CDATA[timeout: Timed out receiving message from renderer: 98.192
+  (Session info: chrome=95.0.4638.54)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'ACHUS_MACHINE', ip: '192.168.1.101', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 94.0.4606.81, chrome: {chromedriverVersion: 94.0.4606.61 (418b78f5838ed..., userDataDir: C:\Users\archa\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:50188}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: e82919a610865664ddf27fce915b1835
-*** Element info: {Using=xpath, value=//button[@class='swal-button swal-button--confirm swal-button--danger']}]]>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 95.0.4638.54, chrome: {chromedriverVersion: 95.0.4638.17 (a9d0719444d4b..., userDataDir: C:\Users\archa\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:51358}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 33c54935f8dc09097dfd93c6e504f29a]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[@class='swal-button swal-button--confirm swal-button--danger']"}
-  (Session info: chrome=94.0.4606.81)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+              <![CDATA[org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: 98.192
+  (Session info: chrome=95.0.4638.54)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'ACHUS_MACHINE', ip: '192.168.1.101', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 94.0.4606.81, chrome: {chromedriverVersion: 94.0.4606.61 (418b78f5838ed..., userDataDir: C:\Users\archa\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:50188}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: e82919a610865664ddf27fce915b1835
-*** Element info: {Using=xpath, value=//button[@class='swal-button swal-button--confirm swal-button--danger']}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 95.0.4638.54, chrome: {chromedriverVersion: 95.0.4638.17 (a9d0719444d4b..., userDataDir: C:\Users\archa\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:51358}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 33c54935f8dc09097dfd93c6e504f29a
 at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -131,22 +43,19 @@ at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCo
 at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at com.sun.proxy.$Proxy10.click(Unknown Source)
-at com.buffalocart.utilities.PageUtility.clickOnElement(PageUtility.java:16)
-at com.buffalocart.pages.DeleteRolesPage.clickOnDeleteButton(DeleteRolesPage.java:31)
-at com.buffalocart.Test.DeleteRolesTest.verifyUserCanDeleteRole(DeleteRolesTest.java:48)
+at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:277)
+at com.buffalocart.automationcore.Base.testInitialize(Base.java:66)
+at com.buffalocart.automationcore.Base.setUp(Base.java:75)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 at java.lang.reflect.Method.invoke(Method.java:498)
 at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:700)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:527)
 at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
 at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
 at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
@@ -171,622 +80,52 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyUserCanDeleteRole -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.buffalocart.Test.DeleteRolesTest@7f77e91b]" name="tearDown" is-config="true" duration-ms="3403" started-at="2021-10-18T21:02:54 IST" finished-at="2021-10-18T21:02:57 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyUserCanDeleteRole status=FAILURE method=DeleteRolesTest.verifyUserCanDeleteRole()[pri:25, instance:com.buffalocart.Test.DeleteRolesTest@7f77e91b] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.buffalocart.Test.DeleteRolesTest -->
-      <class name="com.buffalocart.Test.SalesCommisionAgentTest">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.buffalocart.Test.SalesCommisionAgentTest@44a664f2]" name="setUp" is-config="true" duration-ms="14124" started-at="2021-10-18T21:02:57 IST" finished-at="2021-10-18T21:03:11 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="verifySalesCommisionAgentpageTitle()[pri:27, instance:com.buffalocart.Test.SalesCommisionAgentTest@44a664f2]" name="verifySalesCommisionAgentpageTitle" duration-ms="12148" started-at="2021-10-18T21:03:11 IST" description="TC_027_Verify Sales Commission Agents page title" finished-at="2021-10-18T21:03:24 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifySalesCommisionAgentpageTitle -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.buffalocart.Test.SalesCommisionAgentTest@44a664f2]" name="tearDown" is-config="true" duration-ms="177" started-at="2021-10-18T21:03:24 IST" finished-at="2021-10-18T21:03:24 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifySalesCommisionAgentpageTitle status=SUCCESS method=SalesCommisionAgentTest.verifySalesCommisionAgentpageTitle()[pri:27, instance:com.buffalocart.Test.SalesCommisionAgentTest@44a664f2] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.buffalocart.Test.SalesCommisionAgentTest -->
-      <class name="com.buffalocart.Test.UpdateRolesTest">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.buffalocart.Test.UpdateRolesTest@1a38c59b]" name="setUp" is-config="true" duration-ms="14471" started-at="2021-10-18T20:58:51 IST" finished-at="2021-10-18T20:59:06 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="verifyEditRolespageTitle()[pri:23, instance:com.buffalocart.Test.UpdateRolesTest@1a38c59b]" name="verifyEditRolespageTitle" duration-ms="34075" started-at="2021-10-18T20:59:06 IST" description="TC_023_Verify Edit Role page title" finished-at="2021-10-18T20:59:40 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyEditRolespageTitle -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.buffalocart.Test.UpdateRolesTest@1a38c59b]" name="tearDown" is-config="true" duration-ms="148" started-at="2021-10-18T20:59:40 IST" finished-at="2021-10-18T20:59:40 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyEditRolespageTitle status=SUCCESS method=UpdateRolesTest.verifyEditRolespageTitle()[pri:23, instance:com.buffalocart.Test.UpdateRolesTest@1a38c59b] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.buffalocart.Test.UpdateRolesTest@1a38c59b]" name="setUp" is-config="true" duration-ms="13094" started-at="2021-10-18T20:59:40 IST" finished-at="2021-10-18T20:59:53 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="verifyUserCanUpdateRole()[pri:24, instance:com.buffalocart.Test.UpdateRolesTest@1a38c59b]" name="verifyUserCanUpdateRole" duration-ms="154722" started-at="2021-10-18T20:59:53 IST" description="TC_024_Verify user can update a role " finished-at="2021-10-18T21:02:28 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyUserCanUpdateRole -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.buffalocart.Test.UpdateRolesTest@1a38c59b]" name="tearDown" is-config="true" duration-ms="210" started-at="2021-10-18T21:02:28 IST" finished-at="2021-10-18T21:02:28 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyUserCanUpdateRole status=SUCCESS method=UpdateRolesTest.verifyUserCanUpdateRole()[pri:24, instance:com.buffalocart.Test.UpdateRolesTest@1a38c59b] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.buffalocart.Test.UpdateRolesTest -->
-      <class name="com.buffalocart.Test.AddSalesCommisionAgentTest">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.buffalocart.Test.AddSalesCommisionAgentTest@7f9fcf7f]" name="setUp" is-config="true" duration-ms="15748" started-at="2021-10-18T21:03:24 IST" finished-at="2021-10-18T21:03:39 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="verifyUserCanAddSalesagent()[pri:28, instance:com.buffalocart.Test.AddSalesCommisionAgentTest@7f9fcf7f]" name="verifyUserCanAddSalesagent" duration-ms="113152" started-at="2021-10-18T21:03:39 IST" description="TC_028_Verify user can sales agent " finished-at="2021-10-18T21:05:33 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyUserCanAddSalesagent -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.buffalocart.Test.AddSalesCommisionAgentTest@7f9fcf7f]" name="tearDown" is-config="true" duration-ms="255" started-at="2021-10-18T21:05:33 IST" finished-at="2021-10-18T21:05:33 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyUserCanAddSalesagent status=SUCCESS method=AddSalesCommisionAgentTest.verifyUserCanAddSalesagent()[pri:28, instance:com.buffalocart.Test.AddSalesCommisionAgentTest@7f9fcf7f] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.buffalocart.Test.AddSalesCommisionAgentTest -->
-      <class name="com.buffalocart.Test.AddRolesTest">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.buffalocart.Test.AddRolesTest@448ff1a8]" name="setUp" is-config="true" duration-ms="14813" started-at="2021-10-18T20:57:13 IST" finished-at="2021-10-18T20:57:28 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="verifyRolespageTitle()[pri:21, instance:com.buffalocart.Test.AddRolesTest@448ff1a8]" name="verifyRolespageTitle" duration-ms="12382" started-at="2021-10-18T20:57:28 IST" description="TC_021_Verify Add Roles page title" finished-at="2021-10-18T20:57:40 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyRolespageTitle -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.buffalocart.Test.AddRolesTest@448ff1a8]" name="tearDown" is-config="true" duration-ms="197" started-at="2021-10-18T20:57:40 IST" finished-at="2021-10-18T20:57:41 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyRolespageTitle status=SUCCESS method=AddRolesTest.verifyRolespageTitle()[pri:21, instance:com.buffalocart.Test.AddRolesTest@448ff1a8] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.buffalocart.Test.AddRolesTest@448ff1a8]" name="setUp" is-config="true" duration-ms="14688" started-at="2021-10-18T20:57:41 IST" finished-at="2021-10-18T20:57:55 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="VerifyUserCanAddRoles()[pri:22, instance:com.buffalocart.Test.AddRolesTest@448ff1a8]" name="VerifyUserCanAddRoles" duration-ms="55575" started-at="2021-10-18T20:57:55 IST" description="TC_022_Verify  user can add roles " finished-at="2021-10-18T20:58:51 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- VerifyUserCanAddRoles -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.buffalocart.Test.AddRolesTest@448ff1a8]" name="tearDown" is-config="true" duration-ms="204" started-at="2021-10-18T20:58:51 IST" finished-at="2021-10-18T20:58:51 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=VerifyUserCanAddRoles status=SUCCESS method=AddRolesTest.VerifyUserCanAddRoles()[pri:22, instance:com.buffalocart.Test.AddRolesTest@448ff1a8] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.buffalocart.Test.AddRolesTest -->
-      <class name="com.buffalocart.Test.UpdateSalesCommisionAgentTest">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.buffalocart.Test.UpdateSalesCommisionAgentTest@2357d90a]" name="setUp" is-config="true" duration-ms="14002" started-at="2021-10-18T21:05:33 IST" finished-at="2021-10-18T21:05:47 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="verifyEditSalesagentDetails()[pri:29, instance:com.buffalocart.Test.UpdateSalesCommisionAgentTest@2357d90a]" name="verifyEditSalesagentDetails" duration-ms="127643" started-at="2021-10-18T21:05:47 IST" description="TC_029_Verify Edit sales agent details " finished-at="2021-10-18T21:07:55 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyEditSalesagentDetails -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.buffalocart.Test.UpdateSalesCommisionAgentTest@2357d90a]" name="tearDown" is-config="true" duration-ms="206" started-at="2021-10-18T21:07:55 IST" finished-at="2021-10-18T21:07:55 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyEditSalesagentDetails status=SUCCESS method=UpdateSalesCommisionAgentTest.verifyEditSalesagentDetails()[pri:29, instance:com.buffalocart.Test.UpdateSalesCommisionAgentTest@2357d90a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.buffalocart.Test.UpdateSalesCommisionAgentTest -->
-      <class name="com.buffalocart.Test.ViewUserTest">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.buffalocart.Test.ViewUserTest@145eaa29]" name="setUp" is-config="true" duration-ms="26601" started-at="2021-10-18T21:10:36 IST" finished-at="2021-10-18T21:11:03 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="verifyDetailsDisplayedOnViewuserPage()[pri:19, instance:com.buffalocart.Test.ViewUserTest@145eaa29]" name="verifyDetailsDisplayedOnViewuserPage" duration-ms="11435" started-at="2021-10-18T21:11:03 IST" description="TC_019_Verify  the details displayed on view user page" finished-at="2021-10-18T21:11:14 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyDetailsDisplayedOnViewuserPage -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.buffalocart.Test.ViewUserTest@145eaa29]" name="tearDown" is-config="true" duration-ms="227" started-at="2021-10-18T21:11:14 IST" finished-at="2021-10-18T21:11:14 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyDetailsDisplayedOnViewuserPage status=SUCCESS method=ViewUserTest.verifyDetailsDisplayedOnViewuserPage()[pri:19, instance:com.buffalocart.Test.ViewUserTest@145eaa29] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.buffalocart.Test.ViewUserTest -->
-      <class name="com.buffalocart.Test.ResetTest">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.buffalocart.Test.ResetTest@4206a205]" name="setUp" is-config="true" duration-ms="17874" started-at="2021-10-18T20:44:27 IST" finished-at="2021-10-18T20:44:45 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="VerifyErrorMessageDisplyedOnResetpasswordWithInvalidEmailId()[pri:5, instance:com.buffalocart.Test.ResetTest@4206a205]" name="VerifyErrorMessageDisplyedOnResetpasswordWithInvalidEmailId" duration-ms="3206" started-at="2021-10-18T20:44:45 IST" description="TC_005_Verify error message displyed on  Reset Password page with invalid email id" finished-at="2021-10-18T20:44:49 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- VerifyErrorMessageDisplyedOnResetpasswordWithInvalidEmailId -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.buffalocart.Test.ResetTest@4206a205]" name="tearDown" is-config="true" duration-ms="300" started-at="2021-10-18T20:44:49 IST" finished-at="2021-10-18T20:44:49 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=VerifyErrorMessageDisplyedOnResetpasswordWithInvalidEmailId status=SUCCESS method=ResetTest.VerifyErrorMessageDisplyedOnResetpasswordWithInvalidEmailId()[pri:5, instance:com.buffalocart.Test.ResetTest@4206a205] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.buffalocart.Test.ResetTest -->
-      <class name="com.buffalocart.Test.RolesTest">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.buffalocart.Test.RolesTest@77e9807f]" name="setUp" is-config="true" duration-ms="15827" started-at="2021-10-18T20:55:43 IST" finished-at="2021-10-18T20:55:59 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="verifyRolespageTitle()[pri:20, instance:com.buffalocart.Test.RolesTest@77e9807f]" name="verifyRolespageTitle" duration-ms="12102" started-at="2021-10-18T20:55:59 IST" description="TC_020_Verify Roles page title" finished-at="2021-10-18T20:56:11 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyRolespageTitle -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.buffalocart.Test.RolesTest@77e9807f]" name="tearDown" is-config="true" duration-ms="164" started-at="2021-10-18T20:56:11 IST" finished-at="2021-10-18T20:56:11 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyRolespageTitle status=SUCCESS method=RolesTest.verifyRolespageTitle()[pri:20, instance:com.buffalocart.Test.RolesTest@77e9807f] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.buffalocart.Test.RolesTest@77e9807f]" name="setUp" is-config="true" duration-ms="14604" started-at="2021-10-18T20:56:11 IST" finished-at="2021-10-18T20:56:26 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="verifyAddedRoleInUserAddpage()[pri:26, instance:com.buffalocart.Test.RolesTest@77e9807f]" name="verifyAddedRoleInUserAddpage" duration-ms="47418" started-at="2021-10-18T20:56:26 IST" description="TC_026_Verify whether the added role in Role page is listed in roles field in user add page" finished-at="2021-10-18T20:57:13 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyAddedRoleInUserAddpage -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.buffalocart.Test.RolesTest@77e9807f]" name="tearDown" is-config="true" duration-ms="260" started-at="2021-10-18T20:57:13 IST" finished-at="2021-10-18T20:57:13 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyAddedRoleInUserAddpage status=SUCCESS method=RolesTest.verifyAddedRoleInUserAddpage()[pri:26, instance:com.buffalocart.Test.RolesTest@77e9807f] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.buffalocart.Test.RolesTest -->
-      <class name="com.buffalocart.Test.LoginTest">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.buffalocart.Test.LoginTest@221af3c0]" name="setUp" is-config="true" duration-ms="16425" started-at="2021-10-18T20:42:52 IST" finished-at="2021-10-18T20:43:09 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="verifyLoginpageTitle()[pri:1, instance:com.buffalocart.Test.LoginTest@221af3c0]" name="verifyLoginpageTitle" duration-ms="58" started-at="2021-10-18T20:43:09 IST" description="TC_001_Verify login page title" finished-at="2021-10-18T20:43:09 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyLoginpageTitle -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.buffalocart.Test.LoginTest@221af3c0]" name="tearDown" is-config="true" duration-ms="196" started-at="2021-10-18T20:43:09 IST" finished-at="2021-10-18T20:43:09 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyLoginpageTitle status=SUCCESS method=LoginTest.verifyLoginpageTitle()[pri:1, instance:com.buffalocart.Test.LoginTest@221af3c0] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.buffalocart.Test.LoginTest@221af3c0]" name="setUp" is-config="true" duration-ms="19332" started-at="2021-10-18T20:43:09 IST" finished-at="2021-10-18T20:43:28 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="verifyUserLoginWithValidUserCredentials()[pri:2, instance:com.buffalocart.Test.LoginTest@221af3c0]" name="verifyUserLoginWithValidUserCredentials" duration-ms="9535" started-at="2021-10-18T20:43:28 IST" description="TC_002_Verify user login with valid user credentials" finished-at="2021-10-18T20:43:38 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyUserLoginWithValidUserCredentials -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.buffalocart.Test.LoginTest@221af3c0]" name="tearDown" is-config="true" duration-ms="1100" started-at="2021-10-18T20:43:38 IST" finished-at="2021-10-18T20:43:39 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyUserLoginWithValidUserCredentials status=SUCCESS method=LoginTest.verifyUserLoginWithValidUserCredentials()[pri:2, instance:com.buffalocart.Test.LoginTest@221af3c0] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.buffalocart.Test.LoginTest@221af3c0]" name="setUp" is-config="true" duration-ms="21684" started-at="2021-10-18T20:43:39 IST" finished-at="2021-10-18T20:44:01 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="verifyUserLoginWithInvalidUserCredentials()[pri:3, instance:com.buffalocart.Test.LoginTest@221af3c0]" name="verifyUserLoginWithInvalidUserCredentials" duration-ms="2171" started-at="2021-10-18T20:44:01 IST" description="TC_003_Verify the error message displayed for user login with invalid credentials" finished-at="2021-10-18T20:44:03 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyUserLoginWithInvalidUserCredentials -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.buffalocart.Test.LoginTest@221af3c0]" name="tearDown" is-config="true" duration-ms="327" started-at="2021-10-18T20:44:03 IST" finished-at="2021-10-18T20:44:03 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyUserLoginWithInvalidUserCredentials status=SUCCESS method=LoginTest.verifyUserLoginWithInvalidUserCredentials()[pri:3, instance:com.buffalocart.Test.LoginTest@221af3c0] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.buffalocart.Test.LoginTest@221af3c0]" name="setUp" is-config="true" duration-ms="23264" started-at="2021-10-18T20:44:03 IST" finished-at="2021-10-18T20:44:26 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="verifyUserAbleToClickOnRememeberMeCheckbox()[pri:4, instance:com.buffalocart.Test.LoginTest@221af3c0]" name="verifyUserAbleToClickOnRememeberMeCheckbox" duration-ms="171" started-at="2021-10-18T20:44:26 IST" description="TC_004_Verify User is able to click on rememeberme Checkbox" finished-at="2021-10-18T20:44:27 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyUserAbleToClickOnRememeberMeCheckbox -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.buffalocart.Test.LoginTest@221af3c0]" name="tearDown" is-config="true" duration-ms="893" started-at="2021-10-18T20:44:27 IST" finished-at="2021-10-18T20:44:27 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyUserAbleToClickOnRememeberMeCheckbox status=SUCCESS method=LoginTest.verifyUserAbleToClickOnRememeberMeCheckbox()[pri:4, instance:com.buffalocart.Test.LoginTest@221af3c0] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.buffalocart.Test.LoginTest -->
-      <class name="com.buffalocart.Test.DeleteSalesCommisionAgentTest">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.buffalocart.Test.DeleteSalesCommisionAgentTest@6328d34a]" name="setUp" is-config="true" duration-ms="14899" started-at="2021-10-18T21:07:55 IST" finished-at="2021-10-18T21:08:10 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="verifyUserCanDeleteSalesCommissionAgents()[pri:30, instance:com.buffalocart.Test.DeleteSalesCommisionAgentTest@6328d34a]" name="verifyUserCanDeleteSalesCommissionAgents" duration-ms="146019" started-at="2021-10-18T21:08:10 IST" description="TC_30_Verify user can delete a Sales Commission Agents " finished-at="2021-10-18T21:10:36 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyUserCanDeleteSalesCommissionAgents -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.buffalocart.Test.DeleteSalesCommisionAgentTest@6328d34a]" name="tearDown" is-config="true" duration-ms="380" started-at="2021-10-18T21:10:36 IST" finished-at="2021-10-18T21:10:36 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyUserCanDeleteSalesCommissionAgents status=SUCCESS method=DeleteSalesCommisionAgentTest.verifyUserCanDeleteSalesCommissionAgents()[pri:30, instance:com.buffalocart.Test.DeleteSalesCommisionAgentTest@6328d34a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.buffalocart.Test.DeleteSalesCommisionAgentTest -->
-      <class name="com.buffalocart.Test.AddUsersTest">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.buffalocart.Test.AddUsersTest@1a052a00]" name="setUp" is-config="true" duration-ms="22214" started-at="2021-10-18T20:49:54 IST" finished-at="2021-10-18T20:50:16 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="verifyErrorMessageDisplayedWithoutFillingMandatoryFields()[pri:12, instance:com.buffalocart.Test.AddUsersTest@1a052a00]" name="verifyErrorMessageDisplayedWithoutFillingMandatoryFields" duration-ms="15461" started-at="2021-10-18T20:50:16 IST" description="TC_012_Verify the error message displayed without filling mandatory fields in add user form" finished-at="2021-10-18T20:50:32 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyErrorMessageDisplayedWithoutFillingMandatoryFields -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.buffalocart.Test.AddUsersTest@1a052a00]" name="tearDown" is-config="true" duration-ms="105" started-at="2021-10-18T20:50:32 IST" finished-at="2021-10-18T20:50:32 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyErrorMessageDisplayedWithoutFillingMandatoryFields status=SUCCESS method=AddUsersTest.verifyErrorMessageDisplayedWithoutFillingMandatoryFields()[pri:12, instance:com.buffalocart.Test.AddUsersTest@1a052a00] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.buffalocart.Test.AddUsersTest@1a052a00]" name="setUp" is-config="true" duration-ms="19033" started-at="2021-10-18T20:50:32 IST" finished-at="2021-10-18T20:50:51 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="verifyAddUserspageTitle()[pri:14, instance:com.buffalocart.Test.AddUsersTest@1a052a00]" name="verifyAddUserspageTitle" duration-ms="13623" started-at="2021-10-18T20:50:51 IST" description="TC_014_Verify Add Users page title" finished-at="2021-10-18T20:51:05 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyAddUserspageTitle -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.buffalocart.Test.AddUsersTest@1a052a00]" name="tearDown" is-config="true" duration-ms="312" started-at="2021-10-18T20:51:05 IST" finished-at="2021-10-18T20:51:05 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyAddUserspageTitle status=SUCCESS method=AddUsersTest.verifyAddUserspageTitle()[pri:14, instance:com.buffalocart.Test.AddUsersTest@1a052a00] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.buffalocart.Test.AddUsersTest@1a052a00]" name="setUp" is-config="true" duration-ms="17922" started-at="2021-10-18T20:51:05 IST" finished-at="2021-10-18T20:51:23 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="verifyUserCanAddUserDetails()[pri:15, instance:com.buffalocart.Test.AddUsersTest@1a052a00]" name="verifyUserCanAddUserDetails" duration-ms="95320" started-at="2021-10-18T20:51:23 IST" description="TC_014_Verify User can AddUser Details" finished-at="2021-10-18T20:52:58 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyUserCanAddUserDetails -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.buffalocart.Test.AddUsersTest@1a052a00]" name="tearDown" is-config="true" duration-ms="206" started-at="2021-10-18T20:52:58 IST" finished-at="2021-10-18T20:52:58 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyUserCanAddUserDetails status=SUCCESS method=AddUsersTest.verifyUserCanAddUserDetails()[pri:15, instance:com.buffalocart.Test.AddUsersTest@1a052a00] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.buffalocart.Test.AddUsersTest -->
-      <class name="com.buffalocart.Test.SignoutTest">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.buffalocart.Test.SignoutTest@7bb58ca3]" name="setUp" is-config="true" duration-ms="24133" started-at="2021-10-18T20:45:55 IST" finished-at="2021-10-18T20:46:19 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="verifyUserNavigatingToLoginPageByClickingOnSignout()[pri:8, instance:com.buffalocart.Test.SignoutTest@7bb58ca3]" name="verifyUserNavigatingToLoginPageByClickingOnSignout" duration-ms="5818" started-at="2021-10-18T20:46:19 IST" description="TC_008_Verify whether user is navigating to login page by clicking on Sign out button" finished-at="2021-10-18T20:46:25 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyUserNavigatingToLoginPageByClickingOnSignout -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.buffalocart.Test.SignoutTest@7bb58ca3]" name="tearDown" is-config="true" duration-ms="362" started-at="2021-10-18T20:46:25 IST" finished-at="2021-10-18T20:46:25 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyUserNavigatingToLoginPageByClickingOnSignout status=SUCCESS method=SignoutTest.verifyUserNavigatingToLoginPageByClickingOnSignout()[pri:8, instance:com.buffalocart.Test.SignoutTest@7bb58ca3] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.buffalocart.Test.SignoutTest -->
-      <class name="com.buffalocart.Test.DeleteUserTest">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.buffalocart.Test.DeleteUserTest@61009542]" name="setUp" is-config="true" duration-ms="14950" started-at="2021-10-18T20:54:54 IST" finished-at="2021-10-18T20:55:09 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="verifyDeleteUserpageTitle()[pri:18, instance:com.buffalocart.Test.DeleteUserTest@61009542]" name="verifyDeleteUserpageTitle" duration-ms="34034" started-at="2021-10-18T20:55:09 IST" description="TC_018_Verify user can delete a user" finished-at="2021-10-18T20:55:43 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyDeleteUserpageTitle -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.buffalocart.Test.DeleteUserTest@61009542]" name="tearDown" is-config="true" duration-ms="168" started-at="2021-10-18T20:55:43 IST" finished-at="2021-10-18T20:55:43 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyDeleteUserpageTitle status=SUCCESS method=DeleteUserTest.verifyDeleteUserpageTitle()[pri:18, instance:com.buffalocart.Test.DeleteUserTest@61009542] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.buffalocart.Test.DeleteUserTest -->
-      <class name="com.buffalocart.Test.UpdateUsersTest">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.buffalocart.Test.UpdateUsersTest@4d826d77]" name="setUp" is-config="true" duration-ms="12757" started-at="2021-10-18T20:52:58 IST" finished-at="2021-10-18T20:53:11 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="FAIL" signature="verifyEditUserpageTitle()[pri:16, instance:com.buffalocart.Test.UpdateUsersTest@4d826d77]" name="verifyEditUserpageTitle" duration-ms="8694" started-at="2021-10-18T20:53:11 IST" description="TC_016_Verify Edit User page title" finished-at="2021-10-18T20:53:20 IST">
-          <exception class="java.lang.ArithmeticException">
+        <test-method status="SKIP" signature="verifyUserCanEditUserDetails()[pri:17, instance:com.buffalocart.Test.UpdateUsersTest@27c6e487]" name="verifyUserCanEditUserDetails" duration-ms="0" started-at="2021-10-26T22:11:33 IST" description="TC_017_Verify user can edit the user details " finished-at="2021-10-26T22:11:33 IST">
+          <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[/ by zero]]>
+              <![CDATA[timeout: Timed out receiving message from renderer: 98.192
+  (Session info: chrome=95.0.4638.54)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ACHUS_MACHINE', ip: '192.168.1.101', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 95.0.4638.54, chrome: {chromedriverVersion: 95.0.4638.17 (a9d0719444d4b..., userDataDir: C:\Users\archa\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:51358}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 33c54935f8dc09097dfd93c6e504f29a]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.ArithmeticException: / by zero
-at com.buffalocart.utilities.TableUtility.actionData(TableUtility.java:45)
-at com.buffalocart.pages.UsersPage.ClickonEditButton(UsersPage.java:77)
-at com.buffalocart.Test.UpdateUsersTest.verifyEditUserpageTitle(UpdateUsersTest.java:49)
+              <![CDATA[org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: 98.192
+  (Session info: chrome=95.0.4638.54)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'ACHUS_MACHINE', ip: '192.168.1.101', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_301'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 95.0.4638.54, chrome: {chromedriverVersion: 95.0.4638.17 (a9d0719444d4b..., userDataDir: C:\Users\archa\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:51358}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 33c54935f8dc09097dfd93c6e504f29a
+at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:277)
+at com.buffalocart.automationcore.Base.testInitialize(Base.java:66)
+at com.buffalocart.automationcore.Base.setUp(Base.java:75)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 at java.lang.reflect.Method.invoke(Method.java:498)
 at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+at org.testng.internal.TestInvoker.runConfigMethods(TestInvoker.java:700)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:527)
 at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
 at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
 at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
@@ -811,130 +150,15 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.ArithmeticException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyEditUserpageTitle -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.buffalocart.Test.UpdateUsersTest@4d826d77]" name="tearDown" is-config="true" duration-ms="4892" started-at="2021-10-18T20:53:20 IST" finished-at="2021-10-18T20:53:25 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyEditUserpageTitle status=FAILURE method=UpdateUsersTest.verifyEditUserpageTitle()[pri:16, instance:com.buffalocart.Test.UpdateUsersTest@4d826d77] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.buffalocart.Test.UpdateUsersTest@4d826d77]" name="setUp" is-config="true" duration-ms="12496" started-at="2021-10-18T20:53:25 IST" finished-at="2021-10-18T20:53:37 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="verifyUserCanEditUserDetails()[pri:17, instance:com.buffalocart.Test.UpdateUsersTest@4d826d77]" name="verifyUserCanEditUserDetails" duration-ms="76198" started-at="2021-10-18T20:53:37 IST" description="TC_017_Verify user can edit the user details " finished-at="2021-10-18T20:54:54 IST">
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyUserCanEditUserDetails -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.buffalocart.Test.UpdateUsersTest@4d826d77]" name="tearDown" is-config="true" duration-ms="199" started-at="2021-10-18T20:54:54 IST" finished-at="2021-10-18T20:54:54 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyUserCanEditUserDetails status=SUCCESS method=UpdateUsersTest.verifyUserCanEditUserDetails()[pri:17, instance:com.buffalocart.Test.UpdateUsersTest@4d826d77] output={null}]]]>
-              </value>
-            </param>
-          </params>
+        <test-method status="SKIP" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.buffalocart.Test.UpdateUsersTest@27c6e487]" name="tearDown" is-config="true" duration-ms="-1635266493408" started-at="2021-10-26T22:11:33 IST" finished-at="1970-01-01T05:30:00 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.buffalocart.Test.UpdateUsersTest -->
-      <class name="com.buffalocart.Test.HomeTest">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.buffalocart.Test.HomeTest@29ba4338]" name="setUp" is-config="true" duration-ms="19006" started-at="2021-10-18T20:44:49 IST" finished-at="2021-10-18T20:45:08 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="verifyHomepageTitle()[pri:6, instance:com.buffalocart.Test.HomeTest@29ba4338]" name="verifyHomepageTitle" duration-ms="10313" started-at="2021-10-18T20:45:08 IST" description="TC_006_Verify home page title" finished-at="2021-10-18T20:45:18 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyHomepageTitle -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.buffalocart.Test.HomeTest@29ba4338]" name="tearDown" is-config="true" duration-ms="1340" started-at="2021-10-18T20:45:18 IST" finished-at="2021-10-18T20:45:20 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyHomepageTitle status=SUCCESS method=HomeTest.verifyHomepageTitle()[pri:6, instance:com.buffalocart.Test.HomeTest@29ba4338] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.buffalocart.Test.HomeTest@29ba4338]" name="setUp" is-config="true" duration-ms="21761" started-at="2021-10-18T20:45:20 IST" finished-at="2021-10-18T20:45:41 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="VerifyDateDisplayedInHomepage()[pri:7, instance:com.buffalocart.Test.HomeTest@29ba4338]" name="VerifyDateDisplayedInHomepage" duration-ms="13770" started-at="2021-10-18T20:45:41 IST" description="TC_007_Verify date displayed in home page " finished-at="2021-10-18T20:45:55 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- VerifyDateDisplayedInHomepage -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.buffalocart.Test.HomeTest@29ba4338]" name="tearDown" is-config="true" duration-ms="117" started-at="2021-10-18T20:45:55 IST" finished-at="2021-10-18T20:45:55 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=VerifyDateDisplayedInHomepage status=SUCCESS method=HomeTest.VerifyDateDisplayedInHomepage()[pri:7, instance:com.buffalocart.Test.HomeTest@29ba4338] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.buffalocart.Test.HomeTest -->
-      <class name="com.buffalocart.Test.UserManagementTest">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.buffalocart.Test.UserManagementTest@c540f5a]" name="setUp" is-config="true" duration-ms="20950" started-at="2021-10-18T20:46:25 IST" finished-at="2021-10-18T20:46:46 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="verifyUserManagementSubTabs()[pri:9, instance:com.buffalocart.Test.UserManagementTest@c540f5a]" name="verifyUserManagementSubTabs" duration-ms="10676" started-at="2021-10-18T20:46:46 IST" description="TC_009_Verify the Usermanagement sub tabs" finished-at="2021-10-18T20:46:57 IST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyUserManagementSubTabs -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.buffalocart.Test.UserManagementTest@c540f5a]" name="tearDown" is-config="true" duration-ms="440" started-at="2021-10-18T20:46:57 IST" finished-at="2021-10-18T20:46:58 IST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyUserManagementSubTabs status=SUCCESS method=UserManagementTest.verifyUserManagementSubTabs()[pri:9, instance:com.buffalocart.Test.UserManagementTest@c540f5a] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.buffalocart.Test.UserManagementTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

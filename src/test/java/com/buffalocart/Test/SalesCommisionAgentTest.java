@@ -32,7 +32,7 @@ public class SalesCommisionAgentTest  extends Base{
 		excel = new ExcelUtility(path, "Login");
 		login = new LoginPage(driver);
 		login.enterUsername(excel.getStringCellData(1, 0));
-		login.enterPassword(excel.getStringCellData(1, 1));
+		login.enternumericPassword((int)excel.getNumericCellData(1, 1));
 		home = login.clickOnLoginButton();
 		home.clickOnEndTour();
 		sidebar = home.clickOnSidebar();

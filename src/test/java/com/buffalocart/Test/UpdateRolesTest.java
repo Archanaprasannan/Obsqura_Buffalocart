@@ -12,6 +12,7 @@ import com.buffalocart.automationcore.Base;
 import com.buffalocart.constants.Constants;
 import com.buffalocart.pages.AddRolesPage;
 import com.buffalocart.pages.AddUsersPage;
+import com.buffalocart.pages.DeleteRolesPage;
 import com.buffalocart.pages.HomePage;
 import com.buffalocart.pages.LoginPage;
 import com.buffalocart.pages.RolesPage;
@@ -34,6 +35,7 @@ public class UpdateRolesTest extends Base {
 	UsersPage users;
 	AddUsersPage adduser;
 	AddRolesPage addroles;
+	DeleteRolesPage deleterole;
 	String path = System.getProperty("user.dir") + Constants.EXCEL_FILE;
 
 	@Test(priority = 23, description = "TC_023_Verify Edit Role page title", enabled = true)
@@ -41,13 +43,21 @@ public class UpdateRolesTest extends Base {
 		excel = new ExcelUtility(path, "Login");
 		login = new LoginPage(driver);
 		login.enterUsername(excel.getStringCellData(1, 0));
-		login.enterPassword(excel.getStringCellData(1, 1));
+		login.enternumericPassword((int)excel.getNumericCellData(1, 1));
 		home = login.clickOnLoginButton();
 		home.clickOnEndTour();
 		sidebar = home.clickOnSidebar();
 		usermanagement = sidebar.clickOnUserManagementModule();
 		roles = usermanagement.clickOnRolesSubmodule();
-		updateroles = roles.ClickonEditButton("Sales Executive");
+		addroles = roles.clickOnAddRoles();
+		addroles.clickOnRoleName();
+		excel = new ExcelUtility(path, "Roles");
+		addroles.enterRoleName(excel.getStringCellData(1, 0));
+		addroles.clickOnUserPermissionSelectAllCheckbox();
+		addroles.clickOnRolesPermissionSelectAllCheckbox();
+		roles = addroles.clickOnSaveButton();
+		
+		updateroles = roles.ClickonEditButton(excel.getStringCellData(1, 0));
 		String actualTitle = updateroles.getEditRolesPageTitle();
 		String expectedTitle = "Edit Role - Reobeen HHC";
 		SoftAssert softassert = new SoftAssert();
@@ -63,7 +73,7 @@ public class UpdateRolesTest extends Base {
 		excel = new ExcelUtility(path, "Login");
 		login = new LoginPage(driver);
 		login.enterUsername(excel.getStringCellData(1, 0));
-		login.enterPassword(excel.getStringCellData(1, 1));
+		login.enternumericPassword((int)excel.getNumericCellData(1, 1));
 		home = login.clickOnLoginButton();
 		home.clickOnEndTour();
 		sidebar = home.clickOnSidebar();
@@ -72,7 +82,7 @@ public class UpdateRolesTest extends Base {
 		addroles = roles.clickOnAddRoles();
 		addroles.clickOnRoleName();
 		excel = new ExcelUtility(path, "Roles");
-		addroles.enterRoleName(excel.getStringCellData(1, 0));
+		addroles.enterRoleName(excel.getStringCellData(2, 0));
 		addroles.clickOnUserPermissionSelectAllCheckbox();
 		addroles.clickOnRolesPermissionSelectAllCheckbox();
 		roles = addroles.clickOnSaveButton();
@@ -83,17 +93,17 @@ public class UpdateRolesTest extends Base {
 		excel = new ExcelUtility(path, "Login");
 		login = new LoginPage(driver);
 		login.enterUsername(excel.getStringCellData(1, 0));
-		login.enterPassword(excel.getStringCellData(1, 1));
+		login.enternumericPassword((int)excel.getNumericCellData(1, 1));
 		home = login.clickOnLoginButton();
 		// home.clickOnEndTour();
 		sidebar = home.clickOnSidebar();
 		usermanagement = sidebar.clickOnUserManagementModule();
 		roles = usermanagement.clickOnRolesSubmodule();
 		excel = new ExcelUtility(path, "Roles");
-		updateroles = roles.ClickonEditButton(excel.getStringCellData(1, 0));
+		updateroles = roles.ClickonEditButton(excel.getStringCellData(2, 0));
 		updateroles.getHardWait();
 		updateroles.clickOnRoleName();
-		updateroles.enterupdateRoleName(excel.getStringCellData(2, 0));
+		updateroles.enterupdateRoleName(excel.getStringCellData(3, 0));
 		// updateroles.editUserPermissionSelectAllCheckbox();
 		// updateroles.editCustomerPermissionSelectAllCheckbox();
 		roles = updateroles.clickOnUpdateButton();
@@ -111,6 +121,9 @@ public class UpdateRolesTest extends Base {
 		SoftAssert softassert = new SoftAssert();
 		softassert.assertTrue(status, "Edit role Failed");
 		softassert.assertAll();
+		roles.getHardWait();
+		deleterole=roles.ClickonDeleteButton(excel.getStringCellData(3, 0));
+		roles=deleterole.clickOnDeleteButton();
 		roles.getHardWait();
 		signout = home.clickOnUserMenu();
 		login = signout.clickOnSignoutButton();

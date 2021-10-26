@@ -11,6 +11,7 @@ import com.buffalocart.automationcore.Base;
 import com.buffalocart.constants.Constants;
 import com.buffalocart.pages.AddSalesCommisionAgentPage;
 import com.buffalocart.pages.AddUsersPage;
+import com.buffalocart.pages.DeleteSalesCommisionAgentPage;
 import com.buffalocart.pages.HomePage;
 import com.buffalocart.pages.LoginPage;
 import com.buffalocart.pages.SalesCommisionAgentPage;
@@ -34,6 +35,7 @@ public class UpdateSalesCommisionAgentTest extends Base{
 	AddSalesCommisionAgentPage addsalescommisionagent;
 	SalesCommisionAgentPage salescommisionagent;
 	UpdateSalesCommisionAgentPage updatesales;
+	DeleteSalesCommisionAgentPage deletesales;
 	String path = System.getProperty("user.dir") + Constants.EXCEL_FILE;
 	
 	
@@ -44,7 +46,7 @@ public class UpdateSalesCommisionAgentTest extends Base{
 		 excel = new ExcelUtility(path, "Login");
 			login = new LoginPage(driver);
 			login.enterUsername(excel.getStringCellData(1, 0));
-			login.enterPassword(excel.getStringCellData(1, 1));
+			login.enternumericPassword((int)excel.getNumericCellData(1, 1));
 			home = login.clickOnLoginButton();
 			home.clickOnEndTour();
 			sidebar = home.clickOnSidebar();
@@ -69,7 +71,7 @@ public class UpdateSalesCommisionAgentTest extends Base{
 			excel = new ExcelUtility(path, "Login");
 			login = new LoginPage(driver);
 			login.enterUsername(excel.getStringCellData(1, 0));
-			login.enterPassword(excel.getStringCellData(1, 1));
+			login.enternumericPassword((int)excel.getNumericCellData(1, 1));
 			home = login.clickOnLoginButton();
 			//home.clickOnEndTour();
 			sidebar = home.clickOnSidebar();
@@ -86,13 +88,16 @@ public class UpdateSalesCommisionAgentTest extends Base{
 			System.out.println(updateTableData);
 			boolean status = false;
 			for (int i = 0; i < updateTableData.size(); i++) {
-				if (updateTableData.get(i).equals("Mr Rahul Babu R"));
+				if (updateTableData.get(i).equals("Mr Darin Babu R"));
 				status = true;
 				break;
 			}
 			SoftAssert softassert = new SoftAssert();
 			softassert.assertTrue(status, "Edit Sales agent Failed");
 			softassert.assertAll();
+			deletesales=salescommisionagent.ClickonDeleteButton(excel.getStringCellData(2, 3));
+			deletesales.getHardWait();
+			salescommisionagent=deletesales.clickOnOkButton();
 			signout = home.clickOnUserMenu();
 			login = signout.clickOnSignoutButton();
 			

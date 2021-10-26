@@ -35,7 +35,7 @@ public class UsersTest extends Base {
 		excel = new ExcelUtility(path, "Login");
 		login = new LoginPage(driver);
 		login.enterUsername(excel.getStringCellData(1, 0));
-		login.enterPassword(excel.getStringCellData(1, 1));
+		login.enternumericPassword((int)excel.getNumericCellData(1, 1));
 		home = login.clickOnLoginButton();
 		home.clickOnEndTour();
 		sidebar = home.clickOnSidebar();
@@ -54,7 +54,7 @@ public class UsersTest extends Base {
 		excel = new ExcelUtility(path, "Login");
 		login = new LoginPage(driver);
 		login.enterUsername(excel.getStringCellData(1, 0));
-		login.enterPassword(excel.getStringCellData(1, 1));
+		login.enternumericPassword((int)excel.getNumericCellData(1, 1));
 		home = login.clickOnLoginButton();
 		home.clickOnEndTour();
 		sidebar = home.clickOnSidebar();
@@ -63,7 +63,8 @@ public class UsersTest extends Base {
 		users.clickOnSearchBar();
 		users.enterDataToSearchBar("felix mathew");
 		List<ArrayList<String>> data = users.getTableData();
-		users.getHardWait();
+		//users.getHardWait();
+		users.getSoftWaitusertable();
 		System.out.println(data);
 		System.out.println("datas are :" + data);
 		excel = new ExcelUtility(path, "AddUser");
@@ -80,12 +81,12 @@ public class UsersTest extends Base {
 		login = signout.clickOnSignoutButton();
 	}
 
-	 @Test(priority = 13, description = "TC_013_Verify user login with newly added user", enabled = true)
+	@Test(priority = 13, description = "TC_013_Verify user login with newly added user", enabled = true)
 	public void verifyUserLoginWithNewlyAddedUser() throws IOException, InterruptedException {
 		excel = new ExcelUtility(path, "Login");
 		login = new LoginPage(driver);
 		login.enterUsername(excel.getStringCellData(1, 0));
-		login.enterPassword(excel.getStringCellData(1, 1));
+		login.enternumericPassword((int)excel.getNumericCellData(1, 1));
 		home = login.clickOnLoginButton();
 		home.clickOnEndTour();
 		sidebar = home.clickOnSidebar();
@@ -102,6 +103,7 @@ public class UsersTest extends Base {
 		adduser.enterConfirmPassword(excel.getStringCellData(1, 7));
 		adduser.enterSalesPercentage(excel.getNumericCellData(1, 8));
 		users = adduser.clickOnSaveButton();
+		//users.getSoftWaitUsersLogo();
 		users.getHardwait();
 		signout = home.clickOnUserMenu();
 		login = signout.clickOnSignoutButton();

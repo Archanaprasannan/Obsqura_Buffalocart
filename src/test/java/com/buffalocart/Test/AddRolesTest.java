@@ -11,6 +11,7 @@ import org.testng.asserts.SoftAssert;
 import com.buffalocart.automationcore.Base;
 import com.buffalocart.constants.Constants;
 import com.buffalocart.pages.AddRolesPage;
+import com.buffalocart.pages.DeleteRolesPage;
 import com.buffalocart.pages.HomePage;
 import com.buffalocart.pages.LoginPage;
 import com.buffalocart.pages.RolesPage;
@@ -28,6 +29,7 @@ public class AddRolesTest extends Base {
 	RolesPage roles;
 	AddRolesPage addroles;
 	SignoutPage signout;
+	DeleteRolesPage deleterole;
 	String path = System.getProperty("user.dir") + Constants.EXCEL_FILE;
 
 	 @Test(priority = 21, description = "TC_021_Verify Add Roles page title", enabled = true)
@@ -35,7 +37,7 @@ public class AddRolesTest extends Base {
 		excel = new ExcelUtility(path, "Login");
 		login = new LoginPage(driver);
 		login.enterUsername(excel.getStringCellData(1, 0));
-		login.enterPassword(excel.getStringCellData(1, 1));
+		login.enternumericPassword((int)excel.getNumericCellData(1, 1));
 		home = login.clickOnLoginButton();
 		home.clickOnEndTour();
 		sidebar = home.clickOnSidebar();
@@ -56,7 +58,7 @@ public class AddRolesTest extends Base {
 		excel = new ExcelUtility(path, "Login");
 		login = new LoginPage(driver);
 		login.enterUsername(excel.getStringCellData(1, 0));
-		login.enterPassword(excel.getStringCellData(1, 1));
+		login.enternumericPassword((int)excel.getNumericCellData(1, 1));
 		home = login.clickOnLoginButton();
 		home.clickOnEndTour();
 		sidebar = home.clickOnSidebar();
@@ -82,6 +84,9 @@ public class AddRolesTest extends Base {
 		SoftAssert softassert = new SoftAssert();
 		softassert.assertTrue(status, "Add userrole Failed");
 		softassert.assertAll();
+		deleterole=roles.ClickonDeleteButton(excel.getStringCellData(1, 0));
+		roles=deleterole.clickOnDeleteButton();
+		roles.getHardWait();
 		signout = home.clickOnUserMenu();
 		login = signout.clickOnSignoutButton();
 	}

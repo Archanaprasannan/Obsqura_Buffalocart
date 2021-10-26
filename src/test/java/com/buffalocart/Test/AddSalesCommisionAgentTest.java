@@ -13,6 +13,7 @@ import com.buffalocart.automationcore.Base;
 import com.buffalocart.constants.Constants;
 import com.buffalocart.pages.AddSalesCommisionAgentPage;
 import com.buffalocart.pages.AddUsersPage;
+import com.buffalocart.pages.DeleteSalesCommisionAgentPage;
 import com.buffalocart.pages.HomePage;
 import com.buffalocart.pages.LoginPage;
 import com.buffalocart.pages.SalesCommisionAgentPage;
@@ -34,15 +35,16 @@ public class AddSalesCommisionAgentTest extends Base{
 	SignoutPage signout;
 	AddSalesCommisionAgentPage addsalescommisionagent;
 	SalesCommisionAgentPage salescommisionagent;
+	DeleteSalesCommisionAgentPage deletesales;
 	String path = System.getProperty("user.dir") + Constants.EXCEL_FILE;
 	
-	 @Test(priority = 28, description = "TC_028_Verify user can sales agent ", enabled = true)
+	 @Test(priority = 28, description = "TC_028_Verify user can add sales agent ", enabled = true)
 
 		public void verifyUserCanAddSalesagent() throws IOException, InterruptedException {
 			excel = new ExcelUtility(path, "Login");
 			login = new LoginPage(driver);
 			login.enterUsername(excel.getStringCellData(1, 0));
-			login.enterPassword(excel.getStringCellData(1, 1));
+			login.enternumericPassword((int)excel.getNumericCellData(1, 1));
 			home = login.clickOnLoginButton();
 			home.clickOnEndTour();
 			sidebar = home.clickOnSidebar();
@@ -74,7 +76,9 @@ public class AddSalesCommisionAgentTest extends Base{
 			SoftAssert softassert = new SoftAssert();
 			softassert.assertTrue(status, "Add user Failed");
 			softassert.assertAll();
-			salescommisionagent.getHardWait();
+			deletesales=salescommisionagent.ClickonDeleteButton(excel.getStringCellData(1, 3));
+			deletesales.getHardWait();
+			salescommisionagent=deletesales.clickOnOkButton();
 			signout = home.clickOnUserMenu();
 			login = signout.clickOnSignoutButton();
 			

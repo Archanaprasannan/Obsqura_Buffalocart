@@ -10,6 +10,8 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.buffalocart.utilities.PageUtility;
 import com.buffalocart.utilities.TableUtility;
+import com.buffalocart.utilities.WaitUtility;
+import com.buffalocart.utilities.WaitUtility.LocatorType;
 
 public class UpdateUsersPage {
 	WebDriver driver;
@@ -29,6 +31,15 @@ public class UpdateUsersPage {
 	private final String _updateButton = "submit_user_button";
 	@FindBy(id = _updateButton)
 	private WebElement updateButton;
+	
+	
+	private final String _edittable = "//div[@class='box-body']";
+	@FindBy(xpath = _edittable)
+	private WebElement edittable;
+	
+	private final String _editpage = "//div[@class=' content-wrapper ']";
+	@FindBy(xpath = _editpage)
+	private WebElement editpage;
 	
 	
 	
@@ -53,6 +64,15 @@ public class UpdateUsersPage {
 	
 	public void getHardWait() throws InterruptedException {
 		PageUtility.hardWait();
+	}
+	
+	/*public void getSoftWaitEditpage() throws InterruptedException {
+		WaitUtility.waitForelement(driver, edittable, LocatorType.Xpath);
+	}*/
+	
+	public void getSoftWaitEditusertable()
+	{
+		WaitUtility.waitForelement(driver,edittable,LocatorType.Xpath);
 	}
 	
 	

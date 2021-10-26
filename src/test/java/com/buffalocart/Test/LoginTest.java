@@ -35,11 +35,14 @@ public class LoginTest extends Base {
 	}
 
 	@Test(priority = 2, description = "TC_002_Verify user login with valid user credentials", enabled = true)
-	public void verifyUserLoginWithValidUserCredentials() throws IOException {
+	public void verifyUserLoginWithValidUserCredentials() throws IOException, InterruptedException {
 		excel = new ExcelUtility(path, "Login");
 		login = new LoginPage(driver);
 		login.enterUsername(excel.getStringCellData(1, 0));
-		login.enterPassword(excel.getStringCellData(1, 1));
+		//int value=(int) excel.getNumericCellData(1, 1);
+		//String s=String.valueOf(value);  
+		//System.out.println(s);
+		login.enternumericPassword((int)excel.getNumericCellData(1, 1));
 		home = login.clickOnLoginButton();
 		home.clickOnEndTour();
 		boolean actualHomeLogostatus = home.getHomePageLogoStatus();

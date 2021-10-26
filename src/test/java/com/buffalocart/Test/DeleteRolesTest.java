@@ -9,6 +9,7 @@ import org.testng.asserts.SoftAssert;
 
 import com.buffalocart.automationcore.Base;
 import com.buffalocart.constants.Constants;
+import com.buffalocart.pages.AddRolesPage;
 import com.buffalocart.pages.DeleteRolesPage;
 import com.buffalocart.pages.HomePage;
 import com.buffalocart.pages.LoginPage;
@@ -29,6 +30,7 @@ public class DeleteRolesTest extends Base{
 	UpdateRolesPage updateroles;
 	SignoutPage signout;
 	DeleteRolesPage deleterole;
+	AddRolesPage addroles;
 	String path = System.getProperty("user.dir") + Constants.EXCEL_FILE;
 
 	
@@ -37,21 +39,30 @@ public class DeleteRolesTest extends Base{
 		excel = new ExcelUtility(path, "Login");
 		login = new LoginPage(driver);
 		login.enterUsername(excel.getStringCellData(1, 0));
-		login.enterPassword(excel.getStringCellData(1, 1));
+		login.enternumericPassword((int)excel.getNumericCellData(1, 1));
 		home = login.clickOnLoginButton();
 		home.clickOnEndTour();
 		sidebar = home.clickOnSidebar();
 		usermanagement = sidebar.clickOnUserManagementModule();
-		roles=usermanagement.clickOnRolesSubmodule();
+		roles = usermanagement.clickOnRolesSubmodule();
+		addroles = roles.clickOnAddRoles();
+		addroles.clickOnRoleName();
 		excel = new ExcelUtility(path, "Roles");
-		deleterole=roles.ClickonDeleteButton(excel.getStringCellData(1, 0));
+		addroles.enterRoleName(excel.getStringCellData(4, 0));
+		addroles.clickOnUserPermissionSelectAllCheckbox();
+		addroles.clickOnRolesPermissionSelectAllCheckbox();
+		roles = addroles.clickOnSaveButton();
+		roles.getHardWait();
+		
+		
+		deleterole=roles.ClickonDeleteButton(excel.getStringCellData(4, 0));
 		roles=deleterole.clickOnDeleteButton();
 		roles.getHardWait();
 		List<ArrayList<String>> updateTableData = roles.getTableData();
 		//System.out.println(updateTableData);
 		boolean status = false;
 		for (int i = 0; i < updateTableData.size(); i++) {
-			if (!updateTableData.get(i).equals(excel.getStringCellData(1, 0)));
+			if (!updateTableData.get(i).equals(excel.getStringCellData(4, 0)));
 			status = true;
 			break;
 		}

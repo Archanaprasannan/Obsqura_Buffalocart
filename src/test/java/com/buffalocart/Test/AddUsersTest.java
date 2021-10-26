@@ -11,6 +11,7 @@ import org.testng.asserts.SoftAssert;
 import com.buffalocart.automationcore.Base;
 import com.buffalocart.constants.Constants;
 import com.buffalocart.pages.AddUsersPage;
+import com.buffalocart.pages.DeleteUserPage;
 import com.buffalocart.pages.HomePage;
 import com.buffalocart.pages.LoginPage;
 import com.buffalocart.pages.SidebarPage;
@@ -29,15 +30,16 @@ public class AddUsersTest extends Base {
 	UsersPage users;
 	AddUsersPage adduser;
 	SignoutPage signout;
+	DeleteUserPage deleteuser;
 	String path = System.getProperty("user.dir") + Constants.EXCEL_FILE;
 
-	 @Test(priority = 12, description = "TC_012_Verify the error message displayed without filling mandatory fields in add user form", enabled = true)
+	@Test(priority = 12, description = "TC_012_Verify the error message displayed without filling mandatory fields in add user form", enabled = true)
 
 	public void verifyErrorMessageDisplayedWithoutFillingMandatoryFields() throws IOException {
 		excel = new ExcelUtility(path, "Login");
 		login = new LoginPage(driver);
 		login.enterUsername(excel.getStringCellData(1, 0));
-		login.enterPassword(excel.getStringCellData(1, 1));
+		login.enternumericPassword((int)excel.getNumericCellData(1, 1));
 		home = login.clickOnLoginButton();
 		home.clickOnEndTour();
 		sidebar = home.clickOnSidebar();
@@ -59,12 +61,12 @@ public class AddUsersTest extends Base {
 		login = signout.clickOnSignoutButton();
 	}
 
-	 @Test(priority = 14, description = "TC_014_Verify Add Users page title", enabled = true)
+	@Test(priority = 14, description = "TC_014_Verify Add Users page title", enabled = true)
 	public void verifyAddUserspageTitle() throws IOException {
 		excel = new ExcelUtility(path, "Login");
 		login = new LoginPage(driver);
 		login.enterUsername(excel.getStringCellData(1, 0));
-		login.enterPassword(excel.getStringCellData(1, 1));
+		login.enternumericPassword((int)excel.getNumericCellData(1, 1));
 		home = login.clickOnLoginButton();
 		home.clickOnEndTour();
 		sidebar = home.clickOnSidebar();
@@ -85,7 +87,7 @@ public class AddUsersTest extends Base {
 		excel = new ExcelUtility(path, "Login");
 		login = new LoginPage(driver);
 		login.enterUsername(excel.getStringCellData(1, 0));
-		login.enterPassword(excel.getStringCellData(1, 1));
+		login.enternumericPassword((int)excel.getNumericCellData(1, 1));
 		home = login.clickOnLoginButton();
 		home.clickOnEndTour();
 		sidebar = home.clickOnSidebar();
@@ -102,20 +104,26 @@ public class AddUsersTest extends Base {
 		adduser.enterConfirmPassword(excel.getStringCellData(2,7));
 		adduser.enterSalesPercentage(excel.getNumericCellData(2,8));
 		users = adduser.clickOnSaveButton();
-		users.getHardWait();
+		//users.getSoftWaitusertable();
 		List<ArrayList<String>> data = users.getTableData();
-		users.getHardWait();
+		//users.getHardWait();
+		users.getSoftWaitusertable();
 		System.out.println(data);
 		boolean status = false;
 		for (int i = 0; i < data.size(); i++) {
-			if (data.get(i).equals(excel.getStringCellData(1, 3)));
+			if (data.get(i).equals(excel.getStringCellData(2, 3)));
 			status = true;
 			break;
 		}
 		SoftAssert softassert = new SoftAssert();
 		softassert.assertTrue(status, "Add user Failed");
 		softassert.assertAll();
-		users.getHardWait();
+		//users.getHardWait();
+		users.getSoftWaitusertable();
+		deleteuser=users.ClickonDeleteButton(excel.getStringCellData(2, 3));
+		//deleteuser.getHardWait();
+		deleteuser.getSoftWaitDeleteAlertWindow();
+		users=deleteuser.clickOnAlertwindow();
 		signout = home.clickOnUserMenu();
 		login = signout.clickOnSignoutButton();
 		

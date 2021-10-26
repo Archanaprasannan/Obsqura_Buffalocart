@@ -15,7 +15,7 @@ public class TableUtility {
 	public static List<ArrayList<String>> gridData(List<WebElement> rowItems, List<WebElement> columnItems) {
 		int rSize = rowItems.size();
 	    int cSize = columnItems.size();
-	    int clistSize = (columnItems.size() / rowItems.size() - 1)  ;
+	    int clistSize = (columnItems.size() / rowItems.size() - 1) ;
 
 	    String[] columnList = new String[clistSize]; // 20/5 --->4
 	    List<ArrayList<String>> gridData = new ArrayList<ArrayList<String>>();

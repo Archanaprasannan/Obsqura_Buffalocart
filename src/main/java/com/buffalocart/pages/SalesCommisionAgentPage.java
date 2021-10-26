@@ -75,7 +75,7 @@ public class SalesCommisionAgentPage {
 				String data=grid.get(i).get(j).getText();
 				if(data.equals(user))
 				{
-					WebElement deletebutton=driver.findElement(By.xpath("//table[@id='sales_commission_agent_table']//tbody//tr[\"+(i+1)+\"]//td[6]//button[2]"));
+					WebElement deletebutton=driver.findElement(By.xpath("//table[@id='sales_commission_agent_table']//tbody//tr["+(i+1)+"]//td[6]//button[2]"));
 					PageUtility.clickOnElement(deletebutton);
 					break OUTER;
 				}

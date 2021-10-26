@@ -10,8 +10,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WaitUtility {
 	public static final long PAGE_LOAD_WAIT = 100;
-	public static final long EXPLICIT_WAIT = 20;
+	public static final long EXPLICIT_WAIT = 70;
 	public static final long IMPLICIT_WAIT = 20;
+	public static final long FLUENT_WAIT = 20;
 
 	public enum LocatorType {
 		Id, Xpath, Cssselector, Name, Classname, Tagname, Linktext, Partiallinktext
@@ -37,4 +38,16 @@ public class WaitUtility {
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.partialLinkText(target)));
 		}
 	}
+	public static void waitForelement(WebDriver driver, WebElement target, Enum locatortype) {
+		WebDriverWait wait = new WebDriverWait(driver, TimeUnit.SECONDS.toSeconds(EXPLICIT_WAIT));
+		
+			wait.until(ExpectedConditions.visibilityOf(target));
+
+		//else if (locatortype.equals(LocatorType.Xpath)) {
+			//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(target.getText())));
+			//wait.until(ExpectedConditions.visibilityOf(target));
+			
 }
+		
+	}
+

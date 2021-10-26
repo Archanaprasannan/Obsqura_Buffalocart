@@ -38,7 +38,7 @@ public class RolesTest extends Base {
 		excel = new ExcelUtility(path, "Login");
 		login = new LoginPage(driver);
 		login.enterUsername(excel.getStringCellData(1, 0));
-		login.enterPassword(excel.getStringCellData(1, 1));
+		login.enternumericPassword((int)excel.getNumericCellData(1, 1));
 		home = login.clickOnLoginButton();
 		home.clickOnEndTour();
 		sidebar = home.clickOnSidebar();
@@ -58,7 +58,7 @@ public class RolesTest extends Base {
 		excel = new ExcelUtility(path, "Login");
 		login = new LoginPage(driver);
 		login.enterUsername(excel.getStringCellData(1, 0));
-		login.enterPassword(excel.getStringCellData(1, 1));
+		login.enternumericPassword((int)excel.getNumericCellData(1, 1));
 		home = login.clickOnLoginButton();
 		home.clickOnEndTour();
 		sidebar = home.clickOnSidebar();
@@ -67,7 +67,7 @@ public class RolesTest extends Base {
 		addroles = roles.clickOnAddRoles();
 		addroles.clickOnRoleName();
 		excel = new ExcelUtility(path, "Roles");
-		addroles.enterRoleName(excel.getStringCellData(3, 0));
+		addroles.enterRoleName(excel.getStringCellData(2, 0));
 		addroles.clickOnUserPermissionSelectAllCheckbox();
 		addroles.clickOnRolesPermissionSelectAllCheckbox();
 		roles = addroles.clickOnSaveButton();
@@ -77,7 +77,7 @@ public class RolesTest extends Base {
 		excel = new ExcelUtility(path, "Login");
 		//login = new LoginPage(driver);
 		login.enterUsername(excel.getStringCellData(1, 0));
-		login.enterPassword(excel.getStringCellData(1, 1));
+		login.enternumericPassword((int)excel.getNumericCellData(1, 1));
 		home = login.clickOnLoginButton();
 		//home.clickOnEndTour();
 		sidebar = home.clickOnSidebar();
@@ -87,8 +87,9 @@ public class RolesTest extends Base {
 		List<String> actualRoleNames = adduser.getOptionsFromRoleDropdown();
 		System.out.println(actualRoleNames);
 		boolean actualRoleName = false;
+		excel = new ExcelUtility(path, "Roles");
 		for (int i = 0; i < actualRoleNames.size(); i++) {
-			if (actualRoleNames.get(i).equals("Managing officer")) {
+			if (actualRoleNames.get(i).equals(excel.getStringCellData(2, 0))) {
 				actualRoleName = true;
 				break;
 			}

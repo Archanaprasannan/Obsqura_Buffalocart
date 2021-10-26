@@ -23,8 +23,9 @@ public class HomePage {
 	}
 
 	/*** WebElements ***/
-	private final String _endTourButton = "button[class='btn btn-default btn-sm']";
-	@FindBy(css = _endTourButton)
+	private final String _endTourButton = "//div[@class='popover-navigation']//button[3]";
+	//button[class='btn btn-default btn-sm']
+	@FindBy(xpath = _endTourButton)
 	private WebElement endTourButton;
 
 	private final String _homelogotitle = "//span[@class='logo-lg']";

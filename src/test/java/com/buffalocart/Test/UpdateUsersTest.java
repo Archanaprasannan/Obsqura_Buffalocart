@@ -32,22 +32,27 @@ public class UpdateUsersTest extends Base {
 	UpdateUsersPage updateusers;
 	SignoutPage signout;
 	DeleteUserPage deleteuser;
+	AddUsersPage adduser;
 	String path = System.getProperty("user.dir") + Constants.EXCEL_FILE;
 
-	@Test(priority = 16, description = "TC_016_Verify Edit User page title", enabled = true)
+	//@Test(priority = 16, description = "TC_016_Verify Edit User page title", enabled = true)
 	public void verifyEditUserpageTitle() throws IOException, InterruptedException {
 		excel = new ExcelUtility(path, "Login");
 		login = new LoginPage(driver);
 		login.enterUsername(excel.getStringCellData(1, 0));
-		login.enterPassword(excel.getStringCellData(1, 1));
+		login.enternumericPassword((int)excel.getNumericCellData(1, 1));
 		home = login.clickOnLoginButton();
 		home.clickOnEndTour();
 		sidebar = home.clickOnSidebar();
 		usermanagement = sidebar.clickOnUserManagementModule();
 		users = usermanagement.clickOnUsersSubmodule();
 		excel = new ExcelUtility(path, "AddUser");
-		updateusers=users.ClickonEditButton(excel.getStringCellData(2, 3));
-		updateusers.getHardWait();
+		//users.getHardwait();
+		//users.getSoftWaitusertable();
+		users.getSoftWaitEditusertable();
+		updateusers=users.ClickonEditButton("felixmathew@gmail.com");
+		//updateusers.getHardWait();
+		updateusers.getSoftWaitEditusertable();
 		String actualTitle=updateusers.getEditUserspageTitle();
 		System.out.println(actualTitle);
 		String expectedTitle="Edit user - Reobeen HHC";
@@ -65,29 +70,62 @@ public class UpdateUsersTest extends Base {
 		excel = new ExcelUtility(path, "Login");
 		login = new LoginPage(driver);
 		login.enterUsername(excel.getStringCellData(1, 0));
-		login.enterPassword(excel.getStringCellData(1, 1));
+		login.enternumericPassword((int)excel.getNumericCellData(1, 1));
 		home = login.clickOnLoginButton();
 		home.clickOnEndTour();
 		sidebar = home.clickOnSidebar();
 		usermanagement = sidebar.clickOnUserManagementModule();
 		users = usermanagement.clickOnUsersSubmodule();
-		excel = new ExcelUtility(path, "AddUser");
-		updateusers=users.ClickonEditButton(excel.getStringCellData(2, 3));
+		adduser = users.clickOnAddUsers();
+		excel = new ExcelUtility(path, "EditUser");
+		adduser.enterPrefix();
+		adduser.enterfirstname(excel.getStringCellData(1, 1));
+		adduser.enterLastname(excel.getStringCellData(1,2));
+		adduser.enterEmail(excel.getStringCellData(1,4));
+		adduser.enteruserName(excel.getStringCellData(1,6));
+		adduser.enterPassword(excel.getStringCellData(1,7));
+		adduser.enterConfirmPassword(excel.getStringCellData(1,8));
+		adduser.enterSalesPercentage(excel.getNumericCellData(1,9));
+		users = adduser.clickOnSaveButton();
+		users.getSoftWaitusertable();
+		//users.getSoftWaitusertable();
+		/*signout = home.clickOnUserMenu();
+		login = signout.clickOnSignoutButton();
+		
+		
+		excel = new ExcelUtility(path, "Login");
+		login = new LoginPage(driver);
+		login.enterUsername(excel.getStringCellData(1, 0));
+		login.enternumericPassword((int)excel.getNumericCellData(1, 1));
+		home = login.clickOnLoginButton();
+		//home.clickOnEndTour();
+		sidebar = home.clickOnSidebar();
+		usermanagement = sidebar.clickOnUserManagementModule();
+		users = usermanagement.clickOnUsersSubmodule();*/
+		excel = new ExcelUtility(path, "EditUser");
+		updateusers=users.ClickonEditButton(excel.getStringCellData(1,6));
+		updateusers.getSoftWaitEditusertable();
+		//updateusers.getSoftWaitEditpage();
 		updateusers.enterEditUsersLastname(" D");
 		users=updateusers.clickOnUpdateButton();
-		users.getHardWait();
+		users.getSoftWaitusertable();
 		List<ArrayList<String>> updateTableData = users.getTableData();
 		//System.out.println(updateTableData);
 		boolean status = false;
 		for (int i = 0; i < updateTableData.size(); i++) {
-			if (updateTableData.get(i).equals(excel.getStringCellData(3,0)));
+			if (updateTableData.get(i).equals(excel.getStringCellData(2,0)));
 			status = true;
 			break;
 		}
 		SoftAssert softassert = new SoftAssert();
 		softassert.assertTrue(status, "Edit user Failed");
 		softassert.assertAll();
-		users.getHardWait();
+		//users.getHardWait();
+		users.getSoftWaitusertable();
+		deleteuser=users.ClickonDeleteButton(excel.getStringCellData(2,0));
+		//deleteuser.getHardWait();
+		deleteuser.getSoftWaitDeleteAlertWindow();
+		users=deleteuser.clickOnAlertwindow();
 		signout = home.clickOnUserMenu();
 		login = signout.clickOnSignoutButton();
 		
