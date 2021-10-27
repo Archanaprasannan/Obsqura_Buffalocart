@@ -38,12 +38,12 @@ public class UpdateRolesTest extends Base {
 	DeleteRolesPage deleterole;
 	String path = System.getProperty("user.dir") + Constants.EXCEL_FILE;
 
-	@Test(priority = 23, description = "TC_023_Verify Edit Role page title", enabled = true)
+	 @Test(priority = 23, description = "TC_023_Verify Edit Role page title", enabled = true)
 	public void verifyEditRolespageTitle() throws IOException, InterruptedException {
 		excel = new ExcelUtility(path, "Login");
 		login = new LoginPage(driver);
 		login.enterUsername(excel.getStringCellData(1, 0));
-		login.enternumericPassword((int)excel.getNumericCellData(1, 1));
+		login.enternumericPassword((int) excel.getNumericCellData(1, 1));
 		home = login.clickOnLoginButton();
 		home.clickOnEndTour();
 		sidebar = home.clickOnSidebar();
@@ -56,7 +56,7 @@ public class UpdateRolesTest extends Base {
 		addroles.clickOnUserPermissionSelectAllCheckbox();
 		addroles.clickOnRolesPermissionSelectAllCheckbox();
 		roles = addroles.clickOnSaveButton();
-		
+
 		updateroles = roles.ClickonEditButton(excel.getStringCellData(1, 0));
 		String actualTitle = updateroles.getEditRolesPageTitle();
 		String expectedTitle = "Edit Role - Reobeen HHC";
@@ -73,7 +73,7 @@ public class UpdateRolesTest extends Base {
 		excel = new ExcelUtility(path, "Login");
 		login = new LoginPage(driver);
 		login.enterUsername(excel.getStringCellData(1, 0));
-		login.enternumericPassword((int)excel.getNumericCellData(1, 1));
+		login.enternumericPassword((int) excel.getNumericCellData(1, 1));
 		home = login.clickOnLoginButton();
 		home.clickOnEndTour();
 		sidebar = home.clickOnSidebar();
@@ -86,6 +86,8 @@ public class UpdateRolesTest extends Base {
 		addroles.clickOnUserPermissionSelectAllCheckbox();
 		addroles.clickOnRolesPermissionSelectAllCheckbox();
 		roles = addroles.clickOnSaveButton();
+		// roles.getSoftWaitrolestable();
+		roles.getSoftWaitusersmenuclickable();
 		roles.getHardWait();
 		signout = home.clickOnUserMenu();
 		login = signout.clickOnSignoutButton();
@@ -93,7 +95,7 @@ public class UpdateRolesTest extends Base {
 		excel = new ExcelUtility(path, "Login");
 		login = new LoginPage(driver);
 		login.enterUsername(excel.getStringCellData(1, 0));
-		login.enternumericPassword((int)excel.getNumericCellData(1, 1));
+		login.enternumericPassword((int) excel.getNumericCellData(1, 1));
 		home = login.clickOnLoginButton();
 		// home.clickOnEndTour();
 		sidebar = home.clickOnSidebar();
@@ -107,8 +109,8 @@ public class UpdateRolesTest extends Base {
 		// updateroles.editUserPermissionSelectAllCheckbox();
 		// updateroles.editCustomerPermissionSelectAllCheckbox();
 		roles = updateroles.clickOnUpdateButton();
-		roles.getHardWait();
-
+		// roles.getHardWait();
+		roles.getSoftWaitrolestable();
 		List<ArrayList<String>> updateTableData = roles.getTableData();
 		// System.out.println(updateTableData);
 		boolean status = false;
@@ -121,10 +123,12 @@ public class UpdateRolesTest extends Base {
 		SoftAssert softassert = new SoftAssert();
 		softassert.assertTrue(status, "Edit role Failed");
 		softassert.assertAll();
-		roles.getHardWait();
-		deleterole=roles.ClickonDeleteButton(excel.getStringCellData(3, 0));
-		roles=deleterole.clickOnDeleteButton();
-		roles.getHardWait();
+		// roles.getHardWait();
+		roles.getSoftWaitrolestable();
+		deleterole = roles.ClickonDeleteButton(excel.getStringCellData(3, 0));
+		roles = deleterole.clickOnDeleteButton();
+		// roles.getHardWait();
+		roles.getSoftWaitrolestable();
 		signout = home.clickOnUserMenu();
 		login = signout.clickOnSignoutButton();
 	}

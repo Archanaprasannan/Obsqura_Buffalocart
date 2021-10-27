@@ -57,6 +57,21 @@ public class UsersPage {
 	@FindBy(xpath = _edittable)
 	private WebElement edittable;
 	
+	private final String _viewtable = "//table[@id='users_table']//tbody//tr//td[5]//a[2]";
+	@FindBy(xpath = _viewtable)
+	private WebElement viewtable;
+	
+	private final String _deletetable = "//table[@id='users_table']//tbody//tr//td[5]//button";
+	@FindBy(xpath = _deletetable)
+	private WebElement deletetable;
+	
+	private final String _usersmenu = "//li[@class='dropdown user user-menu']";
+	@FindBy(xpath = _usersmenu)
+	private WebElement usersmenu;
+	
+	
+	
+	
 	
 	
 	/*** UserActionMethods ***/
@@ -154,14 +169,27 @@ public class UsersPage {
 	
 	public void getSoftWaitusertable()
 	{
-		WaitUtility.waitForelement(driver,userstable,LocatorType.Xpath);
+		WaitUtility.waitForelementVisibility(driver,userstable,LocatorType.Xpath);
 	}
 	public void getSoftWaitEditusertable()
 	{
-		WaitUtility.waitForelement(driver,edittable,LocatorType.Xpath);
+		WaitUtility.waitForelementTobeClickable(driver,edittable,LocatorType.Xpath);
+	}
+	
+	public void getSoftWaitViewusertable()
+	{
+		WaitUtility.waitForelementTobeClickable(driver,viewtable,LocatorType.Xpath);
+	}
+	public void getSoftWaitDeleteusertable()
+	{
+		WaitUtility.waitForelementTobeClickable(driver,deletetable,LocatorType.Xpath);
 	}
 	public void getSoftWaitUsersLogo()
 	{
-		WaitUtility.waitForelement(driver,userslogo , LocatorType.Xpath);
+		WaitUtility.waitForelementVisibility(driver,userslogo , LocatorType.Xpath);
+	}
+	public void getSoftWaitusersmenuclickable()
+	{
+		WaitUtility.waitForelementVisibility(driver,usersmenu,LocatorType.Xpath);
 	}
 }

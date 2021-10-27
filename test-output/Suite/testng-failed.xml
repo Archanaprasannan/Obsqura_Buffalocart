@@ -7,13 +7,20 @@
   <test thread-count="5" name="Test(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="com.buffalocart.Test.UpdateUsersTest">
+      <class name="com.buffalocart.Test.DeleteSalesCommisionAgentTest">
         <methods>
-          <include name="verifyUserCanEditUserDetails"/>
+          <include name="verifyUserCanDeleteSalesCommissionAgents"/>
           <include name="setUp"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- com.buffalocart.Test.UpdateUsersTest -->
+      </class> <!-- com.buffalocart.Test.DeleteSalesCommisionAgentTest -->
+      <class name="com.buffalocart.Test.UpdateSalesCommisionAgentTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="verifyEditSalesagentDetails"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.buffalocart.Test.UpdateSalesCommisionAgentTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

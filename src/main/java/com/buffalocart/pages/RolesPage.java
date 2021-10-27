@@ -39,6 +39,21 @@ public class RolesPage {
 	private final String _cElement = "//table[@id='roles_table']//tbody//tr//td";
 	@FindBy(xpath = _cElement)
 	private List<WebElement> cElement;
+	
+	private final String _rolestable = "//table[@id='roles_table']";
+	@FindBy(xpath = _rolestable)
+	private WebElement rolestable;
+	
+	private final String _usersmenu = "//li[@class='dropdown user user-menu']";
+	@FindBy(xpath = _usersmenu)
+	private WebElement usersmenu;
+	
+	private final String _deletetable = "//table[@id='roles_table']//tbody//tr//td[2]/button";
+	@FindBy(xpath = _deletetable)
+	private WebElement deletetable;
+	
+	
+	
 
 	/*** UserActionMethods ***/
 	public String getRolesPageTitle() {
@@ -89,8 +104,9 @@ public class RolesPage {
 		return new UpdateRolesPage(driver);
 	}
 	
-	public DeleteRolesPage ClickonDeleteButton(String user) {
+	public DeleteRolesPage ClickonDeleteButton(String user) throws InterruptedException {
 		List<ArrayList<WebElement>> grid=TableUtility.actionData(rElement, cElement);
+		PageUtility.hardWait();
 		System.out.println(grid);
 		OUTER: for(int i=0;i<grid.size();i++)
 		{
@@ -106,5 +122,21 @@ public class RolesPage {
 			}
 		}
 		return new DeleteRolesPage(driver);
+	}
+	public void getSoftWaitrolestable()
+	{
+		WaitUtility.waitForelementTobeClickable(driver,rolestable,LocatorType.Xpath);
+	}
+	public void getSoftWaitusersmenuclickable()
+	{
+		WaitUtility.waitForelementTobeClickable(driver,usersmenu,LocatorType.Xpath);
+	}
+	public void getSoftWaitDeleteusertable()
+	{
+		WaitUtility.waitForelementVisibility(driver,deletetable,LocatorType.Xpath);
+	}
+	public void getSoftWaitVisibilityusersmenuclickable()
+	{
+		WaitUtility.waitForelementVisibility(driver,usersmenu,LocatorType.Xpath);
 	}
 }

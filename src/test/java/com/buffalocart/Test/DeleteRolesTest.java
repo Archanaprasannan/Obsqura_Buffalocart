@@ -52,12 +52,15 @@ public class DeleteRolesTest extends Base{
 		addroles.clickOnUserPermissionSelectAllCheckbox();
 		addroles.clickOnRolesPermissionSelectAllCheckbox();
 		roles = addroles.clickOnSaveButton();
-		roles.getHardWait();
+		//roles.getHardWait();
+		roles.getSoftWaitDeleteusertable();
 		
 		
 		deleterole=roles.ClickonDeleteButton(excel.getStringCellData(4, 0));
+		deleterole.getSoftWaitDeleteAlertWindow();
 		roles=deleterole.clickOnDeleteButton();
-		roles.getHardWait();
+		//roles.getHardWait();
+		
 		List<ArrayList<String>> updateTableData = roles.getTableData();
 		//System.out.println(updateTableData);
 		boolean status = false;
@@ -69,7 +72,8 @@ public class DeleteRolesTest extends Base{
 		SoftAssert softassert = new SoftAssert();
 		softassert.assertTrue(status, "Edit user Failed");
 		softassert.assertAll();
-		roles.getHardWait();
+		//roles.getHardWait();
+		roles.getSoftWaitusersmenuclickable();
 		signout = home.clickOnUserMenu();
 		login = signout.clickOnSignoutButton();
 }

@@ -38,16 +38,16 @@ public class WaitUtility {
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.partialLinkText(target)));
 		}
 	}
-	public static void waitForelement(WebDriver driver, WebElement target, Enum locatortype) {
+	public static void waitForelementVisibility(WebDriver driver, WebElement target, Enum locatortype) {
 		WebDriverWait wait = new WebDriverWait(driver, TimeUnit.SECONDS.toSeconds(EXPLICIT_WAIT));
 		
 			wait.until(ExpectedConditions.visibilityOf(target));
-
-		//else if (locatortype.equals(LocatorType.Xpath)) {
-			//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(target.getText())));
-			//wait.until(ExpectedConditions.visibilityOf(target));
 			
 }
+	public static void waitForelementTobeClickable(WebDriver driver, WebElement target, Enum locatortype) {
+		WebDriverWait wait = new WebDriverWait(driver, TimeUnit.SECONDS.toSeconds(EXPLICIT_WAIT));
+			wait.until(ExpectedConditions.elementToBeClickable(target));
 		
 	}
+}
 

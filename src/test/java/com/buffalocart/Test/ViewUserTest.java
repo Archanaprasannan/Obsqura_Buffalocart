@@ -42,7 +42,8 @@ public class ViewUserTest extends Base{
 			sidebar = home.clickOnSidebar();
 			usermanagement = sidebar.clickOnUserManagementModule();
 			users = usermanagement.clickOnUsersSubmodule();
-			users.getHardwait();
+			//users.getHardwait();
+			users.getSoftWaitViewusertable();
 			viewuser=users.ClickonViewButton("felixmathew@gmail.com");
 			viewuser.getHardWait();
 			String actualProfileName=viewuser.getProfileName();

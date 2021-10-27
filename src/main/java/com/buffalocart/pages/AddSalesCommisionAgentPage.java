@@ -59,6 +59,10 @@ public class AddSalesCommisionAgentPage {
 	private WebElement save;
 	
 	
+	private final String _salesaddwindow = "//form[@id='sale_commission_agent_form']";
+	@FindBy(xpath = _salesaddwindow)
+	private WebElement salesaddwindow;
+	
 	/*** UserActionMethods ***/
 	
 	public void clickOnWindow()
@@ -108,8 +112,8 @@ public class AddSalesCommisionAgentPage {
 		PageUtility.hardWait();
 	}
 	
-	public void getSoftWait() throws InterruptedException {
-	WaitUtility.waitForElement(driver, sales.getText(), LocatorType.Xpath);
+	public void getSoftWaitAddSalesAgentWindow() throws InterruptedException {
+	WaitUtility.waitForelementVisibility(driver, salesaddwindow, LocatorType.Xpath);
 	}
 	
 	

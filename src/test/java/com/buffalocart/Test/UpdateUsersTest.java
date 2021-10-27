@@ -35,7 +35,7 @@ public class UpdateUsersTest extends Base {
 	AddUsersPage adduser;
 	String path = System.getProperty("user.dir") + Constants.EXCEL_FILE;
 
-	//@Test(priority = 16, description = "TC_016_Verify Edit User page title", enabled = true)
+	@Test(priority = 16, description = "TC_016_Verify Edit User page title", enabled = true)
 	public void verifyEditUserpageTitle() throws IOException, InterruptedException {
 		excel = new ExcelUtility(path, "Login");
 		login = new LoginPage(driver);
@@ -87,25 +87,12 @@ public class UpdateUsersTest extends Base {
 		adduser.enterConfirmPassword(excel.getStringCellData(1,8));
 		adduser.enterSalesPercentage(excel.getNumericCellData(1,9));
 		users = adduser.clickOnSaveButton();
-		users.getSoftWaitusertable();
-		//users.getSoftWaitusertable();
-		/*signout = home.clickOnUserMenu();
-		login = signout.clickOnSignoutButton();
-		
-		
-		excel = new ExcelUtility(path, "Login");
-		login = new LoginPage(driver);
-		login.enterUsername(excel.getStringCellData(1, 0));
-		login.enternumericPassword((int)excel.getNumericCellData(1, 1));
-		home = login.clickOnLoginButton();
-		//home.clickOnEndTour();
-		sidebar = home.clickOnSidebar();
-		usermanagement = sidebar.clickOnUserManagementModule();
-		users = usermanagement.clickOnUsersSubmodule();*/
+		users.getSoftWaitEditusertable();
 		excel = new ExcelUtility(path, "EditUser");
 		updateusers=users.ClickonEditButton(excel.getStringCellData(1,6));
-		updateusers.getSoftWaitEditusertable();
+		//updateusers.getSoftWaitEditusertable();
 		//updateusers.getSoftWaitEditpage();
+		updateusers.getHardWait();
 		updateusers.enterEditUsersLastname(" D");
 		users=updateusers.clickOnUpdateButton();
 		users.getSoftWaitusertable();

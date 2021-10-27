@@ -43,6 +43,6 @@ public class DeleteUserPage {
 	
 	public void getSoftWaitDeleteAlertWindow()
 	{
-		WaitUtility.waitForelement(driver,deletealertwindow,LocatorType.Xpath);
+		WaitUtility.waitForelementTobeClickable(driver,deletealertwindow,LocatorType.Xpath);
 	}
 }

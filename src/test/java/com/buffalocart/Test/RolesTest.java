@@ -72,6 +72,9 @@ public class RolesTest extends Base {
 		addroles.clickOnRolesPermissionSelectAllCheckbox();
 		roles = addroles.clickOnSaveButton();
 		roles.getHardWait();
+		//roles.getSoftWaitusersmenuclickable();
+		//roles.getSoftWaitrolestable();
+		//roles.getSoftWaitVisibilityusersmenuclickable();
 		signout = home.clickOnUserMenu();
 		login = signout.clickOnSignoutButton();
 		excel = new ExcelUtility(path, "Login");

@@ -54,7 +54,7 @@ public class UpdateSalesCommisionAgentTest extends Base{
 			salescommisionagent=usermanagement.clickOnSalesCommsionAgentSubmodule();
 			addsalescommisionagent=salescommisionagent.clickOnAddButton();
 			//addsalescommisionagent.getSoftWait();
-			addsalescommisionagent.getHardWait();
+			addsalescommisionagent.getSoftWaitAddSalesAgentWindow();
 			excel = new ExcelUtility(path, "SalesCommsionAgent");
 			addsalescommisionagent.enterPrefix(excel.getStringCellData(2, 0));
 			addsalescommisionagent.enterFirstname(excel.getStringCellData(2, 1));
@@ -64,11 +64,12 @@ public class UpdateSalesCommisionAgentTest extends Base{
 			addsalescommisionagent.enterAddress(excel.getStringCellData(2, 5));
 			addsalescommisionagent.enterSalesPercentage(excel.getNumericCellData(2, 6));
 			salescommisionagent=addsalescommisionagent.clickOnSaveButton();
-			salescommisionagent.getHardWait();
-			signout = home.clickOnUserMenu();
-			login = signout.clickOnSignoutButton();
+			//salescommisionagent.getHardWait();
+			salescommisionagent.getSoftWaitsalesagenttable();
+			//signout = home.clickOnUserMenu();
+			//login = signout.clickOnSignoutButton();
 			
-			excel = new ExcelUtility(path, "Login");
+			/*excel = new ExcelUtility(path, "Login");
 			login = new LoginPage(driver);
 			login.enterUsername(excel.getStringCellData(1, 0));
 			login.enternumericPassword((int)excel.getNumericCellData(1, 1));
@@ -77,8 +78,10 @@ public class UpdateSalesCommisionAgentTest extends Base{
 			sidebar = home.clickOnSidebar();
 			usermanagement = sidebar.clickOnUserManagementModule();
 			salescommisionagent=usermanagement.clickOnSalesCommsionAgentSubmodule();
-			salescommisionagent.getHardWait();
-			excel = new ExcelUtility(path, "SalesCommsionAgent");
+			//salescommisionagent.getHardWait();
+			
+			excel = new ExcelUtility(path, "SalesCommsionAgent");*/
+			salescommisionagent.getSoftWaitEditsalesagent();
 			updatesales=salescommisionagent.ClickonEditButton(excel.getStringCellData(2, 3));
 			updatesales.getHardWait();
 			//excel = new ExcelUtility(path, "SalesCommsionAgent");
@@ -96,7 +99,7 @@ public class UpdateSalesCommisionAgentTest extends Base{
 			softassert.assertTrue(status, "Edit Sales agent Failed");
 			softassert.assertAll();
 			deletesales=salescommisionagent.ClickonDeleteButton(excel.getStringCellData(2, 3));
-			deletesales.getHardWait();
+			deletesales.getSoftWaitsalesagentdeletewindowvisibility();
 			salescommisionagent=deletesales.clickOnOkButton();
 			signout = home.clickOnUserMenu();
 			login = signout.clickOnSignoutButton();

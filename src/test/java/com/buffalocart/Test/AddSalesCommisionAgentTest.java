@@ -51,8 +51,8 @@ public class AddSalesCommisionAgentTest extends Base{
 			usermanagement = sidebar.clickOnUserManagementModule();
 			salescommisionagent=usermanagement.clickOnSalesCommsionAgentSubmodule();
 			addsalescommisionagent=salescommisionagent.clickOnAddButton();
-			//addsalescommisionagent.getSoftWait();
-			addsalescommisionagent.getHardWait();
+			addsalescommisionagent.getSoftWaitAddSalesAgentWindow();
+			//addsalescommisionagent.getHardWait();
 			excel = new ExcelUtility(path, "SalesCommsionAgent");
 			addsalescommisionagent.enterPrefix(excel.getStringCellData(1, 0));
 			addsalescommisionagent.enterFirstname(excel.getStringCellData(1, 1));
@@ -62,9 +62,11 @@ public class AddSalesCommisionAgentTest extends Base{
 			addsalescommisionagent.enterAddress(excel.getStringCellData(1, 5));
 			addsalescommisionagent.enterSalesPercentage(excel.getNumericCellData(1, 6));
 			salescommisionagent=addsalescommisionagent.clickOnSaveButton();
-			salescommisionagent.getHardWait();
+			//salescommisionagent.getHardWait();
+			salescommisionagent.getSoftWaitsalesagenttable();
 			List<ArrayList<String>> data = salescommisionagent.getTableData();	
-			salescommisionagent.getHardWait();
+			//salescommisionagent.getHardWait();
+			salescommisionagent.getSoftWaitsalesagenttable();
 			System.out.println(data);
 			
 			boolean status = false;
@@ -77,7 +79,8 @@ public class AddSalesCommisionAgentTest extends Base{
 			softassert.assertTrue(status, "Add user Failed");
 			softassert.assertAll();
 			deletesales=salescommisionagent.ClickonDeleteButton(excel.getStringCellData(1, 3));
-			deletesales.getHardWait();
+			//deletesales.getHardWait();
+			deletesales.getSoftWaitsalesagentdeletewindowvisibility();
 			salescommisionagent=deletesales.clickOnOkButton();
 			signout = home.clickOnUserMenu();
 			login = signout.clickOnSignoutButton();

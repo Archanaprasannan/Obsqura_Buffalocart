@@ -8,7 +8,7 @@
 	<test name="Test">
 		<parameter name="browser" value="chrome" />
 		<classes>
-			<class name="com.buffalocart.Test.UpdateUsersTest" />
+			<class name="com.buffalocart.Test.DeleteSalesCommisionAgentTest" />
 			<class name="com.buffalocart.automationcore.Base" />
 		</classes>
 	</test> <!-- Test -->

@@ -49,8 +49,8 @@ public class DeleteSalesCommisionAgentTest extends Base{
 		usermanagement = sidebar.clickOnUserManagementModule();
 		salescommisionagent=usermanagement.clickOnSalesCommsionAgentSubmodule();
 		addsalescommisionagent=salescommisionagent.clickOnAddButton();
-		//addsalescommisionagent.getSoftWait();
-		addsalescommisionagent.getHardWait();
+		addsalescommisionagent.getSoftWaitAddSalesAgentWindow();
+		//addsalescommisionagent.getHardWait();
 		excel = new ExcelUtility(path, "SalesCommsionAgent");
 		addsalescommisionagent.enterPrefix(excel.getStringCellData(3, 0));
 		addsalescommisionagent.enterFirstname(excel.getStringCellData(3, 1));
@@ -60,12 +60,14 @@ public class DeleteSalesCommisionAgentTest extends Base{
 		addsalescommisionagent.enterAddress(excel.getStringCellData(3, 5));
 		addsalescommisionagent.enterSalesPercentage(excel.getNumericCellData(3, 6));
 		salescommisionagent=addsalescommisionagent.clickOnSaveButton();
-		salescommisionagent.getHardWait();
-		
+		//salescommisionagent.getHardWait();
+		//salescommisionagent.getSoftWaitsalesagenttable();
+		salescommisionagent.getSoftWaitDeletesalesagent();
 		deletesales=salescommisionagent.ClickonDeleteButton(excel.getStringCellData(3, 3));
-		deletesales.getHardWait();
+		//deletesales.getHardWait();
+		deletesales.getSoftWaitsalesagentdeletewindowvisibility();
 		salescommisionagent=deletesales.clickOnOkButton();
-		salescommisionagent.getHardWait();
+		//salescommisionagent.getHardWait();
 		List<ArrayList<String>> updateTableData = salescommisionagent.getTableData();
 		System.out.println(updateTableData);
 		boolean status = false;

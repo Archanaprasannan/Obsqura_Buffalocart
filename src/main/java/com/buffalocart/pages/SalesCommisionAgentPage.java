@@ -11,6 +11,8 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.buffalocart.utilities.PageUtility;
 import com.buffalocart.utilities.TableUtility;
+import com.buffalocart.utilities.WaitUtility;
+import com.buffalocart.utilities.WaitUtility.LocatorType;
 
 public class SalesCommisionAgentPage {
 	WebDriver driver;
@@ -43,6 +45,17 @@ public class SalesCommisionAgentPage {
 	@FindBy(xpath = _cElement)
 	private List<WebElement> salescElement;
 	
+	private final String _salesagenttable = "//table[@id='sales_commission_agent_table']";
+	@FindBy(xpath = _salesagenttable)
+	private WebElement salesagenttable;
+	
+	private final String _salesagentEdibutton = "//table[@id='sales_commission_agent_table']//tbody//tr//td[6]//button[1]";
+	@FindBy(xpath = _salesagentEdibutton)
+	private WebElement salesagentEdibutton;
+	
+	private final String _salesagentdeletebutton = "//table[@id='sales_commission_agent_table']//tbody//tr//td[6]//button[2]";
+	@FindBy(xpath = _salesagentdeletebutton)
+	private WebElement salesagentdeletebutton;
 	
 	
 	/*** UserActionMethods ***/
@@ -104,5 +117,21 @@ public class SalesCommisionAgentPage {
 	public void getHardWait() throws InterruptedException {
 		PageUtility.hardWait();
 	}
+	
+	public void getSoftWaitsalesagenttable()
+	{
+		WaitUtility.waitForelementVisibility(driver,salesagenttable,LocatorType.Xpath);
+	}
+	
+	public void getSoftWaitEditsalesagent()
+	{
+		WaitUtility.waitForelementVisibility(driver,salesagentEdibutton,LocatorType.Xpath);
+	}
+	
+	public void getSoftWaitDeletesalesagent()
+	{
+		WaitUtility.waitForelementTobeClickable(driver,salesagentdeletebutton,LocatorType.Xpath);
+	}
+	
 	
 }

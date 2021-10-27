@@ -53,22 +53,15 @@ public class DeleteUserTest extends Base{
 		adduser.enterConfirmPassword(excel.getStringCellData(1,7));
 		adduser.enterSalesPercentage(excel.getNumericCellData(1,8));
 		users = adduser.clickOnSaveButton();
-		users.getHardwait();
+		//users.getHardwait();
+		users.getSoftWaitDeleteusertable();
 		
-		/*excel = new ExcelUtility(path, "Login");
-		login = new LoginPage(driver);
-		login.enterUsername(excel.getStringCellData(1, 0));
-		login.enterPassword(excel.getStringCellData(1, 1));
-		home = login.clickOnLoginButton();
-		home.clickOnEndTour();
-		sidebar = home.clickOnSidebar();
-		usermanagement = sidebar.clickOnUserManagementModule();
-		users = usermanagement.clickOnUsersSubmodule();
-		excel = new ExcelUtility(path, "AddUser");
-		users.getHardwait();*/
+	
 		deleteuser=users.ClickonDeleteButton(excel.getStringCellData(1,5));
-		deleteuser.getHardWait();
+		//deleteuser.getHardWait();
+		deleteuser.getSoftWaitDeleteAlertWindow();
 		users=deleteuser.clickOnAlertwindow();
+		users.getSoftWaitusersmenuclickable();
 		signout = home.clickOnUserMenu();
 		login = signout.clickOnSignoutButton();
 		

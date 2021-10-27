@@ -72,7 +72,7 @@ public class UpdateUsersPage {
 	
 	public void getSoftWaitEditusertable()
 	{
-		WaitUtility.waitForelement(driver,edittable,LocatorType.Xpath);
+		WaitUtility.waitForelementVisibility(driver,edittable,LocatorType.Xpath);
 	}
 	
 	

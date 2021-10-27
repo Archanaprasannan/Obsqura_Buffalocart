@@ -16,6 +16,16 @@
 			<class name="com.buffalocart.Test.UsersTest" />
 			<class name="com.buffalocart.Test.AddUsersTest" />
 			<class name="com.buffalocart.Test.UpdateUsersTest" />
+			<class name="com.buffalocart.Test.DeleteUserTest" />
+			<class name="com.buffalocart.Test.ViewUserTest" />
+			<class name="com.buffalocart.Test.RolesTest" />
+			<class name="com.buffalocart.Test.AddRolesTest" />
+			<class name="com.buffalocart.Test.DeleteRolesTest" />
+			<class name="com.buffalocart.Test.UpdateRolesTest" />
+			<class name="com.buffalocart.Test.SalesCommisionAgentTest" />
+			<class name="com.buffalocart.Test.AddSalesCommisionAgentTest" />
+			<class name="com.buffalocart.Test.UpdateSalesCommisionAgentTest" />
+			<class name="com.buffalocart.Test.DeleteSalesCommisionAgentTest" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

@@ -71,7 +71,8 @@ public class AddRolesTest extends Base {
 		addroles.clickOnUserPermissionSelectAllCheckbox();
 		addroles.clickOnRolesPermissionSelectAllCheckbox();
 		roles = addroles.clickOnSaveButton();
-		roles.getHardWait();
+		//roles.getHardWait();
+		roles.getSoftWaitrolestable();
 		List<ArrayList<String>> data = roles.getTableData();
 		System.out.println(data);
 		boolean status = false;
@@ -86,7 +87,7 @@ public class AddRolesTest extends Base {
 		softassert.assertAll();
 		deleterole=roles.ClickonDeleteButton(excel.getStringCellData(1, 0));
 		roles=deleterole.clickOnDeleteButton();
-		roles.getHardWait();
+		roles.getSoftWaitrolestable();
 		signout = home.clickOnUserMenu();
 		login = signout.clickOnSignoutButton();
 	}
